@@ -1,0 +1,13 @@
+{
+    "folders":
+    [
+        {
+            "path": "."
+        }
+    ],
+        "settings":
+    {
+        "TEXroot": "thesis.tex",
+        "output_directory": "./tmp_build_files/"
+    }
+}

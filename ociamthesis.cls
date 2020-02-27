@@ -267,6 +267,22 @@
 {\end{alwayssingle}}
 
 
+% PREFACE
+%
+% The preface environment puts a large, bold, centered 
+% "Preface" label at the top of the page. 
+
+\newenvironment{preface}%
+{   \begin{alwayssingle}\chapter*{Preface}
+    \addcontentsline{toc}{chapter}{Preface}
+    \thispagestyle{empty}
+  \pagestyle{empty}
+  \setlength{\baselineskip}{\frontmatterbaselineskip}
+}
+{\end{alwayssingle}}
+
+
+
 %ABSTRACT
 %
 %The abstract environment puts a large, bold, centered "Abstract" label at

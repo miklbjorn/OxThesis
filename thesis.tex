@@ -23,25 +23,11 @@
 % The most common choices should be below.  You can also do other things, like replacing "a4paper" with "letterpaper", etc.
 
 % This one will format for two-sided binding (ie left and right pages have mirror margins; blank pages inserted where needed):
-\documentclass[a4paper,twoside]{ociamthesis}
+% \documentclass[a4paper,twoside]{ociamthesis}
 % This one will format for one-sided binding (ie left margin > right margin; no extra blank pages):
 %\documentclass[a4paper]{ociamthesis}
 % This one will format for PDF output (ie equal margins, no extra blank pages):
-%\documentclass[a4paper,nobind]{ociamthesis} 
-
-
-
-%%%%% SELECT YOUR DRAFT OPTIONS
-% Three options going on here; use in any combination.  But remember to turn the first two off before
-% generating a PDF to send to the printer!
-
-% This adds a "DRAFT" footer to every normal page.  (The first page of each chapter is not a "normal" page.)
-\fancyfoot[C]{\emph{DRAFT Printed on \today}}  
-
-% This highlights (in blue) corrections marked with (for words) \mccorrect{blah} or (for whole
-% paragraphs) \begin{mccorrection} . . . \end{mccorrection}.  This can be useful for sending a PDF of
-% your corrected thesis to your examiners for review.  Turn it off, and the blue disappears.
-\correctionstrue
+\documentclass[a4paper,nobind]{ociamthesis} 
 
 
 %%%%% BIBLIOGRAPHY SETUP
@@ -52,18 +38,18 @@
 % Either way, you'll have to choose and configure an appropriate bibliography format...
 
 % The science-type option: numerical in-text citation with references in order of appearance.
-\usepackage[style=numeric-comp, sorting=none, backend=biber, doi=false, isbn=false]{biblatex}
-\newcommand*{\bibtitle}{References}
+% \usepackage[style=numeric-comp, sorting=none, backend=biber, doi=false, isbn=false]{biblatex}
+% \newcommand*{\bibtitle}{References}
 
 % The humanities-type option: author-year in-text citation with an alphabetical works cited.
 %\usepackage[style=authoryear, sorting=nyt, backend=biber, maxcitenames=2, useprefix, doi=false, isbn=false]{biblatex}
 %\newcommand*{\bibtitle}{Works Cited}
 
 % This makes the bibliography left-aligned (not 'justified') and slightly smaller font.
-\renewcommand*{\bibfont}{\raggedright\small}
+% \renewcommand*{\bibfont}{\raggedright\small}
 
 % Change this to the name of your .bib file (usually exported from a citation manager like Zotero or EndNote).
-\addbibresource{references.bib}
+% \addbibresource{bib_files/references.bib}
 
 
 % Uncomment this if you want equation numbers per section (2.3.12), instead of per chapter (2.18):
@@ -74,8 +60,8 @@
 %%%%% THESIS / TITLE PAGE INFORMATION
 % Everybody needs to complete the following:
 \title{Suitably impressive thesis title}
-\author{Your Name}
-\college{Your College}
+\author{Mikkel Bj\o rn}
+\college{St. Anne's College}
 
 % Master's candidates who require the alternate title page (with candidate number and word count)
 % must also un-comment and complete the following three lines:
@@ -88,17 +74,44 @@
 % Your full degree name.  (But remember that DPhils aren't "in" anything.  They're just DPhils.)
 \degree{Doctor of Philosophy}
 % Term and year of submission, or date if your board requires (eg most masters)
-\degreedate{Michaelmas 2014}
+\degreedate{Trinity 2020}
 
 
 %%%%% YOUR OWN PERSONAL MACROS
 % This is a good place to dump your own LaTeX macros as they come up.
 
 % To make text superscripts shortcuts
-	\renewcommand{\th}{\textsuperscript{th}} % ex: I won 4\th place
-	\newcommand{\nd}{\textsuperscript{nd}}
-	\renewcommand{\st}{\textsuperscript{st}}
-	\newcommand{\rd}{\textsuperscript{rd}}
+\renewcommand{\th}{\textsuperscript{th}} % ex: I won 4\th place
+\newcommand{\nd}{\textsuperscript{nd}}
+\renewcommand{\st}{\textsuperscript{st}}
+\newcommand{\rd}{\textsuperscript{rd}}
+
+\usepackage{ifthen} % for conditional statements
+\newboolean{uprightparticles}
+\setboolean{uprightparticles}{false} %True for upright particle symbols
+\newboolean{articletitles}
+\setboolean{articletitles}{true} % False removes titles in references
+
+\input{preambles/preamble}
+\input{preambles/lhcb-symbols-def}
+\input{preambles/ggsz-symbols-def}
+
+%%%%% SELECT YOUR DRAFT OPTIONS
+% Three options going on here; use in any combination.  But remember to turn the first two off before
+% generating a PDF to send to the printer!
+
+% This adds a "DRAFT" footer to every normal page.  (The first page of each chapter is not a "normal" page.)
+\fancyfoot[C]{\emph{DRAFT printed on \today}}  
+
+% Should line numbers be printed? Useful for feedback sessions
+% \linenumbers
+
+
+% This highlights (in blue) corrections marked with (for words) \mccorrect{blah} or (for whole
+% paragraphs) \begin{mccorrection} . . . \end{mccorrection}.  This can be useful for sending a PDF of
+% your corrected thesis to your examiners for review.  Turn it off, and the blue disappears.
+\correctionstrue
+
 
 %%%%% THE ACTUAL DOCUMENT STARTS HERE
 \begin{document}
@@ -107,9 +120,9 @@
 
 %%%%% CHOOSE YOUR LINE SPACING HERE
 % This is the official option.  Use it for your submission copy and library copy:
-\setlength{\textbaselineskip}{22pt plus2pt}
+% \setlength{\textbaselineskip}{22pt plus2pt}
 % This is closer spacing (about 1.5-spaced) that you might prefer for your personal copies:
-%\setlength{\textbaselineskip}{18pt plus2pt minus1pt}
+\setlength{\textbaselineskip}{18pt plus2pt minus1pt}
 
 % You can set the spacing here for the roman-numbered pages (acknowledgements, table of contents, etc.)
 \setlength{\frontmatterbaselineskip}{17pt plus1pt minus1pt}
@@ -133,9 +146,9 @@
 %%%%% ABSTRACT SEPARATE
 % This is used to create the separate, one-page abstract that you are required to hand into the Exam
 % Schools.  You can comment it out to generate a PDF for printing or whatnot.
-\begin{abstractseparate}
-	\input{text/abstract} % Create an abstract.tex file in the 'text' folder for your abstract.
-\end{abstractseparate}
+% \begin{abstractseparate}
+% 	\input{text/abstract} % Create an abstract.tex file in the 'text' folder for your abstract.
+% \end{abstractseparate}
 
 
 % JEM: Pages are roman numbered from here, though page numbers are invisible until ToC.  This is in
@@ -154,19 +167,19 @@
 
 %%%%% ACKNOWLEDGEMENTS -- Nothing to do here except comment out if you don't want it.
 \begin{acknowledgements}
- 	\input{text/acknowledgements}
+ 	\input{preambles/acknowledgements}
 \end{acknowledgements}
 
 %%%%% ABSTRACT -- Nothing to do here except comment out if you don't want it.
 \begin{abstract}
-	\input{text/abstract}
+	\input{preambles/abstract}
 \end{abstract}
 
 %%%%% MINI TABLES
 % This lays the groundwork for per-chapter, mini tables of contents.  Comment the following line
 % (and remove \minitoc from the chapter files) if you don't want this.  Un-comment either of the
 % next two lines if you want a per-chapter list of figures or tables.
-\dominitoc % include a mini table of contents
+
 %\dominilof  % include a mini list of figures
 %\dominilot  % include a mini list of tables
 
@@ -175,9 +188,10 @@
 
 % This is where the whole-document ToC appears:
 \tableofcontents
-
-\listoffigures
-	\mtcaddchapter
+\dominitoc % include a mini table of contents
+% \adjustmtc
+% \listoffigures
+% 	\mtcaddchapter
 % \mtcaddchapter is needed when adding a non-chapter (but chapter-like) entity to avoid confusing minitoc
 
 % Uncomment to generate a list of tables:
@@ -188,7 +202,11 @@
 % This example includes a list of abbreviations.  Look at text/abbreviations.tex to see how that file is
 % formatted.  The template can handle any kind of list though, so this might be a good place for a
 % glossary, etc.
-\include{text/abbreviations}
+% \include{text/abbreviations}
+
+\begin{preface}
+    \input{preambles/preface}
+\end{preface}
 
 % The Roman pages, like the Roman Empire, must come to its inevitable close.
 \end{romanpages}
@@ -197,30 +215,29 @@
 %%%%% CHAPTERS
 % Add or remove any chapters you'd like here, by file name (excluding '.tex'):
 \flushbottom
-\include{text/ch1-intro}
-\include{text/ch2-litreview}
-
+\include{chapters/ch1-intro}
+\include{chapters/ch2-theory}
+\include{chapters/ch3-the-LHCb-detector}
+\include{chapters/ch4-GGSZ-and-KS-CPV}
+\include{chapters/ch5-GGSZ-with-B2Dh}
+\include{chapters/ch6-conclusions}
 
 %% APPENDICES %% 
 % Starts lettered appendices, adds a heading in table of contents, and adds a
 %    page that just says "Appendices" to signal the end of your main text.
-\startappendices
+% \startappendices
 % Add or remove any appendices you'd like here:
-\include{text/appendix-1}
+% \include{appendices/appendix-1}
+
 
 
 %%%%% REFERENCES
+\clearpage
+% \setboolean{inbibliography}{true}
+\bibliographystyle{LHCb}
+\bibliography{bib_files/references,bib_files/LHCb-PAPER}
 
-% JEM: Quote for the top of references (just like a chapter quote if you're using them).  Comment to skip.
-\begin{savequote}[8cm]
-The first kind of intellectual and artistic personality belongs to the hedgehogs, the second to the foxes \dots
-  \qauthor{--- Sir Isaiah Berlin \cite{berlin_hedgehog_2013}}
-\end{savequote}
 
-\setlength{\baselineskip}{0pt} % JEM: Single-space References
-
-{\renewcommand*\MakeUppercase[1]{#1}%
-\printbibliography[heading=bibintoc,title={\bibtitle}]}
 
 
 \end{document}
