@@ -516,36 +516,106 @@
 	"buffers":
 	[
 		{
-			"file": "oxford-thesis.sublime-project",
-			"settings":
-			{
-				"buffer_size": 190,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
 			"file": "thesis.tex",
 			"settings":
 			{
-				"buffer_size": 9164,
+				"buffer_size": 9544,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "/Users/bjoern/Documents/Oxford/Analysis/B2Dpi_GGSZ/b2dh-ggsz-ana/chapters/systematic_uncertainties.tex",
+			"file": "chapters/ch2-theory.tex",
 			"settings":
 			{
-				"buffer_size": 32576,
+				"buffer_size": 42435,
+				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "ociamthesis.cls",
+			"file": "chapters/ch3-the-LHCb-detector.tex",
 			"settings":
 			{
-				"buffer_size": 13368,
+				"buffer_size": 1790,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/Users/bjoern/Documents/Oxford/Analysis/B2Dpi_GGSZ/b2dh-ggsz-ana/chapters/theory_and_strategy.tex",
+			"settings":
+			{
+				"buffer_size": 33202,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "tables/02_theory/bin_categories.tex",
+			"settings":
+			{
+				"buffer_size": 1731,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "chapters/ch4-GGSZ-and-KS-CPV.tex",
+			"settings":
+			{
+				"buffer_size": 40228,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/Users/bjoern/Dropbox/Oxford/Beauty2019/skeleton.tex",
+			"settings":
+			{
+				"buffer_size": 23872,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "bib_files/zotero_DPhil.bib",
+			"settings":
+			{
+				"buffer_size": 385395,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "bib_files/references.bib",
+			"settings":
+			{
+				"buffer_size": 2612,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/Users/bjoern/Documents/Oxford/confirmation_report/confirmation-of-status/sections/GGSZ_theory.tex",
+			"settings":
+			{
+				"buffer_size": 19722,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "preambles/preamble.tex",
+			"settings":
+			{
+				"buffer_size": 2543,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "chapters/ch6-conclusions.tex",
+			"settings":
+			{
+				"buffer_size": 485,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -744,10 +814,33 @@
 	},
 	"expanded_folders":
 	[
-		"/Users/bjoern/Documents/Oxford/thesis"
+		"/Users/bjoern/Documents/Oxford/thesis",
+		"/Users/bjoern/Documents/Oxford/thesis/bib_files",
+		"/Users/bjoern/Documents/Oxford/thesis/chapters",
+		"/Users/bjoern/Documents/Oxford/thesis/preambles"
 	],
 	"file_history":
 	[
+		"/Users/bjoern/Documents/Oxford/Analysis/ks-cpv-in-ggsz-analyses/ks-cpv-paper/sections/GGSZ_theory.tex",
+		"/Users/bjoern/Documents/Oxford/thesis/preambles/preface.tex",
+		"/Users/bjoern/Documents/Oxford/thesis/bib_files/references.bib",
+		"/Users/bjoern/Documents/Oxford/thesis/bib_files/LHCb-PAPER.bib",
+		"/Users/bjoern/Documents/Oxford/thesis/preambles/preamble.tex",
+		"/Users/bjoern/Documents/Oxford/thesis/preambles/ggsz-symbols-def.tex",
+		"/Users/bjoern/Documents/Oxford/thesis/tmp_build_files/thesis.log",
+		"/Users/bjoern/Documents/Oxford/Analysis/ks-cpv-in-ggsz-analyses/ks-cpv-paper/sections/numerical_studies.tex",
+		"/Users/bjoern/Documents/Oxford/thesis/chapters/ch4-GGSZ-and-KS-CPV.tex",
+		"/Users/bjoern/Documents/Oxford/thesis/chapters/ch1-intro.tex",
+		"/Users/bjoern/Documents/Oxford/thesis/chapters/ch5-GGSZ-with-B2Dh.tex",
+		"/Users/bjoern/Documents/Oxford/thesis/ociamthesis.cls",
+		"/Users/bjoern/Documents/Oxford/Analysis/B2Dpi_GGSZ/b2dh-ggsz-ana/chapters/systematic_uncertainties.tex",
+		"/Users/bjoern/Documents/Oxford/thesis/chapters/ch3-the-LHCb-detector.tex",
+		"/Users/bjoern/Documents/Oxford/thesis/chapters/ch2-theory.tex",
+		"/Users/bjoern/Documents/Oxford/Analysis/B2Dpi_GGSZ/b2dh-ggsz-ana/tmp_build_files/main.bbl",
+		"/Users/bjoern/Documents/Oxford/thesis/appendices/appendix-1.tex",
+		"/Users/bjoern/Documents/Oxford/thesis/tmp_build_files/thesis.bbl",
+		"/Users/bjoern/Documents/Oxford/thesis/text/acknowledgements.tex",
+		"/Users/bjoern/Documents/Oxford/thesis/oxford-thesis.sublime-project",
 		"/Users/bjoern/Documents/Oxford/Analysis/B2Dpi_GGSZ/b2dh-ggsz-ana/tables/cp_fit/cp_fit_toy_results.tex",
 		"/Users/bjoern/Documents/Oxford/Analysis/B2Dpi_GGSZ/b2dh-ggsz-ana/chapters/global_fit.tex",
 		"/Users/bjoern/Documents/Oxford/Analysis/B2Dpi_GGSZ/b2dh-ggsz-ana/tables/global_fit/global_fit_yields.tex",
@@ -755,7 +848,6 @@
 		"/Users/bjoern/Documents/Oxford/Analysis/B2Dpi_GGSZ/b2dh-ggsz-ana/chapters/selection.tex",
 		"/Users/bjoern/Documents/Oxford/Analysis/B2Dpi_GGSZ/b2dh-ggsz-ana/chapters/selection_background_studies.tex",
 		"/Users/bjoern/Documents/Oxford/Analysis/B2Dpi_GGSZ/b2dh-ggsz-ana/title-LHCb-ANA.tex",
-		"/Users/bjoern/Documents/Oxford/Analysis/B2Dpi_GGSZ/b2dh-ggsz-ana/chapters/systematic_uncertainties.tex",
 		"/Users/bjoern/Documents/Oxford/Analysis/B2Dpi_GGSZ/b2dh-ggsz-ana/chapters/results_and_interpretation.tex",
 		"/Users/bjoern/Documents/Oxford/Analysis/B2Dpi_GGSZ/b2dh-ggsz-ana/chapters/cp_fit.tex",
 		"/Users/bjoern/Documents/Oxford/Analysis/B2Dpi_GGSZ/b2dh-ggsz-ana/chapters/theory_and_strategy.tex",
@@ -832,7 +924,6 @@
 		"/Users/bjoern/Documents/Oxford/Analysis/B2Dpi_GGSZ/b2dh-ggsz-ana/tables/data_samples/stripping_table_1.tex",
 		"/Users/bjoern/Documents/Oxford/Analysis/B2Dpi_GGSZ/b2dh-ggsz-ana/tables/selection/charmless_yield_table.tex",
 		"/Users/bjoern/Documents/Oxford/Analysis/B2Dpi_GGSZ/b2dh-ggsz-ana/snakefiles/signal_only_feas_snakefile",
-		"/Users/bjoern/Documents/Oxford/Analysis/ks-cpv-in-ggsz-analyses/ks-cpv-paper/sections/GGSZ_theory.tex",
 		"/Users/bjoern/Documents/Oxford/Analysis/Bu2Dh_D2Kshh/ANA-Note/chapters/combination_and_interpretation.tex",
 		"/Users/bjoern/Documents/Oxford/confirmation_report/confirmation-of-status/sections/Dh_measurement.tex",
 		"/Users/bjoern/Documents/Oxford/Analysis/B2Dpi_GGSZ/b2dh-ggsz-ana/Snakefile",
@@ -857,29 +948,11 @@
 		"/Users/bjoern/Documents/Oxford/Analysis/ks-cpv-in-ggsz-analyses/paper/tables/param_efficiency.tex",
 		"/Users/bjoern/Documents/Oxford/Analysis/ks-cpv-in-ggsz-analyses/paper/sections/basic_ggsz.tex",
 		"/Users/bjoern/Documents/Oxford/Analysis/ks-cpv-in-ggsz-analyses/paper/ks_cpv_paper.tex",
-		"/Users/bjoern/Documents/Oxford/Analysis/ks-cpv-in-ggsz-analyses/paper/sections/neutral_kaon_cpv_effects.tex",
-		"/Users/bjoern/Documents/Oxford/Analysis/ks-cpv-in-ggsz-analyses/paper/tmp_build_files/ks_cpv_paper.toc",
-		"/Users/bjoern/Documents/Oxford/Analysis/ks-cpv-in-ggsz-analyses/python/BiasStudy.py",
-		"/Users/bjoern/Documents/Oxford/Analysis/ks-cpv-in-ggsz-analyses/scripts/simple_cpv_effect_studies.py",
-		"/Users/bjoern/Documents/Oxford/Analysis/ks-cpv-in-ggsz-analyses/amplitude_calculations/src/AltDtoKpipiAmplitude.cpp",
-		"/Users/bjoern/Documents/Oxford/Analysis/ks-cpv-in-ggsz-analyses/python/models/DefaultCombinedDHModelFloatFi.py",
-		"/Users/bjoern/Documents/Oxford/Analysis/ks-cpv-in-ggsz-analyses/python/models/__init__.py",
-		"/Users/bjoern/Documents/Oxford/Analysis/ks-cpv-in-ggsz-analyses/python/models/DefaultCombinedDHModel.py",
-		"/Users/bjoern/Documents/Oxford/Analysis/ks-cpv-in-ggsz-analyses/python/models/FullModel.py",
-		"/Users/bjoern/Documents/Oxford/Analysis/ks-cpv-in-ggsz-analyses/python/Binning.py",
-		"/Users/bjoern/Documents/Oxford/Analysis/ks-cpv-in-ggsz-analyses/python/UsefulInputs.py",
-		"/Users/bjoern/Documents/Oxford/Analysis/ks-cpv-in-ggsz-analyses/python/ToyStudy.py",
-		"/Users/bjoern/Documents/Oxford/Analysis/ks-cpv-in-ggsz-analyses/python/ROOTFunctions.py",
-		"/Users/bjoern/Documents/Oxford/Analysis/ks-cpv-in-ggsz-analyses/python/DefaultEfficiency.py",
-		"/Users/bjoern/Documents/Oxford/Analysis/ks-cpv-in-ggsz-analyses/python/models/autograd/tracer.py",
-		"/Users/bjoern/Documents/Oxford/Analysis/ks-cpv-in-ggsz-analyses/amplitude_calculations/src/DtoKpipiAmplitude.cpp",
-		"/Users/bjoern/Documents/Oxford/Analysis/ks-cpv-in-ggsz-analyses/scripts/plot_events_on_amplitude_asymmetry.py",
-		"/Users/bjoern/Documents/Oxford/Analysis/ks-cpv-in-ggsz-analyses/amplitude_calculations/include/DtoKshhAmplitude.h",
-		"/Users/bjoern/Documents/Oxford/Analysis/ks-cpv-in-ggsz-analyses/amplitude_calculations/include/AltDtoKpipiAmplitude.h"
+		"/Users/bjoern/Documents/Oxford/Analysis/ks-cpv-in-ggsz-analyses/paper/sections/neutral_kaon_cpv_effects.tex"
 	],
 	"find":
 	{
-		"height": 39.0
+		"height": 22.0
 	},
 	"find_in_files":
 	{
@@ -893,6 +966,8 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"pythia",
+			"refere",
 			"degree"
 		],
 		"highlight": true,
@@ -916,47 +991,19 @@
 			[
 				{
 					"buffer": 0,
-					"file": "oxford-thesis.sublime-project",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 190,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								126,
-								126
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JSON.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
 					"file": "thesis.tex",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 9164,
+						"buffer_size": 9544,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								4993,
-								4993
+								8897,
+								8897
 							]
 						],
 						"settings":
@@ -964,27 +1011,27 @@
 							"syntax": "Packages/LaTeX/LaTeX.sublime-syntax"
 						},
 						"translation.x": 0.0,
-						"translation.y": 2907.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 4,
 					"type": "text"
 				},
 				{
-					"buffer": 2,
-					"file": "/Users/bjoern/Documents/Oxford/Analysis/B2Dpi_GGSZ/b2dh-ggsz-ana/chapters/systematic_uncertainties.tex",
+					"buffer": 1,
+					"file": "chapters/ch2-theory.tex",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 32576,
+						"buffer_size": 42435,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								31806,
-								31806
+								37668,
+								37668
 							]
 						],
 						"settings":
@@ -994,7 +1041,35 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 6223.0,
+						"translation.y": 8100.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "chapters/ch3-the-LHCb-detector.tex",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1790,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1133,
+								1133
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/LaTeX/LaTeX.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 479.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
@@ -1002,32 +1077,269 @@
 				},
 				{
 					"buffer": 3,
-					"file": "ociamthesis.cls",
+					"file": "/Users/bjoern/Documents/Oxford/Analysis/B2Dpi_GGSZ/b2dh-ggsz-ana/chapters/theory_and_strategy.tex",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 13368,
+						"buffer_size": 33202,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1437,
-								1437
+								16077,
+								15883
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/LaTeX/TeX.sublime-syntax",
+							"syntax": "Packages/LaTeX/LaTeX.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 3580.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "tables/02_theory/bin_categories.tex",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1731,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1403,
+								1403
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/LaTeX/LaTeX.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "chapters/ch4-GGSZ-and-KS-CPV.tex",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 40228,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								795,
+								795
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/LaTeX/LaTeX.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 7,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "/Users/bjoern/Dropbox/Oxford/Beauty2019/skeleton.tex",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 23872,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								6861,
+								6255
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/LaTeX/LaTeX.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 8,
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "bib_files/zotero_DPhil.bib",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 385395,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								55945,
+								55950
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/LaTeXTools/BibLaTeX.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"file": "bib_files/references.bib",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2612,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1093,
+								1094
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/LaTeXTools/BibLaTeX.tmLanguage",
+							"tab_size": 6,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 6,
+					"type": "text"
+				},
+				{
+					"buffer": 9,
+					"file": "/Users/bjoern/Documents/Oxford/confirmation_report/confirmation-of-status/sections/GGSZ_theory.tex",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 19722,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3447,
+								3546
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/LaTeX/LaTeX.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 10,
+					"type": "text"
+				},
+				{
+					"buffer": 10,
+					"file": "preambles/preamble.tex",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2543,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1601,
+								1601
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/LaTeX/LaTeX.sublime-syntax",
 							"tab_size": 2,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 213.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 3,
+					"stack_index": 9,
+					"type": "text"
+				},
+				{
+					"buffer": 11,
+					"file": "chapters/ch6-conclusions.tex",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 485,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								410,
+								410
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/LaTeX/LaTeX.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 11,
 					"type": "text"
 				}
 			]
@@ -1035,7 +1347,7 @@
 	],
 	"incremental_find":
 	{
-		"height": 24.0
+		"height": 22.0
 	},
 	"input":
 	{
@@ -1080,7 +1392,7 @@
 	"project": "oxford-thesis.sublime-project",
 	"replace":
 	{
-		"height": 44.0
+		"height": 40.0
 	},
 	"save_all_on_build": true,
 	"select_file":

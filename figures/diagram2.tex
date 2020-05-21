@@ -1,0 +1,20 @@
+\begin{tikzpicture}[node distance=1cm and 1cm]
+        \coordinate[] (e1);
+        \coordinate[right=of e1] (aux1);
+        \coordinate[right=of aux1] (aux2);
+        \coordinate[below=of aux2] (aux3);
+        \coordinate[right=of aux2] (e2);
+        \coordinate[right=of aux3] (e3);
+        \coordinate[below=of e1] (e4);
+        \coordinate[below=of e2] (e5);
+        
+        %
+        \draw[particle] (e1) node[left]{$b$} -- (aux1);
+        \draw[longparticle] (3,-2.1) node[right]{$\bar u$} -- (0,-2.1) node[left]{$\bar u$};
+        \draw[particle] (aux1) node[above]{$V_{ub}$}-- (e2) node[right]{$u$};
+        \draw[boson] (aux1) -- (2,-1.05);
+        \draw[particle] (2,-1.05) node[below]{$V_{cs}^*$} -- (3,-1.4) node[right]{$s$};
+        \draw[particle] (3,-0.7) node[right]{$\bar c$} -- (2,-1.05);
+
+        
+\end{tikzpicture}
