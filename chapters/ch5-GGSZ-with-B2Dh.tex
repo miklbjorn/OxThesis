@@ -12,15 +12,162 @@
 
 % \minitoc
 
-First I will return to describing the overall strategy a bit, then one can proceed with the data analysis section
+This chapter describes a model-independent BPGGSZ measurement of $\gamma$ with \BtoDK and \BtoDpi decays where \DtoKspipi and \DtoKsKK, commonly denoted $\Bpm\to\D(\to\KS h^+h^-)h'^\pm$ decays. The measurement is made with the full \lhcb data set collected during Run~1~and~2 of the LHC, corresponding to an integrated luminosity of about $9\invfb$. The analysis is under review for publication in the Journal of High Energy Physics at the time of writing~\cite{GGSZ-B2Dh} (one can hope).
 
-\section{Candidate selection} % (fold)
+\section{Candidate reconstruction and selection} % (fold)
 \label{sec:candidate_selection}
+
+The $\Bpm\to\D(\to\KS h^+h^-)h'^\pm$ candidates are constructed during the offline \emph{stripping} stage described in Section~\ref{sub:offline_data_filtering_the_lhcb_stripping}. The candidates are defined by first combining tracks to form a $\KS\to\pip\pim$ vertex, then a $\D\to\KS h^+h^-$ vertex, and finally the $\Bpm\to\D h'^\pm$ candidate. Each final state track is required to satisfy certain momentum thresholds and track-quality requirements, and to be separated from all primary interaction vertices. Each decay vertex is required to satisfy a fit-quality threshold and to be separated from the primary vertex. Momentum thresholds are applied to the composite particles and they are required to have reconstructed invariant masses close to their known masses,\footnote{The exact mass window depends on the particle type and reconstruction category; narrower mass windows are applied at a later stage, as described below.} except that the \B candidate is required to have a reconstructed invariant mass in the interval 4750--7000\mevcc. The \B candidate is required to satisfy $\ipchisq <25$, where \ipchisq is the difference in $\chi^2$ value of the primary vertex, when formed with- and without the \B candidate. Finally, a multivariate algorithm is applied to the formed \B candidate to reduce the amount of random track combinations~\cite{}, denoted combinatorial background, even further than the aforementioned requirements.
+
+Two data categories are defined, depending the tracks used to form the \KS candidate: the LL category where both pions are long tracks, and DD category where both pions are downstream tracks, using the track classifications of Section~\ref{}.
+
+
+%DTF
+Each candidate is re-analysed with the \texttt{DecayTreeFitter} (DTF) frame work~\cite{DTF}, where a simultaneous fit of the full decay chain is made with a number of constraints applied: the momenta of the composite \D and \KS particles are required to form invariant masses exactly equal to the known particle masses~\cite{PDG2020}, and the \B candidate is required to originate exactly at the primary vertex. This refit results in improved resolution of the invariant masses of the composite particles and, very importantly, of the Dalitz coordinates in the \D-decay phase space, and ensures that all candidates fall in the kinematically allowed region of phase space. Unless otherwise specified, all results in this chapter are based on the refitted track momenta; for reasons explained below, some studies have to be based on parameters that are obtained without the constraints described above, or with only a subset of them applied.
+
+
+
+Following the stripping stage, the further selection of signal candidates is performed in three steps: an initial set of requirements that remove a large fraction of candidates that are very likely to be background and veto a number of specific backgrounds, the application of a multivariate analysis algorithm designed to allow for filtering combinatorial background, and a set of particle-identification requirements are imposed. The requirements are summarised in Table~\ref{}, and each step is described in detail in the following sections.
+
+\subsection{Initial requirements} % (fold)
+\label{sub:initial_requirements}
+
+At the hardware trigger level, it is required that a particle associated with the signal decay triggered the hadronic level-0 trigger (Trigger on Signal, or TOS), or that the level-0 trigger decision was caused by a particle that is not associated with the signal decay (Trigger Independent of Signal, or TIS). The inclusion of the latter category increases the data sample with X\,\%. At the software trigger level, 
+% subsection initial_requirements (end)
+
+Before any processing of the data, a loose preselection is applied to remove obvious background candidates. The reconstructed \D (\KS) mass is required to be within 25 (15)\mevcc of the known values~\cite{PDG20}. The \emph{companion} particle, the pion or kaon produced in the $\Bpm\to\D h^\pm$ decay, is required to have associated RICH information and a momentum less that 100\gevc; this ensures good particle-identification performance. Finally, all of the DTF fits of the full decay chain are required to have converged properly.
+
+Two additional requirements are made at this stage, to suppress specific backgrounds.
+In order to suppress decays of the type $\Bpm \to \KS h^+h^- h'^\pm$ with no intermediate \D meson, so called \emph{charmless} decays, it is required that the significance of the $z$-separation of the \Dz decay vertex and the \Bpm decay vertex is above 0.5. The significance of the $z$-separation of the \Dz decay vertex and the \Bpm decay vertex is defined as
+\begin{align}
+    \Delta z^{D-B}_{\text{significance}}=\frac{z_{vtx}^\D-z_{vtx}^\B}{\sqrt{\sigma^2(z_{vtx}^\D)+\sigma^2(z_{vtx}^\B)}}
+\end{align} This source of background described further in section~\ref{sub:charmless_decays}. In order to suppress a background from $\D\to4\pi$ and $\D\to\pi\pi\kaon\kaon$ decays,  it is required that the \KS flight distance $\chi^2_\text{FD}$ is greater than 49, where
+\begin{align}
+    \chi^2_\text{FD} = \left(\frac{\Delta r}{\sigma(\Delta r)}\right)^2,
+\end{align} and $\Delta r$ is the measured flight distance of the \KS meson. This background is described in further detail in section~\ref{sub:background_from_four_body_d_decays}. A number of the particle-identification requirements presented in Section~\ref{sub:particle_identification_and_final_requirements} below are also introduced to reject specific background contributions.
+
+
+
+
+\subsection{Boosted decision tree} % (fold)
+\label{sub:boosted_decision_tree}
+
+A Gradient Boosted Decision Tree~\cite{} (abbreviated BDT in the following) is applied to classify each candidate on a scale from $-1$ to $+1$ as signal-like $(+1)$ or combinatorial-background-like $(-1)$, based on the values of a number of input parameters for candidate in question. The BDT is implemented in the \texttt{TMVA} frame work, shipped as part of the \texttt{ROOT} data analysis package. 
+
+% more details on how a BDTG works
+A boosted decision tree classifier consists of a number of sequentially trained decision trees, each of which classify events as either signal or background. Each tree bases the decision on an individual subset of variables, out of an overall set of input variables. At each training step, the input events are weighted when training a new tree, so that events that the already-trained trees classify incorrectly are given a higher weight; this is denoted boosting. The term \emph{gradient boosting} denotes a specific weiht calculation scheme~\cite{}. The final score is the average over all decision trees.
+
+The full set of input variables are given in Table~\ref{}. It includes the momenta of particles in the decay; a number of geometric parameters such a absolute and relative vertex positions, and distances of closest approach between tracks; \ipchisq values for a number of particles in the decay chain; the $\chi^2$ per degree of freedom of the DTF refit; \texttt{DIRA} values, which denote the angle between the fitted particle momenta, and the vector spanned by it's production ad decay vertices; and finally an isolation variable, defined as
+\begin{align}
+    A_{p_T} = \frac{p_T(B)-\sum p_T(other)}{p_T(B)+\sum p_T(other)}
+\end{align}{}
+where the sum is over all other tracks in a cone around the \B-candidate. The cone is defined as being within a circle with a radius of 1.5 units around the \B candidate in the $(\eta, \phi_{azim})$-plane. This variable is highly efficient in rejecting combinatorial background.
+Two algorithms are trained, one for the LL category of \KS mesons and one for the DD category, because some input parameters relate to the \KS meson and have very different distributions between the two categories. 
+
+The BDTs are trained and tested with input samples representing typical signal and background decay candidates: a signal sample that consists of simulated $\Bpm\to\D(\to\KS\pip\pim)\pipm$ decays corresponding to the \lhcb running conditions for the years 2012--2018, and a sample of combinatorial background candidates from real data, where the reconstructed invariant mass of the \B meson is larger than 5800\mevcc. The candidates in both samples were required to have passed the initial requirements described in the preceding section. The distributions of the input parameters in the signal and background training samples are shown in Figs.~\ref{}~and~\ref{}. The signal and background samples are each split into two before the training stage: one sub sample, the training sample, is used to train the BDT, after which it is applied to the other sub sample, the test sample. The classifier is found to perform well on the test sample, not just the training sample, which ensures that it does not suffer significant overtraining. The BDT output distribution are shown for both test and training samples in Fig.~\ref{}, where it is clear that the classifier very effectively separates signal and background candidates.
+
+Each candidate in data is classified using the BDT, and candidates that are assigned a score below some threshold value are discarded. The threshold values are chosen in a set of pseudo experiments, such that the expected sensitivity to $\gamma$ is maximised. This is done by performing preliminary fits to the data set for a range of different BDT threshold values, then generating many pseudo data sets with the obtained yields, and applying the full fit and interpretation procedure described in Section~\ref{}~and~\ref{} to each data set. The procedure is applied independently for the LL and DD categories, as well as for the Run~1~and~Run~2 data sets, because some parameter distributions differ slightly between the two runs. The optimal threshold values are found to be 0.8 in all situations, except for LL candidates in Run~1 where it is 0.6. This is illustrated in Fig.~\ref{} where the results of the threshold scans are shown. While the classifiers were trained using samples of $\Bpm\to\D(\to\KS\pip\pim)\pipm$ simulation and data, they are applied to the \BtoDK and \DtoKsKK samples as well; the decays are similar enough that no significant improvement in performance was obtained when considering a more elaborate setup. Across all categories, the requirement on the BDT output is found to remove approximately 98\,\% of the combinatorial background, while being approximately 93\,\% efficient on signal.
+
+
+% subsection boosted_decision_tree (end)
+
+
+\subsection{Particle-identification requirements} % (fold)
+\label{sub:particle_identification_requirements}
+
+PID cuts are used to separate \BtoDK and \BtoDpi candidates in the samples used in this analysis: 
+\begin{itemize}
+\item For the \BtoDpiDtoKshh samples we require that $\textrm{PIDK} < 4$ for the bachelor.
+\item For the \BtoDKDtoKshh samples we require that $\textrm{PIDK} > 4$ for the bachelor. 
+\end{itemize}
+
+
+Furthermore, PID requirements are made to suppress semi-leptonic backgrounds and decays where a final state particle decays in flight, and a a loose PID requirement is made in the $\D\to\KS\Kp\Km$ channels to suppress background contributions:
+\begin{itemize}
+    \item the companion particle is required to satisfy $\texttt{IsMuon}=0$.
+    \item For the $\B\to\D(\to\KS\pip\pim)h^{\pm}$ samples it is require that the charged pion track from the \D decay with opposite charge to the companion satisfies ${\textrm{PIDe} < 0 \;\&\; \texttt{IsMuon}=0}$, and for the other charged pion that ${\texttt{IsMuon}=0}$.
+    \item For the $\B\to\D(\to\KS\Kp\Km)h^{\pm}$ samples it is required that the charged kaon tracks from the \D decay have RICH information, a momentum less than 100 \gevc and ${\textrm{PIDK} > -5 \;\&\; \texttt{IsMuon}=0}$.
+\end{itemize}
+These backgrounds and requirements are described in Section~\ref{sub:semi_leptonic_backgrounds}.
+
+
+% subsection particle_identification_and_final_requirements (end)
+
+\subsection{Final requirements} % (fold)
+\label{sub:final_requirements}
+
+For a small sample of candidates in the final sample, it is the case that one or more candidates originate in the same $pp$ collision. In order to make sure that all candidates are completely independent, only one candidate from each $pp$ collision is kept in this case, and the others discarded. The choice of candidate to keep in arbitrary. This requirements results in the removal of less than 0.7\,\% of candidates in each data category.
+
+Furthermore, the \D mass used to define the binning schemes described in Ref.~\cite{CLEOCISI} differs slightly from the mass used in the DTF refit. Therefore a few of the decays are reconstructed with Dalitz coordinates outside the allowed kinematic region. Because this problem only concerns a handful of candidates, they are simply discarded.
+
+% subsection final_requirements (end)
+
+\subsection{Selected candidates} % (fold)
+\label{sub:selected_candidates}
+
+In total, about X \BtoDK candidates and Y \BtoDpi candidates are selected, as summarised in Table~\ref{}. The \B mass distribution in the various data categories are shown in Figs.~\ref{}~and~\ref{} at various stages of the selection, and the Dalitz plots for candidates in the signal region where $m_B\in[5249, 5309]\mevcc$ are shown in Fig.~\ref{}~and~\ref{}. Given the large yields in the full Run~1~and~2 \lhcb data set, the asymmetries between the \Bp and \Bm distributions are visible in the \BtoDK plots.
+
+% subsection selected_candidates (end)
 
 % section candidate_selection (end)
 
-\section{Signal and background components} % (fold)
+
+
+
+\section{Background studies} % (fold)
+\label{sec:background_studies}
+
+A wide range of backgrounds can potentially pollute the sample of signal candidates. The backgrounds naturally group into three categories depending on how they are treated in the analysis: 
+\begin{itemize}
+    \item Backgrounds that can be effectively removed in the selection
+    \item Backgrounds that are only present at a level where the impact on the measurement result is small, and which do therefore not have to be modelled
+    \item Backgrounds that are present at a level where they have to be modelled in the fit to data, and cannot effectively be rejected further in the selection
+\end{itemize}
+The latter category comprises of combinatorial background, which remains present at a non-negligible level after the application of the BDT described in Section~\ref{};  contributions from a number of partly reconstructed $\B\to\D h^\pm X$ decays, where $X$ denotes a pion or photon that is not included in the reconstructed decay, and which can only be separated from signal decays by their $m(Dh)$ distribution; and finally \BtoDpi decays that are categorised as \BtoDK decays in the particle-identification step and vice-versa. These background sources are described in detail in Section~\ref{sec:sec:signal_and_background_components}. This section focuses on backgrounds that led to specific requirements in the selection or proved to be small enough not to merit special treatment.
+
+\subsection{Charmless decays} % (fold)
+\label{sub:charmless_decays}
+
+
+% subsection charmless_decays (end)
+
+\subsection{\texorpdfstring{Background from four-body \D decays}{Background from four-body D decays}}% (fold)
+\label{sub:background_from_four_body_d_decays}
+
+% subsection texorpdfstring_background_from_four_body_d_decays (end)
+
+\subsection{Semi-leptonic backgrounds} % (fold)
+\label{sub:semi_leptonic_backgrounds}
+
+Discuss particles that decay in flight as well
+
+% subsection semi_leptonic_backgrounds (end)
+
+
+
+
+\subsection{\texorpdfstring{Cross-feed from other $\D\to\KS h^+h'^-$ decays}{Cross-feed from other D->KShh' decays}} % (fold)
+\label{sub:cross_feed_from_other_d_kshh_decays}
+
+% subsection cross_feed_from_other_d_kshh_decays (end)
+
+\subsection{Swapped-track backgrounds} % (fold)
+\label{sub:swapped_track_backgrounds}
+
+% subsection swapped_track_backgrounds (end)
+
+% section background_studies (end)
+
+\section{Signal and background mass shapes} % (fold)
 \label{sec:signal_and_background_components}
+
+The measurement employs \emph{extended maximum-likelihood fits} to the $m(\D h^\pm)$ distribution of signal candidates to determine the observables of interest. 
+The analysis implements a two-step fit procedure: first the data samples are analysed without separating the candidates by \B charge or Dalitz bin, in order to determine appropriate parametrisations of the $m(\D h^\pm)$  distribution of the signal and relevant background components. These parameterisations are then kept fixed in a subsequent fit that obtains the observables of interest by parameterising the signal yield in each Dalitz bin via the equations derived in Chapter~\ref{ch:2-litreview}. This section describes the first step, whereas the latter fit is the subject of Section~\ref{sec:measurement_of_the_cp_violation_observables}.
+
+The candidates are split in 8 categories depending on whether the bachelor is categorised as a kaon or pion, whether the \KS meson is in the LL or DD category, and by whether the \D meson is reconstructed in the \Kspipi or \KsKK final state (in the second fit they are further split by charge and Dalitz bin). For each category $c$ the likelihood function is defined
+\begin{align}
+    \mathcal L_c \equiv N^{sig, c} f_s(\theta_s) + \sum_i N_i^{bkg, c} f_i(\theta_i)
+\end{align}
 
 % section signal_and_background_components (end)
 
