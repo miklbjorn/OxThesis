@@ -1,0 +1,47 @@
+
+
+
+\begin{table}[t]
+\renewcommand*{\arraystretch}{1.2}
+\centering
+\caption{Summary of requirements applied to data. The base requirements are applied to all data samples before training or applying the BDT. \label{tab:selection}}
+\scriptsize
+\begin{tabular}{l c l}
+\hline\hline 
+\multicolumn{3}{c}{Base requirements} \\ \hline
+Variable & Cut & Comment \\
+\hline 
+Bachelor momentum, $p$ & $< 100 \gevc$ \\
+Bachelor has RICH & \emph{true} \\
+$K^\pm$ in \D decay: momentum, $p$ & $< 100 \gevc$ &  In \DtoKskk\\
+$K^\pm$ in \D decay: have RICH & \emph{true} & In \DtoKskk\\
+DecayTreeFit converged & \emph{true} \\
+\D mass & $m_\Dz \in m_\Dz^{PDG} \pm 25 \mevcc$  & From \texttt{DTF} with constrained \KS mass\\
+\KS mass & $m_\KS \in m_\KS^{PDG} \pm 15 \mevcc$  & From \texttt{DTF} with constrained \Dz mass\\
+ \\ \hline
+\multicolumn{3}{c}{Background suppressing requirements} \\ \hline
+Variable & Cut & Comment \\
+\hline
+\KS flight distance $\chi^2$ &$ > 49$ & for LL only \\
+$\Delta z^{DB}_{\text{significance}}$ & $>0.5$& for all candidates \\
+ \\ \hline
+\multicolumn{3}{c}{PID requirements} \\ \hline
+Channel & Cut & Comment \\
+\hline
+$\BtoDK$ & $\text{PIDK} > 4$ & for bachelor\\
+$\BtoDpi$ & $\text{PIDK} < 4$ & for bachelor\\
+$\BtoDh$ & $\text{IsMuon} = 0$ & for bachelor\\
+$\Bpm\to\D(\to\KS\pip\pim)h^\pm$ & $\text{PIDe} < 0 \;\&\; \text{IsMuon}=0$ & for charged \D decay products \\
+$\Bpm\to\D(\to\KS\Kp\Km)h^\pm$ & $\text{PIDK} > -5\;\&\; \text{IsMuon}=0$ & for charged \D decay products \\
+\\ \hline
+\multicolumn{3}{c}{BDT requirements} \\ \hline
+Channel & Cut & Comment \\ \hline
+Run~1, DD & $>0.6$ &\\
+Others & $>0.8$ &\\
+\hline\hline
+
+\end{tabular} 
+\renewcommand*{\arraystretch}{1.0}
+
+\end{table}
+

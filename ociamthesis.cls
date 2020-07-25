@@ -59,6 +59,8 @@
 \def\degree#1{\gdef\@degree{#1}}
 % The name of your Oxford college (eg Christ Church, Pembroke)
 \def\college#1{\gdef\@college{#1}}
+% the subtitle
+\def\subtitle#1{\gdef\@subtitle{#1}}
 % Your candidate number (ie for master's submissions)
 \def\candidateno#1{\gdef\@candidateno{#1}}
 % Your word count (for master's submissions)
@@ -220,6 +222,8 @@
 \else
   \begin{center}
     { \LARGE {\bfseries {\@title}} \par}
+    {\vspace*{3mm}}
+    { \large {\emph {\@subtitle}} \par}
 {\large \vspace*{30mm} {\crest \par} \vspace*{25mm}}
     {{\Large \@author} \par}
 {\large \vspace*{1ex}

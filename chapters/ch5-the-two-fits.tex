@@ -1,0 +1,679 @@
+
+\section{Signal and background mass shapes} % (fold)
+\label{sec:signal_and_background_components}
+
+The measurement employs \emph{extended maximum-likelihood fits}~\cite{extendedML} to the $m(\D h^\pm)$ distribution of signal candidates to determine the observables of interest. 
+The analysis implements a two-step fit procedure: first the data samples are analysed without separating the candidates by \B charge or Dalitz bin, in order to determine appropriate parametrisations of the $m(\D h^\pm)$  distribution of the signal and relevant background components. The parameterisations are then kept fixed in a subsequent fit of the observables of interest, where the candidates are split by \B charge and Dalitz bin. This section describes the first step, whereas the latter fit is the subject of Section~\ref{sec:measurement_of_the_cp_violation_observables}.
+
+In both steps, the candidates are split in 8 categories depending on whether the companion is categorised as a kaon or pion, whether the \KS meson is in the LL or DD category, and by whether the \D meson is reconstructed in the \Kspipi or \KsKK final state. In the remained of this text, these categories are indexed with the letter $c$. For each category, $c$, the expected number of observed decays at a given \B mass, $F^c(m)$, is given by the sum of a signal contribution and a number of background distributions
+\begin{align}
+    F^c(m|\theta) = N_s^c(\theta) f^c_s(m|\theta) + \sum_b N^c_b(\theta) f^c_b(m|\theta),
+\end{align}
+where $\theta$ denotes a set of parameters that describe the mass shapes and expected yields, in which some parameters are shared between categories. The distributions $f^c_{s/b}$ are normalised to integrate to unity, and the expected signal (background) yields are denoted $N^c_s$ ($N^c_b$). A total, normalised distribution can then be defined
+\begin{align}
+    f^c(m|\theta) &= \frac{1}{N^c_\text{tot}(\theta)}F^c(m|\theta), & N^c_\text{tot}(\theta) = N^c_s(\theta) + \sum_b N^c_b(\theta).
+\end{align}
+Given a set of $N^c_\text{observed}$ measured \B masses, $\{m^c_i\}$, in a given category, the extended log-likelihood function is defined
+\begin{align}
+    \ln \mathcal L_c (\theta|\{m_i^c\}) \equiv \sum_i \ln f^c(m^c_i|\theta) + \ln \text{Poisson}(N^c_\text{tot}(\theta), N^c_\text{observed})
+\end{align}
+In a simultaneous fit the total, negative log-likelihood is $-\ln\mathcal L = - \sum_c \mathcal L_c$, and this function can be minimised to find the maximum-likelihood estimates of the parameters in $\theta$, as well as their confidence regions and correlation coefficients. This is handled with the \texttt{RooFit} package~\cite{verkerkeRooFitToolkitData2003}.
+
+Apart from signal decays, the fit includes components that describe combinatorial background, backgrounds from decays where a companion pion is misidentified as a kaon or vice versa, and partially reconstructed backgrounds. Each of these components are described in detail in the following, before the results of the first-stage fit are presented in Section~\ref{sub:global_fit_results}.
+
+\subsection{Signal decays} % (fold)
+\label{sub:signal_decays}
+
+The signal component is modelled with a sum of a Gaussian density function, $f_G(m|m_B, \sigma)$, and a modified Gaussian distribution with the parameterisation
+\begin{align}
+    f_C(m|m_B, \sigma, \alpha_L, \alpha_R, \beta)\propto \left\{
+    \begin{array}{ll}
+    \exp\left[\frac{-\Delta m^2 (1+\beta \Delta m^2)}{2\sigma^2 + \alpha_L \Delta m^2}\right], & \Delta m = m - m_B  < 0 \\
+    \exp\left[\frac{-\Delta m^2 (1+\beta \Delta m^2)}{2\sigma^2 + \alpha_R \Delta m^2}\right], & \Delta m = m - m_B  > 0,
+    \end{array} 
+    \right.
+\end{align}
+which is Gaussian when $\Delta m^2 \ll \sigma^2/\alpha_{L/R}$ or $\Delta m^2 \gg \beta^{-1}$ (with widths of $\sigma$ and $\sqrt{\alpha_{L/R}/\beta}$ respectively), with an exponential-like transition that is able to model the effect of the experimental resolution of \lhcb very well. For the case $\beta=0$ the shape is denoted the \emph{Cruijff} shape; however, in this case it tends to a uniform distribution for large $\Delta m^2$ values, and cannot model the tails of the signal distribution well. Thus, the full
+density function is
+\begin{align}
+    f_s(m|m_B, \sigma, \alpha_L, \alpha_R, \beta) = k_C f_C(m|m_B, \sigma, \alpha_L, \alpha_R, \beta) + (1-k_C)f_G(m|m_B, \sigma).
+\end{align}
+The tail parameters $(\alpha_{L/R}, \beta)$ and the constant $k_C$ are determined in fits to simulated signal decays that have passed the full selection. The parameters are shared between the \Kspipi and \KsKK channels, but otherwise independent in the fit categories. An example of a fit to simulated $\Bpm\to\D(\to\Kspipi)h^\pm$ decays is given in Fig.~\ref{fig:sig_shapes_mc}. The resolution parameters $\sigma$ are determined in the fit to actual data. Separate parameters are determined in the LL and DD categories, because the LL category has a better resolution on the \Ks momentum, and therefore a narrow peak in reconstructed \B mass. Likewise, separate resolution parameters are used for \BtoDpi and \BtoDK decays, because the smaller $Q$ value in the latter case leads to smaller momenta of the decay products, and a correspondingly better resolution.
+
+\begin{figure}[tbp]
+    \centering
+    \includegraphics[width=0.6\columnwidth]{figures/analysis/mc_shapes/signal_mc_d2kspp_LL.pdf}
+    \includegraphics[width=0.6\columnwidth]{figures/analysis/mc_shapes/signal_mc_log_d2kspp_LL.pdf}
+    \caption{Fit projection of the signal shape to simulated $\Bpm\to\D(\to\KS\pip\pim)\hadron^\pm$ samples reconstructed in the LL category. (Left) shows \D\kaon shapes, and (right) shows $\D\pi$ shapes. The shapes are shown with both linear and logarithmic $y$-axis scales.}
+    \label{fig:sig_shapes_mc}
+\end{figure}
+
+
+The signal yields are determined independently in each \BtoDpi category. The yields in the \BtoDK categories are then parameterised in terms of a single yield-ratio $\mathcal R$, and $\epsilon^c$, the corresponding selection efficiency for a given category
+\begin{align}
+    N^c_{\DK} = \mathcal R \times N^c_{\Dpi} \times \frac{\epsilon^c_{\DK}}{\epsilon^c_{\Dpi}}.
+\end{align}
+The selection efficiency is obtained in simulation, except for the PID efficiencies which are obtained in calibration data as described in Section~\ref{sub:particle_identification_requirements}. The parameter $\mathcal R$ is shared between all categories, and corresponds to the branching ratio between \BtoDK and \BtoDpi decays. Therefore, it can be compared to the branching ratio ratio measured in dedication measurements, which serves as an important cross check of the efficiency determination.
+
+
+
+
+% subsection signal_decays (end)
+
+\subsection{\texorpdfstring{Cross-feed between \BtoDh channels}{Cross-feed between BtoDh channels}} % (fold)
+\label{sub:texorpdfstring_cross_feed_between_btodh_channels}
+
+There is a cross-feed between the  $\BtoDpi$ and $\BtoDK$ channels, where real \BtoDpi decays are reconstructed as \BtoDK decays, or where \BtoDK decays are reconstructed as \BtoDpi decays. Due to relative branching fractions the former contribution is by far the most important, but both are modelled.
+
+
+The cross-feed shapes are obtained in a data-driven manner using the sPlot method~\cite{sPlot}, and fixed in the fit to data. Separate shapes are determined for each category, using the following steps: 
+
+\begin{itemize}
+    \item The procedure is based on the reasonably pure \BtoDpi sample obtained when the full selection is applied. A simple mass fit is performed to the invariant mass spectrum and the sPlot method \cite{Pivk:2004ty} is used to obtain the sWeights, $w_s$, for the signal component. The mass fit uses the same components for signal, low mass shape, and combinatorial background as described in this section. 
+
+\item A set of weights are defined, based on the candidate-by-candidate PID efficiencies obtained as described in Section~\ref{sub:particle_identification_requirements}:
+  \begin{itemize}
+    \item The extracted PID efficiencies of the PIDK$<$4 cut $\epsilon_{\D\pi\to\D\pi}(p,\eta,n_\text{tracks})$ are used to reverse-weight the \BtoDpi sample, in order to obtain the bachelor kinematic distributions before the PIDK$<$4 cut is applied. 
+    \item The extracted PID efficiencies of the PIDK$>$4 cut $\epsilon_{\D\pi\to\D\kaon}(p,\eta,n_\text{tracks})$ are used to obtain the bachelor kinematic distribution of the \BtoDpi candidates mis-identified as \BtoDK.
+  \end{itemize}
+  
+\item The raw distribution of the invariant mass of \Bpm particles with  a misidentified bachelor, $m_B^{mis-ID}$, is produced by also doing the DecayTreeFit kinematic refit while swapping the companion mass hypothesis of each \BtoDpi candidate to a kaon hypothesis.
+
+\item Each candidate is reweighted by the overall weight $w=w_s^{cand.} / \epsilon_{\D\pi\to\D\pi}^{cand.} \cdot \epsilon_{\D\pi\to\D\kaon}^{cand.}$, and the reweighed $m_B^{mis-ID}$ distribution is fitted to obtain the cross-feed mass distribution function.
+\end{itemize}
+The distributions are modelled with a sum of two Crystal Ball density functions, each defined by the parameterisation~\cite{CrystalBall}
+\begin{align}\label{eq:CB_definition}
+  f_\text{CB}(m,\mu,\sigma,\alpha, n)\propto \left \lbrace
+  \begin{array}{ll}
+    \exp \left [ -\frac{1}{2}\left(\frac{m-\mu}{\sigma}\right)^2 \right] & \text{if   } (m-\mu)/\sigma > -\alpha  \\
+    A\left(B-\frac{m-\mu}{\sigma}\right)^{-n} & \text{otherwise,}\end{array}\right.
+\end{align}
+where $\alpha >0$, and
+\begin{align}
+  A &= \left(\frac{n}{\alpha}\right)^n\exp [-\alpha^2/2]\,, &
+  B &= \frac{n}{\alpha}-\alpha\,.
+\end{align}
+The obtained $m_B^{mis-ID}$ spectrum and obtained mass shape is given in Fig.~\ref{fig:misid_shape_DPi_kspp} for the \DtoKspipi category; the \DtoKskk shapes are very similar. An analogous procedure is used to obtain the mass distribution of \BtoDK decays reconstructed in the \BtoDpi category. In the first stage where sPlots are extracted by a fit to the \BtoDK mass spectrum, the cross-feed component determined as described above is included. An example of on of the resulting shapes is given in Fig.~\ref{fig:misid_shape_DK}
+
+\begin{figure}[tb]
+    \centering
+    \begin{subfigure}{0.49\columnwidth}
+        \includegraphics[width=1\columnwidth]{figures/analysis/pid_fits/misID_shape_dk_d2kspp_LL_pm_allDP_Run1and2_PIDcut_4_0.pdf}
+        \caption{}
+    \end{subfigure}
+    \begin{subfigure}{0.49\columnwidth}
+        \includegraphics[width=1\columnwidth]{figures/analysis/pid_fits/misID_shape_dk_d2kspp_DD_pm_allDP_Run1and2_PIDcut_4_0.pdf}
+        \caption{}
+    \end{subfigure}
+    \caption{Fitted shape of \Bpm invariant mass spectrum for \BtoDpi events misidentified as \BtoDK events for (a) LL and (b) DD candidates in the \DtoKspp mode.}
+    \label{fig:misid_shape_DPi_kspp}
+\end{figure}
+
+\begin{figure}[tb]
+    \centering
+    \begin{subfigure}{0.49\columnwidth}
+        \includegraphics[width=1\columnwidth]{figures/analysis/pid_fits/misID_shape_dpi_d2kspp_LL_pm_allDP_Run1and2_PIDcut_4_0.pdf}
+        \caption{}
+    \end{subfigure}
+    \begin{subfigure}{0.49\columnwidth}
+        \includegraphics[width=1\columnwidth]{figures/analysis/pid_fits/misID_shape_dpi_d2kspp_DD_pm_allDP_Run1and2_PIDcut_4_0.pdf}
+        \caption{}
+    \end{subfigure}
+    \caption{Fitted shape of \Bpm invariant mass spectrum for \BtoDK events misidentified as \BtoDpi events for (a) LL and (b) DD candidates. The shape is obtained using \DtoKspp decays, and used in the \DtoKskk mode as well.}
+    \label{fig:misid_shape_DK}
+\end{figure}
+
+The yield of cross-feed from \BtoDpi decays in a given \BtoDK category is parameterised in terms of the yield of correctly identified \BtoDpi decays and the mis-identification probability extracted from calibration samples as described in Section~\ref{sub:particle_identification_requirements}. Denoting the rate at which a pion is reconstructed as a kaon by $\epsilon_{\pi\to\kaon}^c$ in a given category, $c$, the yield is
+\begin{align}
+    N^c_{\pi\to\kaon} = N^c_{\Dpi} \frac{\epsilon_{\pi\to\kaon}^c}{1-\epsilon_{\pi\to\kaon}^c},
+\end{align}
+with an analoguous definition of the  yield of the cross-feed component from \BtoDK decays in the \BtoDpi spectrum.
+
+
+\subsection{Partially reconstructed backgrounds} % (fold)
+\label{sub:partially_reconstructed_backgrounds}
+
+A number of background candidates stem from partly reconstructed \B decays of the type $\B \to \D h X$, where $X$ denotes a photon or a pion that is not reconstructed.  It is not possible to reject these decays in the selection, due to the similarity to signal decays. However, the missing momentum results in reconstructed \B masses below the actual \B mass, and the backgrounds are also denoted \emph{lowmass} backgrounds. These  mass distributions are modelled with analytic shapes, derived based on two principles.
+Firstly, the kinematic endpoints of the distributions are fully defined by the particle masses in the decay. Secondly, the angular distribution of the missing particle has a one-to-one relation to the missing momentum, and therefore to the reconstructed $B$ mass.
+Depending on the spin-parity of the particles and resonances involved in the decay, two different mass distributions arise. 
+
+In \B decays where the missing particle is a scalar that is produced in the decay of a vector resonance (eg. $\Bpm\to\Dstarz(\to \Dz\piz) \pipm$ decays where the \piz is not reconstructed), the $m(\Dz\pipm)$ distribution has a double-peak structure. The \Dstarz helicity angle $\theta$ is defined as the angle between the \piz momentum vector in the \Dstarz rest frame and the \Dstarz boost vector in the $B$ rest frame. The helicity of \Dstarz means that the \piz will travel predominantly in the direction where $\theta=0$ or $\theta=\pi$. When $\theta=0$ the fraction of momentum carried by the missing $\piz$ is lower, leading to a higher reconstructed $m(\Dz\pipm)$. When $\theta=\pi$ the converse occurs. The resulting \PB mass distribution is a parabola $f^0_\mathrm{HORNS}(m)$ peaking near both kinematic endpoints \Pa and \Pb
+\begin{equation}
+f^0_\mathrm{HORNS}(m) = \begin{cases}
+ (m - \frac{a+b}{2})^2, & \text{if $a < m < b$} \\
+  0, & \text{otherwise.}
+\end{cases}
+\end{equation}
+Due to the double-peaking structure, and the fact that is was developed by Paolo Gandini for the two-body ADS/GLW analyses~\cite{}, this shape is denoted a \emph{HORNSdini} shape when convolved with a resolution function as described below.
+
+The second relevant decay situation is where the missing particle is a vector, again produced via the intermediate decay of a vector resonance (eg. $\Bpm\to\Dstarz(\to \Dz\gamma) \pipm$ decays where the photon is not reconstructed).  In this case, the spin-parity of the phton ($1^-$) means that it will decay preferentially in the $\Ptheta = \frac{\pi}{2}$ or  $\Ptheta=\frac{3\pi}{2}$ directions, and so a double-peak structure is not seen. In this case the parabolic distribution $f^0_\mathrm{HILL}(m)$ with kinematic endpoints \Pa, \Pb has negative curvature and can be described by
+\begin{equation}
+f^0_\mathrm{HILL}(m) = \begin{cases}
+-(m-a)(m-b), & \text{if $a < x < b$} \\
+ 0, & \text{otherwise.}
+\end{cases}
+\end{equation}
+Resolution effects mean that the parabolic shapes must be convolved with a resolution function, chosen to be a sum of two Gaussians. For a single Gaussian shape $f_G(x|\mu,\sigma)$ with mean $\mu$ and width $\sigma$, the double Gaussian is expressed as
+\begin{equation}\label{eq:pr_resolution}
+f_{DG}(x) = f_G(x | \mu, \sigma) + k_G f_G(x|\mu,R_\sigma \sigma).
+\end{equation}
+where $\sigma$ is the width of the first Gaussian, and $k_G$ is the relative fractions between the two Gaussians and $R_\sigma$ is their relative widths.
+Further, selection effects can distort the horns shape such that one of the peaks is higher than the other. This is taken into account by introducing a linear polynomial with slope parameter $\xi$. As $\xi\to 0$, the left hand peak decreases in size relative to the right hand peak.
+The resulting \emph{HORNSdini} and \emph{HILLdini} distributions are therefore
+\begin{equation}
+f_\mathrm{HORNS/HILL}(m) = \int^b_a dx \; f^0_\mathrm{HORNS/HILL}(x) f_{DG}(m | x, \sigma, k_G, R_\sigma) \left( \frac{1-\xi}{b-a}x + \frac{b\xi-a}{b-a} \right).
+\end{equation}
+Examples of the shapes are given in Fig.~\ref{fig:HORNS_HILL_example}. A further term $\delta m$ can be added to allow a translation of the full shape. These shapes are used to fit all partially reconstructed backgrounds, as described in the following section.
+
+\begin{figure}
+\centering
+\begin{subfigure}{0.49\columnwidth}
+    \includegraphics[width=\textwidth]{figures/analysis/horns.pdf}
+    \caption{\label{fig:hornsdini}}
+\end{subfigure}
+\begin{subfigure}{0.49\columnwidth}
+    \includegraphics[width=\textwidth]{figures/analysis/hills.pdf}
+    \caption{\label{fig:hillsdini}}
+\end{subfigure}
+\caption{(a) The \emph{HORNSdini} distribution (red) fit to $\Bpm\to(\Dstarz\to\Dz[\piz])\pipm$ MC (black) after full event selection.
+(b) The \emph{HILLSdini} distribution (green) fit to $\Bpm\to(\Dstarz\to\Dz[\gamma])\pipm$ MC (black) after full event selection.
+\label{fig:HORNS_HILL_example}}
+\end{figure}
+
+% Included background shapes
+\subsubsection{Determination of the partially reconstructed background distributions}
+In both the \BtoDK and \BtoDpi categories, components are included to describe contributions from the partially reconstructed decays (where the particle in square brackets is not reconstructed)
+\begin{itemize}
+\item $\Bpm\to(\Dstarz\to\Dz[\piz])h^\pm$, described using a \emph{HORNSdini} distribution
+\item $\Bpm\to(\Dstarz\to\Dz[\Pgamma])h^\pm$: described using a \emph{HILLdini} distribution
+\item $\Bz\to(\Dstarpm\to\Dz[\pipm])h^\mp$: described using a \emph{HORNSdini} distribution
+\item $\B^{\pm(0)}\to \Dz h^\pm[\pi^{0(\mp)}]$: described using a \emph{HORNSdini} distribution
+\end{itemize}
+The mass distributions of all the $\B\to\Dstar h^\pm$ contributions are obtained from fits to samples of full \lhcb simulation. Examples of these fits are shown in Fig.~\ref{fig:sig_shapes_PR_dst}. All shape parameters are kept fixed in the fit to data, except for the parameter $\sigma$ of the resolution function in Eq.~\eqref{eq:pr_resolution} which is allowed to obtain the value preferred by data. 
+
+\begin{figure}[tb]
+    \centering
+    \includegraphics[width=0.6\columnwidth]{figures/analysis/mc_shapes/lowmass_Bu2Dst_pi0_d2kspp_DD_allDP.pdf}
+    \includegraphics[width=0.6\columnwidth]{figures/analysis/mc_shapes/lowmass_Bu2Dst_gamma_d2kspp_DD_allDP.pdf}
+    \caption{Fit projection of the fit to (top) simulated ${\Bp\to\Dstarz(\to \Dz[\piz])h^\pm}$ decays and (bottom) simulated ${\Bp\to\Dstarz(\to \Dz[\gamma])h^\pm}$  decays, all reconstructed in the DD category. Both the (left) \D\kaon shapes and (right) shows $\D\pi$ shapes are shown. }
+    \label{fig:sig_shapes_PR_dst}
+\end{figure}
+
+\begin{figure}[tb]
+    \centering
+    \includegraphics[width=0.45\columnwidth]{figures/analysis/mc_shapes/lowmass_B2Dhpi_d2kspp_LL_allDP.pdf}
+    \includegraphics[width=0.45\columnwidth]{figures/analysis/mc_shapes/lowmass_B2Dhpi_d2kspp_DD_allDP.pdf}
+    \caption{Projections of the fit to simulated $\Bpm\to\D\rhopm$ and $\Bz\to\D\rhoz$ samples reconstructed as $\Bpm\to\D\pipm$ decays for (left) the LL and (right) the DD categories. }
+    \label{fig:sig_shapes_PR_drho}
+\end{figure}
+
+The mass distribution of $\B^{\pm(0)}\to \Dz h^\pm[\pi^{0(\mp)}]$ decays reconstructed in the \BtoDpi categories is obtained from full \lhcb simulation samples of $\Bpm\to\Dz\rho^\pm$ and $\Bz\to\Dz\rho^0$ decays. The shapes were compared to those predicted by an amplitude model for $\B^{0}\to \Dz\to \pipm\pimp$ decays developed by \lhcb~\cite{LHCb-PAPER-2014-070}, but found to be very similar for the $m(\D \pipm)$ range relevant to this analysis. The obtained shapes are shown in Fig.~\ref{fig:sig_shapes_PR_drho}.
+
+The mass distribution of $\B^{\pm(0)}\to \Dz \Kpm[\pi^{0(\mp)}]$ decays reconstructed in the \BtoDK categories, on the other hand, is obtained from a sample of signal decays, generated via a amplitude model for $\B^{0}\to \Dz\to \Kpm\pimp$ decays developed by \lhcb~\cite{LHCb-PAPER-2015-059} and smeared to take the \lhcb resolution into account. This follows an approach developed in the context of a GLW analysis based on partially reconstructed decays made within \lhcb~\cite{LHCb-PAPER-2017-021}. The obtained shape is shown in Fig.~\ref{fig:fit_part_reco_DKpi}.
+
+\begin{figure}[tbp]
+    \centering
+    \includegraphics[width=0.45\textwidth]{figures/analysis/mc_shapes/lowmass_B2DKpi_d2kspp_DD_allDP.pdf}
+    \includegraphics[width=0.45\textwidth]{figures/analysis/mc_shapes/lowmass_Bs2DKpi_d2kspp_DD_allDP.pdf}
+    \caption{Fit projection for the fit used to obtain a shape for the partly reconstructed background from (left) $\B\to\D\kaon\pi$ decays and (right) $\Bs\to\D\Kp\pim$ decays where a pion is not reconstructed.}
+    \label{fig:fit_part_reco_DKpi}
+\end{figure}
+
+
+
+
+% Yields
+The background yields of these backgrounds are parameterised in terms of one total yield parameter, accounting for all partially reconstructed \Bpm and \Bz decays, and a number of parameters that describe the relative rates of the different contributions.
+In the \BtoDpi channels, the relative rates of the $\Bpm\to(\Dstarz\to\Dz[\piz])h^\pm$ and $\Bz\to(\Dstarpm\to\Dz[\pipm])h^\mp$ backgrounds are fixed from the known branching fractions, and relative selection efficiencies in simulation. These backgrounds have almost identical mass distributions and it is not possible to determine the ratio in the fit to data. The relative yield of ${\Bpm\to\Dstar(\to \Dz[\gamma])\pi^\pm}$ compared to the $\B\to\Dstar(\to\Dz[\pi])\pi^\pm$ is denoted $f^{\D\pi}_{\Dstar\gamma}$ and is floated in the fit to data, as is the relative yield of $\B\to\Dz\pi^\pm[\pi]$ decays compared to the $\B\to\Dstar\pi$ modes, denoted $f^{\D\pi}_{\D\pi\pi}$. In the \BtoDK channels, all the relative background rates are fixed via known branching fractions and relative selection efficiencies; this is necessary to obtain a stable fit, due to the lower yields. 
+
+% The Bs background
+In the \BtoDK categories, an additional partially reconstructed background is considered from $\Bs\to\Dzb[\pi^+]\Km$ (an conjugate) decays. The mass shape is obtained from simulated decays, generated using an amplitude model published by \lhcb~\cite{LHCb-PAPER-2014-036} and smeared to account for the experimental resolution.  The obtained shape is shown in Fig.~\ref{fig:fit_part_reco_DKpi}. The yield of this background component is fixed relative to the signal yields in the corresponding \BtoDpi category, taking the relative branching ratios and hadronisation factors into account.
+
+
+
+% Mis-ID components
+In the \BtoDK channels there is a contribution from partially reconstructed $\B\to\Dstar\pipm X$ decays where the companion pion is misidentified as a kaon. The reverse contribution is negligible due to the relative branching fractions, and the fact that it is mostly shifted below the mass range of the fit. These are modelled using analytic, empirical mass distributions (essentially sums of a number of regular \emph{HORNS/HILLdini} distributions), with parameters  that are determined in fits to simulated $\B\to\Dstar\pipm$ and $\B\to\D\rho$ decays where the pion is reconstructed with the kaon mass hypothesis. The shapes are fixed in the fit to data.\\
+
+
+% The non-included backgrounds
+\subsubsection{Partially reconstructed backgrounds that are not modelled}
+It was considered whether a background from $\Lb\to\Dz p\pim$ decays where a pion is not reconstructed,  and the proton is misidentified as the companion, can be expected to contribute significantly. The has been investigated in full \lhcb simulation samples, for the \D final state \KsPiPi. Taking into account the selection efficiencies, branching fractions, and hadronisation fraction of this background, the expected relative yield of the \Lb background compared to signal of 0.03\,\% in the \BtoDpi channel, which is completely negligible. In the \BtoDK channel, total of about 200 decays are expected, combined for the LL and DD categories. However, most of these lie at \B masses smaller than the signal peak, and their impact is small. Therefore it is not necessary to model the background in the nominal fit; a systematic uncertainty is assigned that accounts for the small potential impact. 
+
+In the analogous case of $\Lb\to\Dz p\Km$ decays, the missing energy of the non-reconstructed kaon results in a reconstructed \B mass below the fit range.
+
+It has also been investigated whether a background from $\Lb\to\Lc\pim$ or $\Lb\to\Lc\Km$ decays can be expected, where $\Lc\to p \KS \pip\pim$, a pion is missed and the proton is misidentified as a pion or kaon from the \D decay. Since no PID requirement is made on the \D decay products in the \DtoKspipi channels, and only a loose one for \DtoKsKK, this is possible in principle. In practice, the background is sufficiently suppressed from the applied \D mass requirement to have no significant impact, and is therefore not modelled. A systematic uncertainty is assigned that accounts for any potential impact on the measurement due to this choice.
+
+
+
+% subsection partially_reconstructed_backgrounds (end)
+
+\subsection{Combinatorial background} % (fold)
+\label{sub:combinatorial_background}
+
+The combinatorial background is modelled with an exponentially falling density function, where both the yield and exponential slope are determined independently for each category. This shape is found to model the combinatorial well in all categories, most evident in the high-$m_B$ regions where this background dominates.
+
+
+
+
+
+% subsection combinatorial_background (end)
+
+
+
+% subsection texorpdfstring_cross_feed_between_btodh_channels (end)
+
+\subsection{Fit results} % (fold)
+\label{sub:global_fit_results}
+
+\begin{figure}[tbp]
+    \centering
+    \includegraphics[width=0.65\columnwidth]{figures/analysis/global_fit_feasibility/global_fit_feasibility_n_sig_dk_dpi_ratio.pdf}
+    \includegraphics[width=0.65\columnwidth]{figures/analysis/global_fit_feasibility/global_fit_feasibility_n_sig_dpi_d2kspp_LL_pm_allDP.pdf}
+    \includegraphics[width=0.65\columnwidth]{figures/analysis/global_fit_feasibility/global_fit_feasibility_n_sig_dpi_d2kspp_DD_pm_allDP.pdf}
+    \includegraphics[width=0.65\columnwidth]{figures/analysis/global_fit_feasibility/global_fit_feasibility_n_sig_dpi_d2kskk_LL_pm_allDP.pdf}
+    \includegraphics[width=0.65\columnwidth]{figures/analysis/global_fit_feasibility/global_fit_feasibility_n_sig_dpi_d2kskk_DD_pm_allDP.pdf}
+    \caption{Pull plots for the signal yield parameters in global fits to toy datasets for (top) the \Dpi-\DK yield ratio, and then the \Dpi yield in the LL and DD \DtoKspp modes, and the LL and DD \DtoKskk modes.}
+    \label{fig:global_fit_yield_pulls}
+\end{figure}
+
+The fit range is chosen to be $m_B\in[5080, 5800]\mevcc$. The low end of this interval includes the high-mass peak of the double-peak structure in the partially reconstructed background, which helps the fit constrain the relative contributions of backgrounds in the lowmass regions. A number of additional backgrounds exist at even lower $m_B$ values, thus extending the fit range to lower masses would necessitates an extended model, but not benefit the description of the signal region. The high end of the interval includes enough combinatorial background to allow the fit to determine the exponential slope parameter accurately.
+
+
+A large number of pseudoexperiments are carried out to verify that the fit procedure is self-consistent, in which toy data sets are generated according to the expected \B mass distributions, and then fitted. None of the parameters obtained in the fit exhibit a mean bias different from zero, and for most parameters the uncertainties are well estimated.  This is the case for the signal yields, and the \DK-\Dpi yield ratio $\mathcal R$, as evidenced by the pull plots in Fig.~\ref{fig:global_fit_yield_pulls}. The fit underestimates the uncertainty by 10-20\,\% for some of the parameters related to the partly reconstructed backgrounds, as shown in Fig.~\ref{fig:lowmass_pulls}, but this is taken into account when the uncertainties are propagated to the observables in the second-stage fit, as described in Section~\ref{sub:systematics_from_mass_shapes}.
+
+
+
+\begin{figure}[tbp]
+    \centering
+    \includegraphics[width=0.65\columnwidth]{figures/analysis/global_fit_feasibility/global_fit_feasibility_low_dpi_ratio_b2drho_vs_b2dstpi.pdf}
+    \includegraphics[width=0.65\columnwidth]{figures/analysis/global_fit_feasibility/global_fit_feasibility_low_sigma_pi_LL.pdf}
+    \caption{Examples of lowmass related parameters where the uncertainties are underestimated in some toy fits. This is taken into account when propagating the fit uncertainties to the systematic uncertainties on the final results.}
+    \label{fig:lowmass_pulls}
+\end{figure}
+
+
+\begin{figure}[p]
+    \centering
+    \includegraphics[width=0.98\columnwidth]{figures/analysis/pretty_fit_d2kspp_LL.pdf}
+    \includegraphics[width=0.98\columnwidth]{figures/analysis/pretty_fit_d2kspp_DD.pdf}
+    \caption{The invariant mass distribution for the (left) \BtoDK channel and (right) \BtoDpi channel, where \DtoKspp and the \KS is in the (top) LL and (bottom) the DD categories. The particle within square brackets in the legend denotes the particle that has not been reconstructed. }
+    \label{fig:kspipimass}
+\end{figure}
+
+\begin{figure}[p]
+    \centering
+    \includegraphics[width=0.98\columnwidth]{figures/analysis/pretty_fit_d2kskk_LL.pdf}
+    \includegraphics[width=0.98\columnwidth]{figures/analysis/pretty_fit_d2kskk_DD.pdf}
+    \caption{The invariant mass distribution for the (left) \BtoDK channel and (right) \BtoDpi channel, where \DtoKskk and the \KS is in the (top) LL and (bottom) the DD categories. The particle within square brackets in the legend denotes the particle that has not been reconstructed.}
+    \label{fig:kskkmass}
+\end{figure}
+
+The projections of the fit to data are shown in Figs.~\ref{fig:kspipimass}~and~\ref{fig:kskkmass}, for the ${\DtoKspipi}$ and \DtoKsKK data sets, respectively. The obtained yields for each fit component are given in Table~\ref{tab:yields_global_fit}. The total yield of \BtoDpi decays is approximately 230,000 across all channels. The obtained value of the yield ratio is $\mathcal R=(7.7\pm0.1)\,\%$, corresponding to a total \BtoDK yield of 16,500, of which about 14,300 pass the PID requirement and are reconstructed in the \BtoDK category. This value of $\mathcal R$ is in excellent agreement with expectation from the known branching fractions~\cite{PDG2020}, which predict $\mathcal R_\text{PDG}=(7.8\pm0.3)\,\%$. The shape parameters determined in the fit to data are summarised in Table~\ref{tab:fitted_parameters_global_fit}.
+
+\input{tables/05_measurement/global_fit_yields}
+\input{tables/05_measurement/fitted_parameters_global_fit}
+
+% subsection fit_results (end)
+
+% section signal_and_background_components (end)
+
+\section{Measurement of the CP-violation observables} % (fold)
+\label{sec:measurement_of_the_cp_violation_observables}
+
+The section describes the second fit stage, in which the \CP-violation observables of interest are determined. Compared to the first fit stage, the candidates are further split by \B charge, and by the assigned Dalitz bin number, making for a total of 160 categories. Another extended maximum-likelihood fit is carried out, in which shape parameters of all signal and background components are fixed to those determined in the first fit stage, and thus all floating parameters relate to the signal and background yields. The signal yields are expressed in terms of the observables of interest, $(\xpmdk, \ypmdk, \xxidpi, \yxidpi)$, allowing the fit to determine their optimal values. The details of the fit setup are summarised in the following section, before the results are presented in Section~\ref{sub:main_cpfit_results}, and a wide range of consistency checks are described in Section~\ref{sub:cpfit_cross_checks}.
+
+\subsection{Fit setup} % (fold)
+\label{sub:fit_setup}
+
+The signal yields in each bin (in a given category) are defined using the equations of Chapter~\ref{ch:2-litreview}, in order to allow for the determination of the $(\xpmdk, \ypmdk, \xxidpi, \yxidpi)$ observables. In practice, a set of variables are defined
+\begin{align}\label{eq:Y_definition}
+    Y^-_{c,i} &= F_{c,\phantom{-}i} + [(\xm^c)^2 + (\ym^c)^2] F_{c,-i} + 2\sqrt{F_{c,i}F_{c,-i}}\left(\ci^c\xm^c+\si^c\ym^c\right), \\
+    Y^+_{c,i} &= F_{c,-i} + [(\xp^c)^2 + (\yp^c)^2] F_{c,\phantom{-}i} + 2\sqrt{F_{c,i}F_{c,-i}}\left(\ci^c\xp^c-\si^c\yp^c\right),
+\end{align}
+for each data category, $c$, in terms of which the bin yields that enter the likelihood are given by
+\begin{align}
+    N^\pm_{c, i} = \frac{Y^\pm_{c, i}}{\sum_j Y^\pm_{c,j}}\times N^\pm_{c,\text{ total}}.
+\end{align}
+This parameterisation is essentially identical to the expressions in Section~\ref{sec:strategy_for_lhcb_measurement}, slightly modified so that the phase-space-integrated yields of \Bp and \Bm decays in a given category are determined directly, in lieu of the normalisation constants $h^\pm$ of that section. A single set of four parameters, $(\xmdk, \ymdk, \xpdk, \ypdk)$, are shared between \emph{all} \BtoDK categories; they enter the expressions of Eq.~\eqref{eq:Y_definition} directly, and are thus determined in the fit. In the \BtoDpi categories, the four corresponding parameters, $(\xmdpi, \ymdpi, \xpdpi, \ypdpi)$, are parameterised in terms of $(\xpmdk, \ypmdk)$ and the addition two observables $(\xxidpi, \yxidpi)$, as detailed in Section~\ref{sec:strategy_for_lhcb_measurement}.
+
+The strong-phase parameters $(\ci, \si)$ are fixed in the fit to data. In the \DtoKspipi categories, the combined CLEO~\cite{CLEOCISI} and BESIII~\cite{BESCISI} measurement results are used, as reported in Ref.~\cite{BESCISI}. In the \DtoKsKK categories, the results reported by the CLEO collaboration in Ref.~\cite{CLEOCISI} are used. The experimental uncertainty on these measurements is propagated to the measured \CP-violation observables as part of the systematic uncertainties in Section~\ref{}.
+
+The \Fi parameters are determined in the fit. Separate parameter sets are determined for the LL and DD categories because the acceptance profile over the Dalitz plot differs between them. The \Fi are, however, shared between the \BtoDK and \BtoDpi categories; the small difference in the \D momentum spectrum between the channels does not lead to a detectable difference in the acceptance profiles. This is a crucial assumption of the method, shown to be true using large samples of simulated decays in Section~\ref{}. Because the \Fi are subject to the constraint that $\sum_{i=-\mathcal N}^{\mathcal N} F^c_i=1$, it is beneficial to introduce a reparameterisation in the likelihood function. The \Fi are re-expressed in terms of a set of recursive fractions
+\begin{align}\label{eq:Ri_definition}
+     \mathcal R_i = \left\{
+     \begin{array}{ll}
+         F_i  &,\quad i = -\mathcal N \\
+         F_i \left/\left(\sum_{j\geq i}F_j\right)\right. &,\quad -\mathcal N < i < +\mathcal N \\
+     \end{array}
+     \right.,
+ \end{align}
+for which the constraint is much simpler, namely that each $\mathcal R_i$ lies in the interval $[0, 1]$. This results in much better convergence behaviour in the minimisation of the negative log likelihood.
+
+The yield of combinatorial background decays is determined independently in each bin. A single, overall bin yield of partially reconstructed background from \Bpm and \Bz decays is determined in each of the 160 categories; the relative contribution from each individual background is fixed from the results of the first-stage fit, corrected for the different fit region (a systematic uncertainty is assigned due to this choice). In the \BtoDK channels, the bin yields of the partially reconstructed background from $\Bs\to\Dzb[\pi^+]\Km$ decays are expressed via the \Fi, exploiting that a positive companion particle is always produced along with a \Dzb meson (and vice versa). The overall yield is fixed from the results of the first stage fit. Finally, the yield of the $\Dpi\leftrightarrow\DK$ cross-feed components in each bin are determined via the obtained yield of correctly identified decays in the corresponding bin, and the known PID efficiencies. This is true for both fully and partially reconstructed decays, although only a $\Dpi\to\DK$ component is included in the latter case. 
+
+The fit range is decreased to $m_B\in[5150, 5800]\mevcc$. The information from candidates with lower reconstructed \B masses was useful in determining the relative rates and free mass shape parameters of the partially reconstructed background components in the first-stage fit; however, with these fixed in the second-stage fit, this is no longer the case. Furthermore, the setup assumes that the shape of the partially reconstructed background is identical across the Dalitz bins. This assumption is not perfectly true, but the impact is minimal when the lower limit of the fit range is taken to be 5150\mevcc.
+
+\subsubsection{Self-consistency check} % (fold)
+\label{ssub:self_consistency_check}
+
+In order to establish the fit stability and investigate a potential bias, a series of pseudoexperiments are run, in which toy datasets are generated using the model, and then fitted back. The total yields are taken from the first-stage fit. The signal yields are distributed between Dalitz bins using input physics parameters that approximately equal the values obtained in Section~\ref{sub:main_cpfit_results} from the results of the fit to data. The \Fi parameters are taken from a fit to data. The partly reconstructed background is distributed as "\Dz-like", ie. in the \Bpm channels $N_i^\pm\propto F_{\mp i}$, except for the \Bs background, which is "\Dzb-like" ($N_i^\pm\propto F_{\pm i}$).
+The combinatorial background includes real \D mesons paired with a random bachelor, as well as fake \D mesons that are themselves made up of random tracks. The former is distributed as 50/50 \Dz-like and \Dzb-like in the toy generation, whereas the latter is assumed to be evenly distributed over the Dalitz plot (ie. the bin yield is proportional to the bin area).
+
+
+\input{tables/05_measurement/cp_fit_toy_results}
+
+\begin{figure}[p!]
+    \centering
+    \includegraphics[width=0.75\columnwidth]{figures/analysis/cp_fit_feasibility/xm_dk_cp_feasibility_full_model.pdf}
+    \includegraphics[width=0.75\columnwidth]{figures/analysis/cp_fit_feasibility/ym_dk_cp_feasibility_full_model.pdf}
+    \includegraphics[width=0.75\columnwidth]{figures/analysis/cp_fit_feasibility/xp_dk_cp_feasibility_full_model.pdf}
+    \includegraphics[width=0.75\columnwidth]{figures/analysis/cp_fit_feasibility/yp_dk_cp_feasibility_full_model.pdf}
+    \includegraphics[width=0.75\columnwidth]{figures/analysis/cp_fit_feasibility/Re_xi_dpi_cp_feasibility_full_model.pdf}
+    \includegraphics[width=0.75\columnwidth]{figures/analysis/cp_fit_feasibility/Im_xi_dpi_cp_feasibility_full_model.pdf}
+    \caption{Pull plots for (from the top) \xmdk, \ymdk, \xpdk, \ypdk, \xxidpi, and \yxidpi from pseudoexperiments. The input values are shown with black lines in the left column. The uncertainty estimates in the fit to real data are shown with red lines in the central column.}
+    \label{fig:cp_fit_pull_plots}
+\end{figure}
+
+% text autogenerated by ANA_scripts/05_cp_fit/SensitivityAndBiasStudies.ipynb
+% biases from toy: 20200127_feasibility_study_model_cisi_take2
+A set of 2000 pseudoexperiments has been run, out of which 98.8\,\% converged properly. The pull plots for the observables of interest are shown in Fig.~\ref{fig:cp_fit_pull_plots} and the mean biases and pulls are summarised in Table~\ref{tab:cp_fit_toy_pulls}. No biases are statistically significant, and the uncertainties are seen to be well estimated. 
+
+% subsubsection self_consistency_check (end)
+% subsection fit_setup (end)
+
+\subsection{Main results} % (fold)
+\label{sub:main_cpfit_results}
+% 
+% \input{tables/cp_fit/cp_fit_results}
+
+The values and statistical uncertainties of observables obtained in the fit are 
+\begin{align}
+% \begin{split}
+    \xmdk   &= (\phantom{-}5.68\pm0.96)\times 10^{-2}, & \notag
+    \ymdk   &= (\phantom{-}6.55\pm1.14)\times 10^{-2}, \\
+    \xpdk   &= (         - 9.30\pm0.98)\times 10^{-2}, &
+    \ypdk   &= (         - 1.25\pm1.23)\times 10^{-2}, \\
+    \xxidpi &= (         - 5.47\pm1.99)\times 10^{-2}, & \notag
+    \yxidpi &= (\phantom{-}0.71\pm2.33)\times 10^{-2}.
+% \end{split}
+\end{align}
+The statistical correlation matrix for the observables is given in Table~\ref{tab:stat_corr_matrix}. The 2D log-likelihood profile for the observables is shown in Fig.~\ref{fig:loglikelihood}.
+
+\begin{figure}[t]
+    \centering
+    \includegraphics[width=0.9\columnwidth]{figures/analysis/likelihood_plot.pdf}
+    \caption{The 68\,\% and 95\,\% confidence regions for the fitted observables. The lines show the regions estimated from the covariance matrix returned by the default fit. The shaded areas are obtained in a likelihood scan, where the binned fit is run many times with all observables held at fixed values, scanning pairs of observables over the relevant ranges. The scan is made separately for the three pairs $(\xmdk,\ymdk)$, $(\xpdk, \ypdk)$, and $(\xxidpi, \yxidpi)$, holding the four other parameters fixed at their default-fit central values during a given scan. Then the minimum log-likelihood is related to a $\chi^2$ via $\mathcal L_\text{min} = \frac{1}{2}\chi^2$ (discarding an irrelevant constant), and the confidence region limits placed at $\chi^2=2.30$ and $\chi^2=6.18$, yielding the relevant percentiles for a $\chi^2$ distribution with 2 degrees of freedom.}
+    \label{fig:loglikelihood}
+\end{figure}
+
+The full set of fit projections in all 160 categories is included in Appendix~\ref{app:main_fit}. 
+While the \CP asymmetry of the phase-space integrated yield is small, this is not the case for all individual bin-pairs. This is shown in Fig.~\ref{fig:kspipimass_bin2} where, as an example, the fit projections for the $\Bp\to\D\Kp$ decays in bin $+2$ and the $\Bm\to\D\Km$ decays in bin $-2$ of the \DtoKspipi Dalitz plot are compared. The presence of \CP violation is clearly visible.
+
+\begin{figure}[t]
+    \centering
+    \includegraphics[width=0.9\columnwidth]{figures/analysis/pretty_fit_bin2_asym_comparison.pdf}
+    \caption{The invariant mass distribution for the (left) $\Bp\to\D\Kp$ candidates in bin -2 and (right) the $\Bm\to\D\Km$ candidates in bin +2, where \DtoKspipi and the \KS is reconstructed in the DD category. }
+    \label{fig:kspipimass_bin2}
+\end{figure}
+
+\input{tables/05_measurement/cpfit_stat_corr_matrix}
+
+
+The obtained \Fi parameter values are shown in Table~\ref{tab:Fi_values}. These parameters can be useful in other BPGGSZ measurements made within the \lhcb collaboration: it is expected that the systematic uncertainty due to differences between the Dalitz-plot acceptance profile in \BtoDh decays and, say, $\B\to\Dstar\kaon$ or $\B\to\D\Kstar$ decays is smaller than the systematic arising from extracting the efficiency profile from simulated decays. Therefore, the obtain central values and uncertainties have been made public~\cite{GGSZ-B2Dh}, including a set of systematic uncertainties discussed in Section~\ref{sub:summary_of_systematic_uncertainties}.\footnote{In practice, it is the obtained $\mathcal R_i$ values that are made public, related to the \Fi parameters via Eq.~\eqref{eq:Ri_definition}.}
+
+
+
+
+\input{tables/05_measurement/Fi_values}
+
+% subsection main_results (end)
+
+\subsection{Cross checks} % (fold)
+\label{sub:cpfit_cross_checks}
+
+
+A series of cross checks are performed to verify that the fit to data is behaving as expected.
+
+\subsubsection{Comparison to results of earlier analyses} % (fold)
+\label{ssub:comparison_to_results_of_earlier_analyses}
+
+It is confirmed that the results obtained in fits of the Run~1 or 2015+16 data sets in isolation are compatible with the results obtained in the original \lhcb analyses of those data sets~\cite{LHCb-PAPER-2014-041,LHCb-PAPER-2018-017}. In order to do so, the whole analysis procedure is carried out using only the relevant subset of data, and the strong-phase inputs from the CLEO collaboration are used in the fit. Two effects need to be taken into account when comparing the central values.
+
+The overlap between the samples need to be taken into account. The overlap is not 100\,\% due to changes in the candidate selection. The overlap between the new selection and the data set of the original analysis  of Run~1 data is about 70\,\%, whereas is it about 90\,\% for the 2015+16 data set. In order to determine the expected difference between the observables fitted from data sets with significant overlap, a large number of toy data sets were generated in sets of two, where 70 (90)\,\% of decays were shared between the data sets. Both data sets were fitted and the difference between the obtained central values for each observable tabulated; the standard deviation of these distributions are used to calculate the pulls between the old analysis results and the new fits to data. This check does not take into account that the semi-leptonic PID cuts were introduced to remove a potential peaking background, which may have had a small systematic effect on the earlier measurement results. Thus the expected differences are likely to be slightly underestimated and the check conservative.
+
+Furthermore, the $F_i$ parameters were determined in a semi-leptonic control channel in the earlier analyses. Therefore, the expected difference obtained above is adjusted by adding the $F_i$-related systematic uncertainty of the original analysis in quadrature, when comparing the old results to those in new fits to the Run~1 and 15+16 data sets. No further corrections have been made to the expected differences, which effectively assumes all other systematic uncertainties to be 100\,\% correlated. Also for this reason can the check be considered conservative. As can be seen in Tables~\ref{tab:comparison_run1_results}~and~\ref{tab:comparison_1516_results}, neither the Run~1 and 2015+16 comparisons show unreasonable differences in central values.
+
+\begin{table}
+\centering
+\caption{
+    Comparison between the results on the Run~1 analysis~\cite{LHCb-PAPER-2014-041} and the central values obtained when fitting the Run~1 dataset with the selection and fit setup described in this note. The pull is calculated using the $1\sigma$ expected difference, which takes the sample overlap and the systematic uncertainty on the $F_i$ parameters in the previous analysis into account, but assumes all other systematic uncertainties to be perfectly correlated. The new fits are performed using the CLEO strong-phase inputs.
+    \label{tab:comparison_run1_results}
+}
+    \begin{tabular}{c|cc|c}
+    \toprule
+    Observable & Run~1 result~\cite{LHCb-PAPER-2014-041} & New Fit  & Pull \\
+    & \multicolumn{2}{c|}{(central value $\times 10^{-2}$)} &\\
+    \midrule
+    % numerical input to table from ANA_scripts/05_cp_fit/CrossCheck_CompareEarlierAnalyses.ipynb
+$\xmdk$ & $ 2.50$ & $ 4.04$ & $ 0.85$ \\
+$\ymdk$ & $ 7.50$ & $ 9.14$ & $ 1.02$ \\
+$\xpdk$ & $-7.70$ & $-9.40$ & $-0.91$ \\
+$\ypdk$ & $-2.20$ & $ 0.80$ & $ 1.77$ \\
+\midrule
+    \multicolumn{4}{c}{$p$-value: $0.057$}\\
+    \bottomrule
+    \end{tabular}
+\end{table}
+
+\begin{table}
+\centering
+\caption{
+    Comparison between the results on the 2015+16 analysis~\cite{LHCb-PAPER-2018-017} and the central values obtained when fitting the 2015+16 dataset with the selection and fit setup described in this note. The pull is calculated using the $1\sigma$ expected difference, which takes the sample overlap and the systematic uncertainty on the $F_i$ parameters in the previous analysis into account, but assumes all other systematic uncertainties to be perfectly correlated. The new fits are performed using the CLEO strong-phase inputs.
+    \label{tab:comparison_1516_results}
+}
+    \begin{tabular}{c|cc|c}
+    \toprule
+    Observable & 15+16 result~\cite{LHCb-PAPER-2018-017} & New Fit  & Pull \\
+    & \multicolumn{2}{c|}{(central value $\times 10^{-2}$)} &\\
+    \midrule
+    % numerical input to table from ANA_scripts/05_cp_fit/CrossCheck_CompareEarlierAnalyses.ipynb
+$\xmdk$ & $ 9.00$ & $ 8.36$ & $-0.50$ \\
+$\ymdk$ & $ 2.10$ & $ 1.16$ & $-0.62$ \\
+$\xpdk$ & $-7.70$ & $-8.58$ & $-0.56$ \\
+$\ypdk$ & $-1.00$ & $-2.82$ & $-1.39$ \\
+\midrule
+    \multicolumn{4}{c}{$p$-value: $0.239$}\\
+    \bottomrule
+    \end{tabular}
+\end{table}
+
+
+
+
+
+
+\subsubsection{\texorpdfstring{Directly fitting the signal yields}{Directly fitting the signal yields}} % (fold)
+\label{ssub:_directly_fitting_the_signal_yields}
+As a cross-check, the fit is run in an alternative mode, in which the signal yields of each bin are independent parameters. The obtained yields are compared to those predicted from the results of the default fit in Fig.~\ref{fig:yield_cross_check}. The yields are shown for each "effective bin", where effective bin $i$ is defined as bin $+i$ for \Bp decays and bin $-i$ for \Bm decays; in the \CP symmetric case, these bins are expected to have equal yields (modulo production and detection asymmetries). The agreement between the two fit set-ups is seen to be excellent. The normalised yield asymmetries, defined as
+\begin{align}
+    A^i \equiv \frac{N^-_{-i}-N^+_i}{N^-_{-i}+N^+_i}
+\end{align}
+are shown in Fig.~\ref{fig:asym_cross_check} for all decay channels. Again, the agreement between the nominal fit, and the alternative fit with independent yields is found to be excellent. It is also clear how, in the case of \BtoDK decays, the asymmetry is significantly different from zero for a number of bin pairs.
+% subsubsection _directly_fitting_the_dk_yields (end)
+
+\begin{figure}[tb]
+    \centering
+    \includegraphics[width=0.48\columnwidth]{figures/analysis/cpfit_cross_check_plots/paper_yields_dk.pdf}
+    \includegraphics[width=0.48\columnwidth]{figures/analysis/cpfit_cross_check_plots/paper_yields_dpi.pdf}
+    \caption{Comparison of (lines) the predicted yield given the determined \CP observables and (error bars) the yield obtained in fits to data where each yield is an independent parameter. The yields are shown for (left) \BtoDK decays and (right) \BtoDpi decays. The LL and DD categories have been combined, as has the \Bp and \Bm yields for each effective Dalitz bin, defined as bin $+i$ for \Bp decays and bin $-i$ for \Bm decays.}
+    \label{fig:yield_cross_check}
+\end{figure}
+
+\begin{figure}[tb]
+    \centering
+    \includegraphics[width=0.48\columnwidth]{figures/analysis/cpfit_cross_check_plots/paper_asym_dk.pdf}
+    \includegraphics[width=0.48\columnwidth]{figures/analysis/cpfit_cross_check_plots/paper_asym_dpi.pdf}
+    \caption{The bin-by-bin asymmetries $(N^-_{-i}-N^+_{+i})/(N^-_{-i}+N^+_{+i})$ for each Dalitz-plot bin number for (left) \BtoDK decays and (right) \BtoDpi decays. The prediction from the central values of the \CP-violation observables is shown with a solid line and the asymmetries obtained in fits with independent bin yields are shown with the error bars. The predicted asymmetries in a fit that does not allow for \CP violation are shown with a dotted line.}
+    \label{fig:asym_cross_check}
+\end{figure}
+
+% subsubsection compare_results_obtained_with_different_binning_schemes (end)
+
+% subsection cross_checks (end)
+% section fit_of_cp_observables (end)
+
+
+\subsubsection{Fitting subsets of the data separately} % (fold)
+\label{ssub:fitting_subsets_of_the_data_separately}
+
+One cross check is carrying out, by determining the \CP observables using a number of independent sub samples of the data set separately.  This is done for the following following data splits
+
+\begin{itemize}
+    \item Fig.~\ref{fig:subsample_result_comparisons_year} shows the two dimensional log likelihood contours for the observables for fits to the Run~1, 2015+16, 2017 and 2018 datasets separately 
+    \item Fig.~\ref{fig:subsample_result_comparisons_track} shows the same plots, comparing the fits to the data set split by \KS track type.
+    \item Fig.~\ref{fig:subsample_result_comparisons_trigger} shows the same plots, comparing the fits to the data set split by whether the candidate event was triggered by one of the signal particles at the hardware level (TOS), or by another particle in the underlying event (TIS).
+    \item Fig.~\ref{fig:subsample_result_comparisons_polarity} shows the same plots, comparing the fits to the data set split the magnet polarity during data taking.
+    \item Fig.~\ref{fig:subsample_result_comparisons_d_decay} shows the same plots, comparing the fits to the data set split by whether the \D meson decays to the \Kspipi or \KsKK final state.
+
+\end{itemize}
+All figures show the Gaussian likelihood contours corresponding to the statistical uncertainties. There is good agreement between the results in all cases, given that in each cases the sub datasets are independent and therefore the statistical errors are uncorrelated.  
+
+\begin{figure}[p]
+    \centering
+\begin{subfigure}{0.8\columnwidth}
+    \centering
+    \hspace*{-1.5cm}\includegraphics[width=\textwidth]{figures/analysis/cpfit_cross_check_plots/compare_years.pdf}\vspace{-2.5mm}
+
+    \caption{\label{fig:subsample_result_comparisons_year}}
+\end{subfigure}
+\begin{subfigure}{0.8\columnwidth}
+    \centering
+    \hspace*{-1.5cm}\includegraphics[width=\textwidth]{figures/analysis/cpfit_cross_check_plots/compare_tracks.pdf}\vspace{-2.5mm}
+
+    \caption{\label{fig:subsample_result_comparisons_track}}
+\end{subfigure}
+\begin{subfigure}{0.8\columnwidth}
+    \centering
+    \hspace*{-1.5cm}\includegraphics[width=\textwidth]{figures/analysis/cpfit_cross_check_plots/compare_TOS.pdf}\vspace{-2.5mm}
+
+    \caption{\label{fig:subsample_result_comparisons_trigger}}
+\end{subfigure}
+\begin{subfigure}{0.8\columnwidth}
+    \centering
+    \hspace*{-1.5cm}\includegraphics[width=\textwidth]{figures/analysis/cpfit_cross_check_plots/compare_mags.pdf}\vspace{-2.5mm}
+
+    \caption{\label{fig:subsample_result_comparisons_polarity}}
+\end{subfigure}
+\begin{subfigure}{0.8\columnwidth}
+    \centering
+    \hspace*{-1.5cm}\includegraphics[width=\textwidth]{figures/analysis/cpfit_cross_check_plots/compare_d_decay.pdf}\vspace{-2.5mm}
+
+    \caption{\label{fig:subsample_result_comparisons_d_decay}}
+\end{subfigure}
+    \caption{Comparison of the 68\,\% and 95\,\% confidence regions for (left) $(\xmdk, \ymdk)$, (centre) $(\xpdk, \ypdk)$, and (right) $(\xxidpi, \yxidpi)$ obtained from fits to sub sets of the data set. The uncertainties are statistical only. The central values of the default fit are shown with a black star. The dataset is split by (a) data taking year, (b) LL and DD \KS types, (c) trigger category, (d) magnet polarity, and (e) \D decay mode.}
+    \label{fig:subsample_result_comparisons}
+\end{figure}
+
+% subsubsection fitting_subsets_of_the_data_separately (end)
+
+% \subsubsection{Examining constraints from a subset of the bins independently} % (fold)
+% \label{ssub:examining_constraints_from_a_subset_of_the_bins_independently}
+
+% subsection compare_results_obtained_with_different_strong_phase_inputs (end)
+
+\subsubsection{Significantly tightening the companion PID requirement} % (fold)
+\label{ssub:significantly_tightening_the_bachelor_pid_cut}
+
+One of the dominant backgrounds in the signal region of the \BtoDK channel is from partly reconstructed $\B\to\D\pi X$ decays where the bachelor pion is misidentified as a kaon. The background mode is well described by the included shape component, and included in all relevant systematic studies. Nevertheless, an additional cross check is carried out to ensure that it is not having a significant effect on the fit: the analysis is repeated with PID requirement of $\texttt{PIDK}>12$ required to place a candidate in the \BtoDK category, instead of $\texttt{PIDK}>4$. With this requirement 99.7\,\% of \BtoDpi decays are correctly identified, making the cross-feed component in the \BtoDK channels significantly smaller than in the default fit. This is clearly visible in Fig.~\ref{fig:pid12_fits}, where the fit projections for the global fit of the \DtoKspipi modes are shown. In return, the probability of correctly identifying a kaon companion drops to about 68--69\,\%, resulting in a smaller effective signal yield. 
+
+The measurement results are compared in Table~\ref{tab:pid12}, where the differences in central value are seen to be reasonably small. It is not trivial to determine whether the difference is statistically significant or not: the same candidates are analysed in both cases, the difference being that a number of candidates that are placed in the \BtoDK category in the nominal fit are placed in the \BtoDpi category in the alternative fit. The uncertainty will not be 100\,\% correlated because signal events that move from the $\D K$ to $\D\pi$  category are placed in a region with high background; however, this is somewhat compensated for by candidates that remain in the $\D K$  category gaining  statistical power due to the increased purity. An estimate of the expected statistical fluctuation can be determined by taking the difference of the statistical uncertainties in quadrature. Using this estimate, the observed shifts are found to consistent with statistical fluctuation, and thus there is no sign of the background from $\Dpi\to\DK$ cross-feed causing issues. 
+
+
+\begin{figure}[tbp]
+    \centering
+    \includegraphics[width=0.7\columnwidth]{figures/analysis/cpfit_cross_check_plots/pid12_fits/d2kspp_LL_allDP.pdf}
+    \includegraphics[width=0.7\columnwidth]{figures/analysis/cpfit_cross_check_plots/pid12_fits/d2kspp_DD_allDP.pdf}
+    \caption{Fit projections for fits to the \DtoKspipi candidates with a bachelor PIDK cut at 12 instead of 4 used to split into (left) \BtoDK and (right) \BtoDpi candidates, for (top) the LL and (bottom) DD categories.}
+    \label{fig:pid12_fits}
+\end{figure}
+
+\begin{table}[tbp]
+\centering
+\caption{Results of running the measurement with the default PIDK cut at 4 used to separate \BtoDK and \BtoDpi candidates, as well as with an alternative PIK cut at 12, resulting in much lower cross-feed from misidentified \BtoDpi decays. We also show the pulls, defined as $\Delta x / \sqrt{|\sigma^2_{PIDK>12} - \sigma^2_{PIDK>4}|}$ as described in the main text body. The comparison was made before the BESIII measurement of the \DtoKsKK strong-phase inputs became available; therefore the fits use the CLEO-only results~\cite{CLEOCISI} for this mode, which explains why the results quoted for $\text{PIDK}>4$ differ slightly from the nominal fit results.
+\label{tab:pid12}}
+    
+
+\begin{tabular}{c|cccc}
+\toprule
+    Parameter & $\text{PIDK}>4$ & $\text{PIDK}>12$ & $\sigma=\sqrt{\sigma^2_{PIDK>12} - \sigma^2_{PIDK>4}}$ & Pull \\
+    \midrule
+    \xmdk   & $\phantom{-} 5.59 \pm  0.96$& $\phantom{-} 5.82 \pm  1.01$& $ 0.30 $& $ 0.77 $ \\
+    \ymdk   & $\phantom{-} 6.45 \pm  1.14$& $\phantom{-} 6.86 \pm  1.19$& $ 0.36 $& $ 1.13 $ \\
+    \xpdk   & $           -9.21 \pm  0.96$& $           -8.94 \pm  1.01$& $ 0.30 $& $ 0.93 $ \\
+    \ypdk   & $           -1.21 \pm  1.20$& $           -0.94 \pm  1.26$& $ 0.37 $& $ 0.71 $ \\
+    \xxidpi & $           -5.30 \pm  1.99$& $           -5.13 \pm  2.02$& $ 0.32 $& $ 0.52 $ \\
+    \yxidpi & $\phantom{-} 1.03 \pm  2.34$& $\phantom{-} 1.71 \pm  2.33$& $ 0.28 $& $ 2.40 $ \\
+    \bottomrule
+\end{tabular}
+
+\end{table}
+
+\subsubsection{Compare results obtained with different strong-phase inputs} % (fold)
+\label{ssub:compare_results_obtained_with_different_strong_phase_inputs}
+{}
+It is interesting to compare the results obtained with different strong-phase inputs. This is done in Fig.~\ref{fig:compare_cisi_results}, where the default fit results are compared to those obtained if the \CP fit is done with the CLEO-only inputs~\cite{CLEOCISI}, and with the model predictions from the 2018~Belle~model~\cite{DalitzModel18} and the 2008~BaBar~model~\cite{BABAR2008}. For the measurements, only the strong-phase-related uncertainties are included in the plot, since the statistical uncertainties are correlated. All results are found to agree well.
+
+\begin{figure}[tbp]
+    \centering
+    \includegraphics[width=\columnwidth]{figures/analysis/systematics/strong_phase_inputs.pdf}
+    \caption{Fit results for (left) $(\xmdk, \ymdk)$, (centre) $(\xpdk, \ypdk)$, and (right) $(\xxidpi, \yxidpi)$ depending on strong-phase inputs, shown relative to the default fit results. The included results are based on (green) the BESIII-CLEO combination, which is the default, (red) the CLEO-only results, (blue dot) the 2018~Belle~model~\cite{DalitzModel18} and (orange dot) the 2008~BaBar~model~\cite{BABAR2008}. For the measurements, only strong-phase related uncertainties are included in the plotted confidence regions.}
+    \label{fig:compare_cisi_results}
+\end{figure}
+
+% \subsubsection{Repeat analysis with stricter selection requirements} % (fold)
+% \label{ssub:repeat_analysis_with_stricter_selection_requirements}
+
+% It is investigated whether the obtained results depend on a range of different parameters used in the selection. For each parameter, four intervals are chosen that split the final data set into four subsamples of approximately equal size, and the two-stage fit is repeated for each subsample in isolation. The results are compared to the default result for the BDT variable, the charmless cut variable $\Delta z^{BD}_{\text{significance}}$, and the \KS flight-distance $\chi^2$ in Fig.~\ref{fig:cut_val_scans_1}, and for the DTF $\chi^2/$NDOF, the \KS mass, and the \D mass in Fig.~\ref{fig:cut_val_scans_2}. In each case, we calculate the $\chi^2$ of the four measurements with respect to the default value, and calculate a corresponding $p$-value for a $\chi^2$-distribution with three degrees of freedom (since we compare to the average of the four independent measurements). We see no statistically significant trends.
+% % subsubsection repeat_analysis_with_stricter_selection_requirements (end)
+
+
+% \begin{figure}[tp]
+%     \centering
+%     % \begin{subfigure}{\columnwidth}
+%     %         \includegraphics[width=\columnwidth]{figs/cp_fit/cross_check_plots/scan_MVA_cut.pdf}
+%     %         \caption{}
+%     % \end{subfigure}
+%     % \begin{subfigure}{\columnwidth}
+%     % \includegraphics[width=\columnwidth]{figs/cp_fit/cross_check_plots/scan_BD_ZSIG_cut.pdf}
+%     %         \caption{}
+%     % \end{subfigure}
+%     % \begin{subfigure}{\columnwidth}
+%     % \includegraphics[width=\columnwidth]{figs/cp_fit/cross_check_plots/scan_Ks_FDCHI2_ORIVX_cut.pdf}
+%     %         \caption{}
+%     % \end{subfigure}
+%     \caption{(Error bars) Results obtained for each of the observables, when the fit is repeated splitting the final data set into four independent subsets, depending on the value of (a) the BDT variable (denoted \texttt{MVA}), (b) the charmless cut variable $\Delta z^{BD}_{\text{significance}}$ (\texttt{BD\_ZSIG}), and (c) the \KS flight-distance $\chi^2$ (\texttt{Ks\_FDCHI2\_ORIVX}). In each case, we calculate the $\chi^2$ of the four measurements with respect to the default value (grey band), and calculate a corresponding $p$-value for a $\chi^2$-distribution with three degrees of freedom.}
+%     \label{fig:cut_val_scans_1}
+% \end{figure}
+
+% \begin{figure}[tp]
+%     \centering
+%     % \begin{subfigure}{\columnwidth}
+%     % \includegraphics[width=\columnwidth]{figs/cp_fit/cross_check_plots/scan_Bu_constD0KSPV_CHI2NDOF_cut.pdf}
+%     %         \caption{}
+%     % \end{subfigure}
+%     % \begin{subfigure}{\columnwidth}
+%     % \includegraphics[width=\columnwidth]{figs/cp_fit/cross_check_plots/scan_Bu_constKSPV_D0_M_cut.pdf}
+%     %         \caption{}
+%     % \end{subfigure}
+%     % \begin{subfigure}{\columnwidth}
+%     % \includegraphics[width=\columnwidth]{figs/cp_fit/cross_check_plots/scan_Bu_constD0PV_KS0_M_cut.pdf}
+%     %         \caption{}
+%     % \end{subfigure}
+%     \caption{(Error bars) Results obtained for each of the observables, when the fit is repeated splitting the final data set into four independent subsets, depending on the value of (a) the DTF $\chi^2/$NDOF (denoted \texttt{Bu\_constD0KSPV\_CHI2NDOF}), (b) the \KS mass (\texttt{Bu\_constD0PV\_KS0\_M})), and (c) the \D mass (\texttt{Bu\_constKSPV\_D0\_M}). In each case, we calculate the $\chi^2$ of the four measurements with respect to the default value (grey band), and calculate a corresponding $p$-value for a $\chi^2$-distribution with three degrees of freedom.}
+%     \label{fig:cut_val_scans_2}
+% \end{figure}
+
+
+% subsection cross_checks (end)
+
+% section measurement_of_the_cp_violation_observables (end)
