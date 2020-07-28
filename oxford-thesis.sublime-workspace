@@ -519,7 +519,7 @@
 			"file": "thesis.tex",
 			"settings":
 			{
-				"buffer_size": 9759,
+				"buffer_size": 9755,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -528,25 +528,16 @@
 			"file": "chapters/ch5-systematics-and-interpretation.tex",
 			"settings":
 			{
-				"buffer_size": 47182,
+				"buffer_size": 63917,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "/Users/bjoern/Documents/Oxford/Analysis/b2dh-ggsz-ana/tables/systematics/cisi_syst_corr_matrix.tex",
+			"file": "chapters/ch5-selection-and-backgrounds.tex",
 			"settings":
 			{
-				"buffer_size": 1282,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "/Users/bjoern/Documents/Oxford/Analysis/b2dh-ggsz-ana/title-LHCb-ANA.tex",
-			"settings":
-			{
-				"buffer_size": 3356,
+				"buffer_size": 58019,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -555,53 +546,49 @@
 			"file": "chapters/ch5-the-two-fits.tex",
 			"settings":
 			{
-				"buffer_size": 64844,
+				"buffer_size": 64982,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "tables/05_measurement/systematic_overview.tex",
+			"file": "tables/05_measurement/global_fit_yields.tex",
 			"settings":
 			{
-				"buffer_size": 1903,
+				"buffer_size": 1463,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "tables/05_measurement/bdt_variables.tex",
+			"settings":
+			{
+				"buffer_size": 3791,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "/Users/bjoern/Documents/Oxford/Analysis/b2dh-ggsz-ana/tables/systematics/lhcb_syst_corr_matrix.tex",
+			"file": "/Users/bjoern/Documents/Oxford/Analysis/b2dh-ggsz-ana/chapters/theory_and_strategy.tex",
 			"settings":
 			{
-				"buffer_size": 1407,
-				"encoding": "UTF-8",
+				"buffer_size": 33202,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "tables/05_measurement/lhcb_syst_corr_matrix.tex",
+			"contents": "\n3) I think the fit setup development needs to have more information - its own subsection i think. A paper generally only describes the final version chosen, for length. a thesis should explore a little more on why the choice was made. \nIn the theory chapter you make a simple introduction of the xi parameters but don’t give a lot of detail.\n\nSo here there should be a little more detail on the studies that you did in summer 2018. the questions that you want to try and answer in this section are\ni) why do you need to use 6 parameters rather than 8 (you mash up the DK and Dpi CPV parts so there needs to be a good motivation to have done this)\nii) what is the expected contribution to the gamma uncertainty from 230K(or similar) B->Dpi events in this simultaneous fit (signal only) assuming a certain value for rBDpi\niii) what would the precision on gamma be if the Fi were known perfectly. \nI think you have all these studies done, so just a case of writing it up. \n\nI think this is important as a) you refer to a paper that i think hints that the parameterisation of the xi variables gains statistical precision and you don’t want that idea percolating. b) more importantly this is a new method and so some of the basic studies of the method should be presented, and in particular the behaviour with different values of rBDpi and the impact that you get from running the fit in a certain way. \nFor example, if we had found that using the Dpi sample to get Fi added about 2 degrees to the uncertainty then we might have considered going back to the drawing board and trying to fix/correct the MC. \nThis is very much a key part of your intellectual contribution to the development of this analysis - i think it a real shame to omit this. In total i don’t think this would be more than a page or two depending on whether you thought plots were required or not but it is an essential piece of the work you have done. \n",
 			"settings":
 			{
-				"buffer_size": 1408,
-				"encoding": "UTF-8",
+				"buffer_size": 1920,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "tables/05_measurement/total_syst_corr_matrix.tex",
+			"file": "/Users/bjoern/Documents/Oxford/Analysis/b2dh-ggsz-ana/chapters/selection.tex",
 			"settings":
 			{
-				"buffer_size": 1490,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "/Users/bjoern/Documents/Oxford/Analysis/b2dh-ggsz-ana/tables/systematics/total_syst_corr_matrix.tex",
-			"settings":
-			{
-				"buffer_size": 1491,
-				"encoding": "UTF-8",
+				"buffer_size": 39477,
 				"line_ending": "Unix"
 			}
 		}
@@ -799,27 +786,38 @@
 	},
 	"expanded_folders":
 	[
-		"/Users/bjoern/Documents/Oxford/thesis"
+		"/Users/bjoern/Documents/Oxford/thesis",
+		"/Users/bjoern/Documents/Oxford/thesis/preambles"
 	],
 	"file_history":
 	[
+		"/Users/bjoern/Documents/Oxford/thesis/chapters/ch2-theory.tex",
+		"/Users/bjoern/Documents/Oxford/Analysis/b2dh-ggsz-ana/tables/systematics/total_syst_corr_matrix.tex",
+		"/Users/bjoern/Documents/Oxford/thesis/tables/05_measurement/total_syst_corr_matrix.tex",
+		"/Users/bjoern/Documents/Oxford/thesis/tables/05_measurement/lhcb_syst_corr_matrix.tex",
+		"/Users/bjoern/Documents/Oxford/Analysis/b2dh-ggsz-ana/tables/systematics/lhcb_syst_corr_matrix.tex",
+		"/Users/bjoern/Documents/Oxford/thesis/tables/05_measurement/systematic_overview.tex",
+		"/Users/bjoern/Documents/Oxford/thesis/chapters/ch5-the-two-fits.tex",
+		"/Users/bjoern/Documents/Oxford/Analysis/b2dh-ggsz-ana/title-LHCb-ANA.tex",
+		"/Users/bjoern/Documents/Oxford/Analysis/b2dh-ggsz-ana/tables/systematics/cisi_syst_corr_matrix.tex",
+		"/Users/bjoern/Documents/Oxford/Analysis/b2dh-ggsz-ana/chapters/results_and_interpretation.tex",
+		"/Users/bjoern/Documents/Oxford/thesis/chapters/ch1-intro.tex",
+		"/Users/bjoern/Documents/Oxford/thesis/preambles/ggsz-symbols-def.tex",
+		"/Users/bjoern/Documents/Oxford/thesis/tables/05_measurement/lhcb_combo_inputs.tex",
+		"/Users/bjoern/Documents/Oxford/Analysis/b2dh-ggsz-ana/chapters/selection.tex",
+		"/Users/bjoern/Documents/Oxford/thesis/chapters/ch5-GGSZ-with-B2Dh.tex",
 		"/Users/bjoern/Documents/Oxford/Analysis/b2dh-ggsz-ana/tables/systematics/systematic_overview.tex",
 		"/Users/bjoern/Documents/Oxford/Analysis/b2dh-ggsz-ana/conclusions.tex",
-		"/Users/bjoern/Documents/Oxford/Analysis/b2dh-ggsz-ana/title-LHCb-ANA.tex",
 		"/Users/bjoern/Documents/Oxford/thesis/ociamthesis.cls",
 		"/Users/bjoern/Documents/Oxford/Analysis/b2dh-ggsz-ana/chapters/selection_background_studies.tex",
 		"/Users/bjoern/Documents/Oxford/Analysis/b2dh-ggsz-ana/chapters/introduction.tex",
 		"/Users/bjoern/Documents/Oxford/thesis/tables/05_measurement/cisi_syst_corr_matrix.tex",
 		"/Users/bjoern/Documents/Oxford/Analysis/b2dh-ggsz-ana/chapters/systematic_uncertainties.tex",
-		"/Users/bjoern/Documents/Oxford/thesis/chapters/ch2-theory.tex",
 		"/Users/bjoern/Documents/Oxford/thesis/chapters/ch4-GGSZ-and-KS-CPV.tex",
-		"/Users/bjoern/Documents/Oxford/thesis/tables/05_measurement/systematic_overview.tex",
 		"/Users/bjoern/Documents/Oxford/thesis/chapters/ch5-selection-and-backgrounds.tex",
 		"/Users/bjoern/Documents/Oxford/thesis/bib_files/references.bib",
 		"/Users/bjoern/Documents/Oxford/Analysis/b2dh-ggsz-ana/chapters/global_fit.tex",
 		"/Users/bjoern/Documents/Oxford/thesis/tables/05_measurement/cp_fit_toy_results.tex",
-		"/Users/bjoern/Documents/Oxford/thesis/chapters/ch5-GGSZ-with-B2Dh.tex",
-		"/Users/bjoern/Documents/Oxford/thesis/chapters/ch5-the-two-fits.tex",
 		"/Users/bjoern/Documents/Oxford/thesis/tables/05_measurement/cpfit_stat_corr_matrix.tex",
 		"/Users/bjoern/Documents/Oxford/thesis/tables/05_measurement/Fi_values.tex",
 		"/Users/bjoern/Documents/Oxford/thesis/appendices/all_fits.tex",
@@ -828,11 +826,9 @@
 		"/Users/bjoern/Documents/Oxford/Analysis/b2dh-ggsz-ana/chapters/cp_fit.tex",
 		"/Users/bjoern/Documents/Oxford/thesis/tables/05_measurement/global_fit_yields.tex",
 		"/Users/bjoern/Documents/Oxford/thesis/tables/05_measurement/fitted_parameters_global_fit.tex",
-		"/Users/bjoern/Documents/Oxford/thesis/preambles/ggsz-symbols-def.tex",
 		"/Users/bjoern/Documents/Oxford/Analysis/b2dh-ggsz-ana/tables/global_fit/global_fit_yields.tex",
 		"/Users/bjoern/Documents/Oxford/thesis/preambles/preamble.tex",
 		"/Users/bjoern/Documents/Oxford/thesis/tables/05_measurement/selection_summary.tex",
-		"/Users/bjoern/Documents/Oxford/Analysis/b2dh-ggsz-ana/chapters/selection.tex",
 		"/Users/bjoern/Documents/Oxford/thesis/tables/05_measurement/bdt_variables.tex",
 		"/Users/bjoern/Documents/Oxford/thesis/chapters/ch3-the-LHCb-detector.tex",
 		"/Users/bjoern/Documents/Oxford/Analysis/b2dh-ggsz-ana/tables/selection/input_param.tex",
@@ -854,7 +850,6 @@
 		"/Users/bjoern/Documents/Oxford/Analysis/ks-cpv-in-ggsz-analyses/note/sections/simplified_studies.tex",
 		"/Users/bjoern/Documents/Oxford/Analysis/ks-cpv-in-ggsz-analyses/note/sections/lhcb_study.tex",
 		"/Users/bjoern/Documents/Oxford/thesis/preambles/abstract.tex",
-		"/Users/bjoern/Documents/Oxford/thesis/chapters/ch1-intro.tex",
 		"/Users/bjoern/Documents/Oxford/thesis/preambles/acknowledgements.tex",
 		"/Users/bjoern/Documents/Oxford/confirmation_report/confirmation-of-status/sections/GGSZ_theory.tex",
 		"/Users/bjoern/Documents/Oxford/thesis/bib_files/zotero_DPhil.bib",
@@ -923,14 +918,7 @@
 		"/Users/bjoern/Documents/Oxford/Analysis/B2Dpi_GGSZ/b2dh-ggsz-ana/tables/global_fit/lowmass/lowmass_global_fit_Dst_pi0.tex",
 		"/Users/bjoern/Documents/Oxford/Analysis/B2Dpi_GGSZ/b2dh-ggsz-ana/main.bib",
 		"/Users/bjoern/Documents/Oxford/Analysis/B2Dpi_GGSZ/b2dh-ggsz-ana/tables/selection/efficiency_tables/Lb_relative_eff.tex",
-		"/Users/bjoern/mount_dirs/ox_pplx9/Utility_Code/python/mc_info/mc_samples.py",
-		"/Users/bjoern/Documents/Oxford/Analysis/B2Dpi_GGSZ/b2dh-ggsz-ana/tables/data_samples/signal_mc_overview.tex",
-		"/Users/bjoern/Documents/Oxford/Analysis/B2Dpi_GGSZ/b2dh-ggsz-ana/tables/data_samples/mc_eventnum_table.tex",
-		"/Users/bjoern/Documents/Oxford/Analysis/Bu2Dh_D2Kshh/ANA-Note/title-LHCb-ANA.tex",
-		"/Users/bjoern/Documents/Oxford/Analysis/B2Dpi_GGSZ/b2dh-ggsz-ana/appendix/random.tex",
-		"/Users/bjoern/Documents/Oxford/Analysis/B2Dpi_GGSZ/b2dh-ggsz-ana/conclusions.tex",
-		"/Users/bjoern/Documents/Oxford/Analysis/Bu2Dh_D2Kshh/ANA-Note/tables/global_fit/yields_global_fit.tex",
-		"/Users/bjoern/Dropbox/Oxford/Univ Tutorials/notes/P1/lhcb-symbols-def.tex"
+		"/Users/bjoern/mount_dirs/ox_pplx9/Utility_Code/python/mc_info/mc_samples.py"
 	],
 	"find":
 	{
@@ -975,7 +963,7 @@
 	"groups":
 	[
 		{
-			"selected": 8,
+			"selected": 3,
 			"sheets":
 			[
 				{
@@ -984,71 +972,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 9759,
+						"buffer_size": 9755,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								3314,
-								3314
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/LaTeX/LaTeX.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 9,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "chapters/ch5-systematics-and-interpretation.tex",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 47182,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								375,
-								375
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/LaTeX/LaTeX.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 6,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "/Users/bjoern/Documents/Oxford/Analysis/b2dh-ggsz-ana/tables/systematics/cisi_syst_corr_matrix.tex",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1282,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1268,
-								1268
+								9296,
+								9296
 							]
 						],
 						"settings":
@@ -1063,50 +995,20 @@
 					"type": "text"
 				},
 				{
-					"buffer": 3,
-					"file": "/Users/bjoern/Documents/Oxford/Analysis/b2dh-ggsz-ana/title-LHCb-ANA.tex",
+					"buffer": 1,
+					"file": "chapters/ch5-systematics-and-interpretation.tex",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 3356,
+						"buffer_size": 63917,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2559,
-								2559
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/LaTeX/LaTeX.sublime-syntax",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 7,
-					"type": "text"
-				},
-				{
-					"buffer": 4,
-					"file": "chapters/ch5-the-two-fits.tex",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 64844,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								60458,
-								60458
+								4775,
+								4775
 							]
 						],
 						"settings":
@@ -1116,55 +1018,27 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 12974.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 5,
-					"type": "text"
-				},
-				{
-					"buffer": 5,
-					"file": "tables/05_measurement/systematic_overview.tex",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1903,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1890,
-								1890
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/LaTeX/LaTeX.sublime-syntax"
-						},
-						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 4,
+					"stack_index": 2,
 					"type": "text"
 				},
 				{
-					"buffer": 6,
-					"file": "/Users/bjoern/Documents/Oxford/Analysis/b2dh-ggsz-ana/tables/systematics/lhcb_syst_corr_matrix.tex",
+					"buffer": 2,
+					"file": "chapters/ch5-selection-and-backgrounds.tex",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1407,
+						"buffer_size": 58019,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1099,
-								1099
+								56790,
+								56790
 							]
 						],
 						"settings":
@@ -1181,20 +1055,20 @@
 					"type": "text"
 				},
 				{
-					"buffer": 7,
-					"file": "tables/05_measurement/lhcb_syst_corr_matrix.tex",
+					"buffer": 3,
+					"file": "chapters/ch5-the-two-fits.tex",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1408,
+						"buffer_size": 64982,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								982,
-								982
+								26024,
+								26024
 							]
 						],
 						"settings":
@@ -1202,6 +1076,34 @@
 							"syntax": "Packages/LaTeX/LaTeX.sublime-syntax",
 							"tab_size": 4,
 							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 5094.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "tables/05_measurement/global_fit_yields.tex",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1463,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								696,
+								696
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/LaTeX/LaTeX.sublime-syntax"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -1211,50 +1113,48 @@
 					"type": "text"
 				},
 				{
-					"buffer": 8,
-					"file": "tables/05_measurement/total_syst_corr_matrix.tex",
+					"buffer": 5,
+					"file": "tables/05_measurement/bdt_variables.tex",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1490,
+						"buffer_size": 3791,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1471,
-								1471
+								220,
+								196
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/LaTeX/LaTeX.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
+							"syntax": "Packages/LaTeX/LaTeX.sublime-syntax"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 5,
 					"type": "text"
 				},
 				{
-					"buffer": 9,
-					"file": "/Users/bjoern/Documents/Oxford/Analysis/b2dh-ggsz-ana/tables/systematics/total_syst_corr_matrix.tex",
+					"buffer": 6,
+					"file": "/Users/bjoern/Documents/Oxford/Analysis/b2dh-ggsz-ana/chapters/theory_and_strategy.tex",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1491,
+						"buffer_size": 33202,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1471,
-								1471
+								22695,
+								27695
 							]
 						],
 						"settings":
@@ -1267,7 +1167,65 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
+					"stack_index": 6,
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1920,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"auto_name": "",
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 7,
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"file": "/Users/bjoern/Documents/Oxford/Analysis/b2dh-ggsz-ana/chapters/selection.tex",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 39477,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								29287,
+								31228
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/LaTeX/LaTeX.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
 					"type": "text"
 				}
 			]

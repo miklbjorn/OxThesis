@@ -24,6 +24,17 @@ Apart from signal decays, the fit includes components that describe combinatoria
 \subsection{Signal decays} % (fold)
 \label{sub:signal_decays}
 
+\begin{figure}[tbp]
+    \centering
+    \includegraphics[width=0.45\columnwidth]{figures/analysis/pretty_mc_fit_signal_dk.pdf}
+    \includegraphics[width=0.45\columnwidth]{figures/analysis/pretty_mc_fit_signal_dpi.pdf}
+    \includegraphics[width=0.45\columnwidth]{figures/analysis/pretty_mc_fit_signal_dk_log.pdf}
+    \includegraphics[width=0.45\columnwidth]{figures/analysis/pretty_mc_fit_signal_dpi_log.pdf}
+    \caption{Fit projection of the signal shape to simulated $\Bpm\to\D(\to\KS\pip\pim)\hadron^\pm$ samples reconstructed in the LL category. (Left) shows \D\kaon shapes, and (right) shows $\D\pi$ shapes. The shapes are shown with both linear and logarithmic $y$-axis scales.}
+    \label{fig:sig_shapes_mc}
+\end{figure}
+
+
 The signal component is modelled with a sum of a Gaussian density function, $f_G(m|m_B, \sigma)$, and a modified Gaussian distribution with the parameterisation
 \begin{align}
     f_C(m|m_B, \sigma, \alpha_L, \alpha_R, \beta)\propto \left\{
@@ -40,20 +51,13 @@ density function is
 \end{align}
 The tail parameters $(\alpha_{L/R}, \beta)$ and the constant $k_C$ are determined in fits to simulated signal decays that have passed the full selection. The parameters are shared between the \Kspipi and \KsKK channels, but otherwise independent in the fit categories. An example of a fit to simulated $\Bpm\to\D(\to\Kspipi)h^\pm$ decays is given in Fig.~\ref{fig:sig_shapes_mc}. The resolution parameters $\sigma$ are determined in the fit to actual data. Separate parameters are determined in the LL and DD categories, because the LL category has a better resolution on the \Ks momentum, and therefore a narrow peak in reconstructed \B mass. Likewise, separate resolution parameters are used for \BtoDpi and \BtoDK decays, because the smaller $Q$ value in the latter case leads to smaller momenta of the decay products, and a correspondingly better resolution.
 
-\begin{figure}[tbp]
-    \centering
-    \includegraphics[width=0.6\columnwidth]{figures/analysis/mc_shapes/signal_mc_d2kspp_LL.pdf}
-    \includegraphics[width=0.6\columnwidth]{figures/analysis/mc_shapes/signal_mc_log_d2kspp_LL.pdf}
-    \caption{Fit projection of the signal shape to simulated $\Bpm\to\D(\to\KS\pip\pim)\hadron^\pm$ samples reconstructed in the LL category. (Left) shows \D\kaon shapes, and (right) shows $\D\pi$ shapes. The shapes are shown with both linear and logarithmic $y$-axis scales.}
-    \label{fig:sig_shapes_mc}
-\end{figure}
 
 
-The signal yields are determined independently in each \BtoDpi category. The yields in the \BtoDK categories are then parameterised in terms of a single yield-ratio $\mathcal R$, and $\epsilon^c$, the corresponding selection efficiency for a given category
+The signal yields are determined independently in each \BtoDpi category. The yields in the \BtoDK categories are then parameterised in terms of a single yield-ratio $\mathcal R_{K/\pi}$, and $\epsilon^c$, the corresponding selection efficiency for a given category
 \begin{align}
-    N^c_{\DK} = \mathcal R \times N^c_{\Dpi} \times \frac{\epsilon^c_{\DK}}{\epsilon^c_{\Dpi}}.
+    N^c_{\DK} = \mathcal R_{K/\pi} \times N^c_{\Dpi} \times \frac{\epsilon^c_{\DK}}{\epsilon^c_{\Dpi}}.
 \end{align}
-The selection efficiency is obtained in simulation, except for the PID efficiencies which are obtained in calibration data as described in Section~\ref{sub:particle_identification_requirements}. The parameter $\mathcal R$ is shared between all categories, and corresponds to the branching ratio between \BtoDK and \BtoDpi decays. Therefore, it can be compared to the branching ratio ratio measured in dedication measurements, which serves as an important cross check of the efficiency determination.
+The selection efficiency is obtained in simulation, except for the PID efficiencies which are obtained in calibration data as described in Section~\ref{sub:particle_identification_requirements}. The parameter $\mathcal R_{K/\pi}$ is shared between all categories, and corresponds to the branching ratio between \BtoDK and \BtoDpi decays. Therefore, it can be compared to the branching ratio ratio measured in dedication measurements, which serves as an important cross check of the efficiency determination.
 
 
 
@@ -67,6 +71,21 @@ There is a cross-feed between the  $\BtoDpi$ and $\BtoDK$ channels, where real \
 
 
 The cross-feed shapes are obtained in a data-driven manner using the sPlot method~\cite{sPlot}, and fixed in the fit to data. Separate shapes are determined for each category, using the following steps: 
+\begin{figure}[tb]
+    \centering
+    \includegraphics[width=0.45\columnwidth]{figures/analysis/pretty_sw_misID_dk_LL.pdf}
+    \includegraphics[width=0.45\columnwidth]{figures/analysis/pretty_sw_misID_dk_DD.pdf}
+    \caption{Fitted shape of the \Bpm invariant mass spectrum for \BtoDpi decays misidentified as \BtoDK decays for (left) LL and (right) DD candidates in the \DtoKspp mode.}
+    \label{fig:misid_shape_DPi_kspp}
+\end{figure}
+
+\begin{figure}[tb]
+    \centering
+    \includegraphics[width=0.45\columnwidth]{figures/analysis/pretty_sw_misID_dpi_LL.pdf}
+    \includegraphics[width=0.45\columnwidth]{figures/analysis/pretty_sw_misID_dpi_DD.pdf}
+    \caption{Fitted shape of the \Bpm invariant mass spectrum for \BtoDK decays misidentified as \BtoDpi decays for (left) LL and (right) DD candidates in the ${\DtoKspp}$ mode.}
+    \label{fig:misid_shape_DK}
+\end{figure}
 
 \begin{itemize}
     \item The procedure is based on the reasonably pure \BtoDpi sample obtained when the full selection is applied. A simple mass fit is performed to the invariant mass spectrum and the sPlot method \cite{Pivk:2004ty} is used to obtain the sWeights, $w_s$, for the signal component. The mass fit uses the same components for signal, low mass shape, and combinatorial background as described in this section. 
@@ -93,35 +112,9 @@ where $\alpha >0$, and
   A &= \left(\frac{n}{\alpha}\right)^n\exp [-\alpha^2/2]\,, &
   B &= \frac{n}{\alpha}-\alpha\,.
 \end{align}
-The obtained $m_B^{mis-ID}$ spectrum and obtained mass shape is given in Fig.~\ref{fig:misid_shape_DPi_kspp} for the \DtoKspipi category; the \DtoKskk shapes are very similar. An analogous procedure is used to obtain the mass distribution of \BtoDK decays reconstructed in the \BtoDpi category. In the first stage where sPlots are extracted by a fit to the \BtoDK mass spectrum, the cross-feed component determined as described above is included. An example of on of the resulting shapes is given in Fig.~\ref{fig:misid_shape_DK}
+The obtained $m_B^{mis-ID}$ spectrum and obtained mass shape is given in Fig.~\ref{fig:misid_shape_DPi_kspp} for the \DtoKspipi category; the \DtoKskk shapes are very similar. An analogous procedure is used to obtain the mass distribution of \BtoDK decays reconstructed in the \BtoDpi category. In the first stage where sPlots are extracted by a fit to the \BtoDK mass spectrum, the cross-feed component determined as described above is included. An example of one of the resulting shapes is given in Fig.~\ref{fig:misid_shape_DK}
 
-\begin{figure}[tb]
-    \centering
-    \begin{subfigure}{0.49\columnwidth}
-        \includegraphics[width=1\columnwidth]{figures/analysis/pid_fits/misID_shape_dk_d2kspp_LL_pm_allDP_Run1and2_PIDcut_4_0.pdf}
-        \caption{}
-    \end{subfigure}
-    \begin{subfigure}{0.49\columnwidth}
-        \includegraphics[width=1\columnwidth]{figures/analysis/pid_fits/misID_shape_dk_d2kspp_DD_pm_allDP_Run1and2_PIDcut_4_0.pdf}
-        \caption{}
-    \end{subfigure}
-    \caption{Fitted shape of \Bpm invariant mass spectrum for \BtoDpi events misidentified as \BtoDK events for (a) LL and (b) DD candidates in the \DtoKspp mode.}
-    \label{fig:misid_shape_DPi_kspp}
-\end{figure}
 
-\begin{figure}[tb]
-    \centering
-    \begin{subfigure}{0.49\columnwidth}
-        \includegraphics[width=1\columnwidth]{figures/analysis/pid_fits/misID_shape_dpi_d2kspp_LL_pm_allDP_Run1and2_PIDcut_4_0.pdf}
-        \caption{}
-    \end{subfigure}
-    \begin{subfigure}{0.49\columnwidth}
-        \includegraphics[width=1\columnwidth]{figures/analysis/pid_fits/misID_shape_dpi_d2kspp_DD_pm_allDP_Run1and2_PIDcut_4_0.pdf}
-        \caption{}
-    \end{subfigure}
-    \caption{Fitted shape of \Bpm invariant mass spectrum for \BtoDK events misidentified as \BtoDpi events for (a) LL and (b) DD candidates. The shape is obtained using \DtoKspp decays, and used in the \DtoKskk mode as well.}
-    \label{fig:misid_shape_DK}
-\end{figure}
 
 The yield of cross-feed from \BtoDpi decays in a given \BtoDK category is parameterised in terms of the yield of correctly identified \BtoDpi decays and the mis-identification probability extracted from calibration samples as described in Section~\ref{sub:particle_identification_requirements}. Denoting the rate at which a pion is reconstructed as a kaon by $\epsilon_{\pi\to\kaon}^c$ in a given category, $c$, the yield is
 \begin{align}
@@ -163,20 +156,20 @@ The resulting \emph{HORNSdini} and \emph{HILLdini} distributions are therefore
 \begin{equation}
 f_\mathrm{HORNS/HILL}(m) = \int^b_a dx \; f^0_\mathrm{HORNS/HILL}(x) f_{DG}(m | x, \sigma, k_G, R_\sigma) \left( \frac{1-\xi}{b-a}x + \frac{b\xi-a}{b-a} \right).
 \end{equation}
-Examples of the shapes are given in Fig.~\ref{fig:HORNS_HILL_example}. A further term $\delta m$ can be added to allow a translation of the full shape. These shapes are used to fit all partially reconstructed backgrounds, as described in the following section.
+Examples of the shapes are given in Fig.~\ref{fig:HORNS_HILL_example}.  These shapes are used to fit all partially reconstructed backgrounds, as described in the following section.
 
 \begin{figure}
 \centering
 \begin{subfigure}{0.49\columnwidth}
-    \includegraphics[width=\textwidth]{figures/analysis/horns.pdf}
+    \includegraphics[width=\textwidth]{figures/analysis/pretty_HORNS.pdf}
     \caption{\label{fig:hornsdini}}
 \end{subfigure}
 \begin{subfigure}{0.49\columnwidth}
-    \includegraphics[width=\textwidth]{figures/analysis/hills.pdf}
+    \includegraphics[width=\textwidth]{figures/analysis/pretty_HILL.pdf}
     \caption{\label{fig:hillsdini}}
 \end{subfigure}
-\caption{(a) The \emph{HORNSdini} distribution (red) fit to $\Bpm\to(\Dstarz\to\Dz[\piz])\pipm$ MC (black) after full event selection.
-(b) The \emph{HILLSdini} distribution (green) fit to $\Bpm\to(\Dstarz\to\Dz[\gamma])\pipm$ MC (black) after full event selection.
+\caption{Examples of (a) the \emph{HORNSdini} distribution fit to simulated ${\Bpm\to(\Dstarz\to\Dz[\piz])\Kpm}$ decays, and
+(b) the \emph{HILLSdini} distribution fit to simulated ${\Bpm\to(\Dstarz\to\Dz[\gamma])\Kpm}$ decays. The fits in this figure are made to illustrate the features of each shape, but do not enter the actual fit to data.
 \label{fig:HORNS_HILL_example}}
 \end{figure}
 
@@ -193,17 +186,19 @@ The mass distributions of all the $\B\to\Dstar h^\pm$ contributions are obtained
 
 \begin{figure}[tb]
     \centering
-    \includegraphics[width=0.6\columnwidth]{figures/analysis/mc_shapes/lowmass_Bu2Dst_pi0_d2kspp_DD_allDP.pdf}
-    \includegraphics[width=0.6\columnwidth]{figures/analysis/mc_shapes/lowmass_Bu2Dst_gamma_d2kspp_DD_allDP.pdf}
-    \caption{Fit projection of the fit to (top) simulated ${\Bp\to\Dstarz(\to \Dz[\piz])h^\pm}$ decays and (bottom) simulated ${\Bp\to\Dstarz(\to \Dz[\gamma])h^\pm}$  decays, all reconstructed in the DD category. Both the (left) \D\kaon shapes and (right) shows $\D\pi$ shapes are shown. }
+    \includegraphics[width=0.45\columnwidth]{figures/analysis/pretty_mc_fit_low_dpi_Bu2Dst_pi0.pdf}
+    \includegraphics[width=0.45\columnwidth]{figures/analysis/pretty_mc_fit_low_dk_Bu2Dst_pi0.pdf}
+    \includegraphics[width=0.45\columnwidth]{figures/analysis/pretty_mc_fit_low_dpi_Bu2Dst_gam.pdf}
+    \includegraphics[width=0.45\columnwidth]{figures/analysis/pretty_mc_fit_low_dk_Bu2Dst_gam.pdf}
+    \caption{Fit projection of the fit to (top) simulated ${\Bp\to\Dstarz(\to \Dz[\piz])h^\pm}$ decays and (bottom) simulated ${\Bp\to\Dstarz(\to \Dz[\gamma])h^\pm}$  decays, all reconstructed in the DD category. Both the (left) \D\kaon and (right) $\D\pi$ shapes are shown. }
     \label{fig:sig_shapes_PR_dst}
 \end{figure}
 
 \begin{figure}[tb]
     \centering
-    \includegraphics[width=0.45\columnwidth]{figures/analysis/mc_shapes/lowmass_B2Dhpi_d2kspp_LL_allDP.pdf}
-    \includegraphics[width=0.45\columnwidth]{figures/analysis/mc_shapes/lowmass_B2Dhpi_d2kspp_DD_allDP.pdf}
-    \caption{Projections of the fit to simulated $\Bpm\to\D\rhopm$ and $\Bz\to\D\rhoz$ samples reconstructed as $\Bpm\to\D\pipm$ decays for (left) the LL and (right) the DD categories. }
+    \includegraphics[width=0.45\columnwidth]{figures/analysis/pretty_mc_fit_low_dpi_B2Dpipi_LL.pdf}
+    \includegraphics[width=0.45\columnwidth]{figures/analysis/pretty_mc_fit_low_dpi_B2Dpipi_DD.pdf}
+    \caption{Projections of the fit to simulated $\Bpm\to\D\rhopm$ and $\Bz\to\D\rhoz$ samples reconstructed as $\Bpm\to\D\pipm$ decays for the (left) LL and (right) DD categories. }
     \label{fig:sig_shapes_PR_drho}
 \end{figure}
 
@@ -213,8 +208,8 @@ The mass distribution of $\B^{\pm(0)}\to \Dz \Kpm[\pi^{0(\mp)}]$ decays reconstr
 
 \begin{figure}[tbp]
     \centering
-    \includegraphics[width=0.45\textwidth]{figures/analysis/mc_shapes/lowmass_B2DKpi_d2kspp_DD_allDP.pdf}
-    \includegraphics[width=0.45\textwidth]{figures/analysis/mc_shapes/lowmass_Bs2DKpi_d2kspp_DD_allDP.pdf}
+    \includegraphics[width=0.45\textwidth]{figures/analysis/pretty_mc_fit_low_dk_B2DKpi.pdf}
+    \includegraphics[width=0.45\textwidth]{figures/analysis/pretty_mc_fit_low_dk_Bs2DKpi.pdf}
     \caption{Fit projection for the fit used to obtain a shape for the partly reconstructed background from (left) $\B\to\D\kaon\pi$ decays and (right) $\Bs\to\D\Kp\pim$ decays where a pion is not reconstructed.}
     \label{fig:fit_part_reco_DKpi}
 \end{figure}
@@ -267,32 +262,32 @@ The combinatorial background is modelled with an exponentially falling density f
 
 \begin{figure}[tbp]
     \centering
-    \includegraphics[width=0.65\columnwidth]{figures/analysis/global_fit_feasibility/global_fit_feasibility_n_sig_dk_dpi_ratio.pdf}
-    \includegraphics[width=0.65\columnwidth]{figures/analysis/global_fit_feasibility/global_fit_feasibility_n_sig_dpi_d2kspp_LL_pm_allDP.pdf}
-    \includegraphics[width=0.65\columnwidth]{figures/analysis/global_fit_feasibility/global_fit_feasibility_n_sig_dpi_d2kspp_DD_pm_allDP.pdf}
-    \includegraphics[width=0.65\columnwidth]{figures/analysis/global_fit_feasibility/global_fit_feasibility_n_sig_dpi_d2kskk_LL_pm_allDP.pdf}
-    \includegraphics[width=0.65\columnwidth]{figures/analysis/global_fit_feasibility/global_fit_feasibility_n_sig_dpi_d2kskk_DD_pm_allDP.pdf}
-    \caption{Pull plots for the signal yield parameters in global fits to toy datasets for (top) the \Dpi-\DK yield ratio, and then the \Dpi yield in the LL and DD \DtoKspp modes, and the LL and DD \DtoKskk modes.}
+    \includegraphics[width=0.85\columnwidth]{figures/analysis/pretty_feasibility_plots/pretty_feasibility_R.pdf}
+    \includegraphics[width=0.85\columnwidth]{figures/analysis/pretty_feasibility_plots/pretty_feasibility_n_sig_dpi_d2kspp_LL.pdf}
+    \includegraphics[width=0.85\columnwidth]{figures/analysis/pretty_feasibility_plots/pretty_feasibility_n_sig_dpi_d2kspp_DD.pdf}
+    \includegraphics[width=0.85\columnwidth]{figures/analysis/pretty_feasibility_plots/pretty_feasibility_n_sig_dpi_d2kskk_LL.pdf}
+    \includegraphics[width=0.85\columnwidth]{figures/analysis/pretty_feasibility_plots/pretty_feasibility_n_sig_dpi_d2kskk_DD.pdf}
+    \caption{The (left) fitted value, (centre) estimated statistical uncertainty, and (right) pull plots for the signal yield parameters, as obtained in a number of pseudo experiments. The black line on the left shows the value used to generate the pseudo data sets; the dotted line on the right shows a Gaussian distribution with mean equal to zero and a standard deviation equal to unity.}
     \label{fig:global_fit_yield_pulls}
 \end{figure}
 
 The fit range is chosen to be $m_B\in[5080, 5800]\mevcc$. The low end of this interval includes the high-mass peak of the double-peak structure in the partially reconstructed background, which helps the fit constrain the relative contributions of backgrounds in the lowmass regions. A number of additional backgrounds exist at even lower $m_B$ values, thus extending the fit range to lower masses would necessitates an extended model, but not benefit the description of the signal region. The high end of the interval includes enough combinatorial background to allow the fit to determine the exponential slope parameter accurately.
 
 
-A large number of pseudoexperiments are carried out to verify that the fit procedure is self-consistent, in which toy data sets are generated according to the expected \B mass distributions, and then fitted. None of the parameters obtained in the fit exhibit a mean bias different from zero, and for most parameters the uncertainties are well estimated.  This is the case for the signal yields, and the \DK-\Dpi yield ratio $\mathcal R$, as evidenced by the pull plots in Fig.~\ref{fig:global_fit_yield_pulls}. The fit underestimates the uncertainty by 10-20\,\% for some of the parameters related to the partly reconstructed backgrounds, as shown in Fig.~\ref{fig:lowmass_pulls}, but this is taken into account when the uncertainties are propagated to the observables in the second-stage fit, as described in Section~\ref{sub:systematics_from_mass_shapes}.
+A large number of pseudoexperiments are carried out to verify that the fit procedure is self-consistent, in which toy data sets are generated according to the expected \B mass distributions, and then fitted. None of the parameters obtained in the fit exhibit a mean bias different from zero. For most parameters the uncertainties are well estimated.  This is the case for the signal yields, and the \DK-\Dpi yield ratio $\mathcal R$, as evidenced by the pull plots in Fig.~\ref{fig:global_fit_yield_pulls}. The fit underestimates the uncertainty by 10-20\,\% for some of the parameters related to the partly reconstructed backgrounds, as shown in Fig.~\ref{fig:lowmass_pulls}, but this is taken into account when the uncertainties are propagated to the observables in the second-stage fit, as described in Section~\ref{sub:systematics_from_mass_shapes}.
 
 
 
 \begin{figure}[tbp]
     \centering
-    \includegraphics[width=0.65\columnwidth]{figures/analysis/global_fit_feasibility/global_fit_feasibility_low_dpi_ratio_b2drho_vs_b2dstpi.pdf}
-    \includegraphics[width=0.65\columnwidth]{figures/analysis/global_fit_feasibility/global_fit_feasibility_low_sigma_pi_LL.pdf}
-    \caption{Examples of lowmass related parameters where the uncertainties are underestimated in some toy fits. This is taken into account when propagating the fit uncertainties to the systematic uncertainties on the final results.}
+    \includegraphics[width=0.85\columnwidth]{figures/analysis/pretty_feasibility_plots/pretty_feasibility_low_dpi_ratio_b2drho_vs_b2dstpi.pdf}
+    \includegraphics[width=0.85\columnwidth]{figures/analysis/pretty_feasibility_plots/pretty_feasibility_low_sigma_pi_LL.pdf}
+    \caption{The (left) fitted value, (centre) estimated statistical uncertainty, and (right) pulls obtained in a number of pseudo experiments for two examples of parameters relating to the partially reconstructed backgrounds, where the uncertainties are slightly underestimated on average. The standard deviation of the pull distributions is approximately 1.15 in both cases.}
     \label{fig:lowmass_pulls}
 \end{figure}
 
 
-\begin{figure}[p]
+\begin{figure}[tp]
     \centering
     \includegraphics[width=0.98\columnwidth]{figures/analysis/pretty_fit_d2kspp_LL.pdf}
     \includegraphics[width=0.98\columnwidth]{figures/analysis/pretty_fit_d2kspp_DD.pdf}
@@ -300,7 +295,7 @@ A large number of pseudoexperiments are carried out to verify that the fit proce
     \label{fig:kspipimass}
 \end{figure}
 
-\begin{figure}[p]
+\begin{figure}[tp]
     \centering
     \includegraphics[width=0.98\columnwidth]{figures/analysis/pretty_fit_d2kskk_LL.pdf}
     \includegraphics[width=0.98\columnwidth]{figures/analysis/pretty_fit_d2kskk_DD.pdf}
@@ -308,7 +303,7 @@ A large number of pseudoexperiments are carried out to verify that the fit proce
     \label{fig:kskkmass}
 \end{figure}
 
-The projections of the fit to data are shown in Figs.~\ref{fig:kspipimass}~and~\ref{fig:kskkmass}, for the ${\DtoKspipi}$ and \DtoKsKK data sets, respectively. The obtained yields for each fit component are given in Table~\ref{tab:yields_global_fit}. The total yield of \BtoDpi decays is approximately 230,000 across all channels. The obtained value of the yield ratio is $\mathcal R=(7.7\pm0.1)\,\%$, corresponding to a total \BtoDK yield of 16,500, of which about 14,300 pass the PID requirement and are reconstructed in the \BtoDK category. This value of $\mathcal R$ is in excellent agreement with expectation from the known branching fractions~\cite{PDG2020}, which predict $\mathcal R_\text{PDG}=(7.8\pm0.3)\,\%$. The shape parameters determined in the fit to data are summarised in Table~\ref{tab:fitted_parameters_global_fit}.
+The projections of the fit to data are shown in Figs.~\ref{fig:kspipimass}~and~\ref{fig:kskkmass}, for the ${\DtoKspipi}$ and \DtoKsKK data sets, respectively. The obtained yields for each fit component are given in Table~\ref{tab:yields_global_fit}. The total yield of \BtoDpi decays is approximately 230,000 across all channels. The obtained value of the yield ratio is $\mathcal R_{K/\pi}=(7.7\pm0.1)\,\%$, corresponding to a total \BtoDK yield of 16,500, of which about 14,300 pass the PID requirement and are reconstructed in the \BtoDK category. This value of $\mathcal R$ is in excellent agreement with expectation from the known branching fractions~\cite{PDG2020}, which predict $\mathcal R_{K/\pi}^\text{PDG}=(7.8\pm0.3)\,\%$.\footnote{While it would seem this measurement thus determines the yield ratio $\mathcal R_{K/\pi}$ with a much better precision than the current world average uncertainty, that is because the result quoted here does not include any systematic uncertainties; it is only included to serve as a, successfully passed, cross check.} The shape parameters determined in the fit to data are summarised in Table~\ref{tab:fitted_parameters_global_fit}.
 
 \input{tables/05_measurement/global_fit_yields}
 \input{tables/05_measurement/fitted_parameters_global_fit}
@@ -362,21 +357,27 @@ The combinatorial background includes real \D mesons paired with a random bachel
 
 \input{tables/05_measurement/cp_fit_toy_results}
 
-\begin{figure}[p!]
+\begin{figure}[tp]
     \centering
-    \includegraphics[width=0.75\columnwidth]{figures/analysis/cp_fit_feasibility/xm_dk_cp_feasibility_full_model.pdf}
-    \includegraphics[width=0.75\columnwidth]{figures/analysis/cp_fit_feasibility/ym_dk_cp_feasibility_full_model.pdf}
-    \includegraphics[width=0.75\columnwidth]{figures/analysis/cp_fit_feasibility/xp_dk_cp_feasibility_full_model.pdf}
-    \includegraphics[width=0.75\columnwidth]{figures/analysis/cp_fit_feasibility/yp_dk_cp_feasibility_full_model.pdf}
-    \includegraphics[width=0.75\columnwidth]{figures/analysis/cp_fit_feasibility/Re_xi_dpi_cp_feasibility_full_model.pdf}
-    \includegraphics[width=0.75\columnwidth]{figures/analysis/cp_fit_feasibility/Im_xi_dpi_cp_feasibility_full_model.pdf}
-    \caption{Pull plots for (from the top) \xmdk, \ymdk, \xpdk, \ypdk, \xxidpi, and \yxidpi from pseudoexperiments. The input values are shown with black lines in the left column. The uncertainty estimates in the fit to real data are shown with red lines in the central column.}
+    \includegraphics[width=0.85\columnwidth]{figures/analysis/pretty_feasibility_plots/pretty_feasibility_xm_dk.pdf}
+    \includegraphics[width=0.85\columnwidth]{figures/analysis/pretty_feasibility_plots/pretty_feasibility_ym_dk.pdf}
+    \includegraphics[width=0.85\columnwidth]{figures/analysis/pretty_feasibility_plots/pretty_feasibility_xp_dk.pdf}
+    \includegraphics[width=0.85\columnwidth]{figures/analysis/pretty_feasibility_plots/pretty_feasibility_yp_dk.pdf}
+    \caption{The (left) fitted value, (centre) estimated statistical uncertainty, and (right) pulls for the \BtoDK observables, as obtained in a number of pseudo experiments. The black line on the left shows the value used to generate the pseudo data sets; the dotted line on the right shows a Gaussian distribution with mean equal to zero and a standard deviation equal to unity.}
     \label{fig:cp_fit_pull_plots}
+\end{figure}
+
+\begin{figure}[tp]
+    \centering
+    \includegraphics[width=0.85\columnwidth]{figures/analysis/pretty_feasibility_plots/pretty_feasibility_Re_xi_dpi.pdf}
+    \includegraphics[width=0.85\columnwidth]{figures/analysis/pretty_feasibility_plots/pretty_feasibility_Im_Xi_dpi.pdf}
+    \caption{The (left) fitted value, (centre) estimated statistical uncertainty, and (right) pulls for the \BtoDpi observables, as obtained in a number of pseudo experiments. The black line on the left shows the value used to generate the pseudo data sets; the dotted line on the right shows a Gaussian distribution with mean equal to zero and a standard deviation equal to unity.}
+    \label{fig:cp_fit_pull_plots_dpi}
 \end{figure}
 
 % text autogenerated by ANA_scripts/05_cp_fit/SensitivityAndBiasStudies.ipynb
 % biases from toy: 20200127_feasibility_study_model_cisi_take2
-A set of 2000 pseudoexperiments has been run, out of which 98.8\,\% converged properly. The pull plots for the observables of interest are shown in Fig.~\ref{fig:cp_fit_pull_plots} and the mean biases and pulls are summarised in Table~\ref{tab:cp_fit_toy_pulls}. No biases are statistically significant, and the uncertainties are seen to be well estimated. 
+A set of 2000 pseudoexperiments has been run, out of which 98.8\,\% converged properly. The pull plots for the observables of interest are shown in Figs.~\ref{fig:cp_fit_pull_plots}~and~\ref{fig:cp_fit_pull_plots_dpi}; the mean biases and pulls are summarised in Table~\ref{tab:cp_fit_toy_pulls}. No biases are statistically significant, and the uncertainties are seen to be well estimated. 
 
 % subsubsection self_consistency_check (end)
 % subsection fit_setup (end)
@@ -529,51 +530,60 @@ are shown in Fig.~\ref{fig:asym_cross_check} for all decay channels. Again, the 
 One cross check is carrying out, by determining the \CP observables using a number of independent sub samples of the data set separately.  This is done for the following following data splits
 
 \begin{itemize}
-    \item Fig.~\ref{fig:subsample_result_comparisons_year} shows the two dimensional log likelihood contours for the observables for fits to the Run~1, 2015+16, 2017 and 2018 datasets separately 
     \item Fig.~\ref{fig:subsample_result_comparisons_track} shows the same plots, comparing the fits to the data set split by \KS track type.
-    \item Fig.~\ref{fig:subsample_result_comparisons_trigger} shows the same plots, comparing the fits to the data set split by whether the candidate event was triggered by one of the signal particles at the hardware level (TOS), or by another particle in the underlying event (TIS).
-    \item Fig.~\ref{fig:subsample_result_comparisons_polarity} shows the same plots, comparing the fits to the data set split the magnet polarity during data taking.
     \item Fig.~\ref{fig:subsample_result_comparisons_d_decay} shows the same plots, comparing the fits to the data set split by whether the \D meson decays to the \Kspipi or \KsKK final state.
 
+    \item Fig.~\ref{fig:subsample_result_comparisons_year} shows the two dimensional log likelihood contours for the observables for fits to the Run~1, 2015+16, 2017 and 2018 datasets separately 
+    \item Fig.~\ref{fig:subsample_result_comparisons_trigger} shows the same plots, comparing the fits to the data set split by whether the candidate event was triggered by one of the signal particles at the hardware level (TOS), or by another particle in the underlying event (TIS).
+    \item Fig.~\ref{fig:subsample_result_comparisons_polarity} shows the same plots, comparing the fits to the data set split the magnet polarity during data taking.
 \end{itemize}
 All figures show the Gaussian likelihood contours corresponding to the statistical uncertainties. There is good agreement between the results in all cases, given that in each cases the sub datasets are independent and therefore the statistical errors are uncorrelated.  
 
-\begin{figure}[p]
+\begin{figure}[tp]
     \centering
-\begin{subfigure}{0.8\columnwidth}
-    \centering
-    \hspace*{-1.5cm}\includegraphics[width=\textwidth]{figures/analysis/cpfit_cross_check_plots/compare_years.pdf}\vspace{-2.5mm}
 
-    \caption{\label{fig:subsample_result_comparisons_year}}
-\end{subfigure}
-\begin{subfigure}{0.8\columnwidth}
+\begin{subfigure}{0.95\columnwidth}
     \centering
     \hspace*{-1.5cm}\includegraphics[width=\textwidth]{figures/analysis/cpfit_cross_check_plots/compare_tracks.pdf}\vspace{-2.5mm}
 
     \caption{\label{fig:subsample_result_comparisons_track}}
 \end{subfigure}
-\begin{subfigure}{0.8\columnwidth}
-    \centering
-    \hspace*{-1.5cm}\includegraphics[width=\textwidth]{figures/analysis/cpfit_cross_check_plots/compare_TOS.pdf}\vspace{-2.5mm}
-
-    \caption{\label{fig:subsample_result_comparisons_trigger}}
-\end{subfigure}
-\begin{subfigure}{0.8\columnwidth}
-    \centering
-    \hspace*{-1.5cm}\includegraphics[width=\textwidth]{figures/analysis/cpfit_cross_check_plots/compare_mags.pdf}\vspace{-2.5mm}
-
-    \caption{\label{fig:subsample_result_comparisons_polarity}}
-\end{subfigure}
-\begin{subfigure}{0.8\columnwidth}
+\begin{subfigure}{0.95\columnwidth}
     \centering
     \hspace*{-1.5cm}\includegraphics[width=\textwidth]{figures/analysis/cpfit_cross_check_plots/compare_d_decay.pdf}\vspace{-2.5mm}
 
     \caption{\label{fig:subsample_result_comparisons_d_decay}}
 \end{subfigure}
-    \caption{Comparison of the 68\,\% and 95\,\% confidence regions for (left) $(\xmdk, \ymdk)$, (centre) $(\xpdk, \ypdk)$, and (right) $(\xxidpi, \yxidpi)$ obtained from fits to sub sets of the data set. The uncertainties are statistical only. The central values of the default fit are shown with a black star. The dataset is split by (a) data taking year, (b) LL and DD \KS types, (c) trigger category, (d) magnet polarity, and (e) \D decay mode.}
+    \caption{Comparison of the 68\,\% and 95\,\% confidence regions for (left) $(\xmdk, \ymdk)$, (centre) $(\xpdk, \ypdk)$, and (right) $(\xxidpi, \yxidpi)$ obtained from fits to sub sets of the data set. The uncertainties are statistical only. The central values of the default fit are shown with a black star. The dataset is split by (a)  LL and DD \KS types and (b) \D decay mode.}
     \label{fig:subsample_result_comparisons}
 \end{figure}
 
+
+\begin{figure}[tp]
+    \centering
+\begin{subfigure}{0.95\columnwidth}
+    \centering
+    \hspace*{-1.5cm}\includegraphics[width=\textwidth]{figures/analysis/cpfit_cross_check_plots/compare_years.pdf}\vspace{-2.5mm}
+
+    \caption{\label{fig:subsample_result_comparisons_year}}
+\end{subfigure}
+
+\begin{subfigure}{0.95\columnwidth}
+    \centering
+    \hspace*{-1.5cm}\includegraphics[width=\textwidth]{figures/analysis/cpfit_cross_check_plots/compare_TOS.pdf}\vspace{-2.5mm}
+
+    \caption{\label{fig:subsample_result_comparisons_trigger}}
+\end{subfigure}
+\begin{subfigure}{0.95\columnwidth}
+    \centering
+    \hspace*{-1.5cm}\includegraphics[width=\textwidth]{figures/analysis/cpfit_cross_check_plots/compare_mags.pdf}\vspace{-2.5mm}
+
+    \caption{\label{fig:subsample_result_comparisons_polarity}}
+\end{subfigure}
+
+    \caption{Comparison of the 68\,\% and 95\,\% confidence regions for (left) $(\xmdk, \ymdk)$, (centre) $(\xpdk, \ypdk)$, and (right) $(\xxidpi, \yxidpi)$ obtained from fits to sub sets of the data set. The uncertainties are statistical only. The central values of the default fit are shown with a black star. The dataset is split by (a) data taking year, (b) trigger category, and (c) magnet polarity.}
+    \label{fig:subsample_result_comparisons_2}
+\end{figure}
 % subsubsection fitting_subsets_of_the_data_separately (end)
 
 % \subsubsection{Examining constraints from a subset of the bins independently} % (fold)
@@ -581,7 +591,7 @@ All figures show the Gaussian likelihood contours corresponding to the statistic
 
 % subsection compare_results_obtained_with_different_strong_phase_inputs (end)
 
-\subsubsection{Significantly tightening the companion PID requirement} % (fold)
+\subsubsection{\texorpdfstring{Significantly reducing the \BtoDpi to \BtoDK cross feed}{Significantly reducing the BtoDpi to BtoDK cross feed}} % (fold)
 \label{ssub:significantly_tightening_the_bachelor_pid_cut}
 
 One of the dominant backgrounds in the signal region of the \BtoDK channel is from partly reconstructed $\B\to\D\pi X$ decays where the bachelor pion is misidentified as a kaon. The background mode is well described by the included shape component, and included in all relevant systematic studies. Nevertheless, an additional cross check is carried out to ensure that it is not having a significant effect on the fit: the analysis is repeated with PID requirement of $\texttt{PIDK}>12$ required to place a candidate in the \BtoDK category, instead of $\texttt{PIDK}>4$. With this requirement 99.7\,\% of \BtoDpi decays are correctly identified, making the cross-feed component in the \BtoDK channels significantly smaller than in the default fit. This is clearly visible in Fig.~\ref{fig:pid12_fits}, where the fit projections for the global fit of the \DtoKspipi modes are shown. In return, the probability of correctly identifying a kaon companion drops to about 68--69\,\%, resulting in a smaller effective signal yield. 
@@ -591,9 +601,9 @@ The measurement results are compared in Table~\ref{tab:pid12}, where the differe
 
 \begin{figure}[tbp]
     \centering
-    \includegraphics[width=0.7\columnwidth]{figures/analysis/cpfit_cross_check_plots/pid12_fits/d2kspp_LL_allDP.pdf}
-    \includegraphics[width=0.7\columnwidth]{figures/analysis/cpfit_cross_check_plots/pid12_fits/d2kspp_DD_allDP.pdf}
-    \caption{Fit projections for fits to the \DtoKspipi candidates with a bachelor PIDK cut at 12 instead of 4 used to split into (left) \BtoDK and (right) \BtoDpi candidates, for (top) the LL and (bottom) DD categories.}
+    \includegraphics[width=0.98\columnwidth]{figures/analysis/pretty_fit_tightPID_d2kspp_LL.pdf}
+    \includegraphics[width=0.98\columnwidth]{figures/analysis/pretty_fit_tightPID_d2kspp_DD.pdf}
+    \caption{Fit projections for fits to the \DtoKspipi candidates with a companion PIDK requirement at 12 instead of 4 used to split into (left) \BtoDK and (right) \BtoDpi candidates, for the (top)  LL and (bottom) DD categories.}
     \label{fig:pid12_fits}
 \end{figure}
 
