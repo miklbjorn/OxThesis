@@ -52,6 +52,7 @@ ENTRY
     extra2Pages
     extra2Year
     extra2Doi
+    url
   }
   {}
   { label }
@@ -416,7 +417,7 @@ FUNCTION {format.lhcbid}
 			  { "LHCb+Theses" }
 			  { s #6 #4 substring$ "TALK" = 
   			      { "LHCb+Talks" }
-			      { "LHCb+Reports" 
+			      { "" 
 			      } if$
 			  } if$
 		      } if$
@@ -429,6 +430,41 @@ FUNCTION {format.lhcbid}
   "\href{http://cdsweb.cern.ch/search?p=" s * 
   "&f=reportnumber&action_search=Search&c=" * swap$ * "} {" * 
   s * "}" *
+}
+
+FUNCTION {format.cdflink}
+{ number
+  "{" "" find.replace
+  "}" "" find.replace
+  's :=
+  s #6 #3 substring$ "ANA" =
+  { "LHCb+Analysis+Notes" }
+  { s #6 #3 substring$ "INT" = 
+      { "LHCb+Internal+Notes"}
+      { s #6 #4 substring$ "CONF" = 
+    { "LHCb+Conference+Contributions"}
+    { s #6 #3 substring$ "PUB" = 
+        { "LHCb+Notes"}
+        { s #6 #5 substring$ "PAPER" = 
+      { "LHCb+Papers" }
+      { s #6 #4 substring$ "PROC" = 
+          { "LHCb+Conference+Proceedings" }
+          { s #6 #6 substring$ "THESIS" = 
+        { "LHCb+Theses" }
+        { s #6 #4 substring$ "TALK" = 
+              { "LHCb+Talks" }
+            { "LHCb+Reports" 
+            } if$
+        } if$
+          } if$
+      } if$
+        } if$
+    } if$
+      } if$
+  } if$
+
+  
+  "\href{" url * "} {" number *  "}" *
 }
 
 FUNCTION {format.DOI}
@@ -746,6 +782,14 @@ FUNCTION {format.in.ed.booktitle}
     }
   if$
 }
+
+FUNCTION {format.url}
+{ url empty$
+    {""}
+    {url}
+  if$
+}
+
 
 FUNCTION {format.thesis.type}
 { type empty$
@@ -1404,6 +1448,18 @@ FUNCTION {lhcbreport}
   fin.entry
 }
 
+FUNCTION {CDFdoc}
+{ output.bibitem
+  format.collaboration output
+  format.authors "author" output.check
+  format.title "title" output.check
+  blank.sep
+  format.lhcbid output.nonnull
+  format.date "year" output.check
+  note output
+  fin.entry
+}
+
 FUNCTION {unpublished}
 { output.bibitem
   format.collaboration output
@@ -1411,6 +1467,17 @@ FUNCTION {unpublished}
   format.title "title" output.check
   blank.sep
   note "note" output.check
+  format.date output
+  fin.entry
+}
+
+FUNCTION {online}
+{ output.bibitem
+  format.collaboration output
+  format.authors "author" output.check
+  format.title "title" output.check
+  blank.sep
+  format.url "url" output.check
   format.date output
   fin.entry
 }
