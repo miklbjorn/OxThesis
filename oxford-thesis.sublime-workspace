@@ -519,116 +519,17 @@
 			"file": "thesis.tex",
 			"settings":
 			{
-				"buffer_size": 9761,
+				"buffer_size": 9755,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "bib_files/DPhil.bib",
+			"file": "chapters/ch5-the-two-fits.tex",
 			"settings":
 			{
-				"buffer_size": 269012,
+				"buffer_size": 80277,
 				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "preambles/preface.tex",
-			"settings":
-			{
-				"buffer_size": 2373,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "chapters/ch2-theory.tex",
-			"settings":
-			{
-				"buffer_size": 72978,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "tmp_build_files/thesis.bbl",
-			"settings":
-			{
-				"buffer_size": 17191,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"contents": "Searching 115 files for \"grossmanEffectsBarMixing2014\"\n\n/Users/bjoern/Documents/Oxford/thesis/bib_files/DPhil.bib:\n  890  }\n  891  \n  892: @article{grossmanEffectsBarMixing2014,\n  893    title = {Effects of {{K}}-\\textbackslash bar {{K}} Mixing on Determining Gamma from {{B}}\\^\\textbackslash pm -{$>$} {{DK}}\\^\\textbackslash pm},\n  894    author = {Grossman, Yuval and Savastio, Michael},\n  ...\n  908  }\n  909  \n  910: @article{grossmanEffectsBarMixing2014a,\n  911    title = {{Effects of $ K^0 -\\bar K^0 $mixing on determining $\\gamma$ from $B^\\pm\\to D K^\\pm$}},\n  912    author = {Grossman, Yuval and Savastio, Michael},\n\n/Users/bjoern/Documents/Oxford/thesis/bib_files/Fysik.bib:\n 1940  }\n 1941  \n 1942: @article{grossmanEffectsBarMixing2014,\n 1943    title = {Effects of {{K}}-\\textbackslash bar {{K}} Mixing on Determining Gamma from {{B}}\\^\\textbackslash pm -{$>$} {{DK}}\\^\\textbackslash pm},\n 1944    author = {Grossman, Yuval and Savastio, Michael},\n\n/Users/bjoern/Documents/Oxford/thesis/bib_files/My Library.bib:\n 1420  }\n 1421  \n 1422: @article{grossmanEffectsBarMixing2014,\n 1423    title = {Effects of {{K}}-\\textbackslash bar {{K}} Mixing on Determining Gamma from {{B}}\\^\\textbackslash pm -{$>$} {{DK}}\\^\\textbackslash pm},\n 1424    author = {Grossman, Yuval and Savastio, Michael},\n\n/Users/bjoern/Documents/Oxford/thesis/chapters/ch2-theory.tex:\n  214  \n  215  The phase $\\gamma$ can be measured in tree-level processes with interference between $b\\to c s \\bar u$ and $b\\to \\bar c s u$ transitions. The canonical example, also the subject of this thesis, is based on measurements sensitive to interference between the $\\Bpm\\to\\Dz\\Kpm$ and $\\Bpm\\to\\Dzb\\Kpm$ decay amplitudes. As illustrated in Fig.~\\ref{fig:feynman_diagrams} for the case of \\Bm decays, the electro-weak phase difference between the two decays is $\\Delta\\phi = \n  216: \\text{arg}\\left( {V_{cb}^{\\phantom{*}}V_{us}^*}/{V_{ub}^{\\phantom{*}}V_{cs}^*} \\right)$. While $\\Delta\\phi$ is not identical to the definition of $\\gamma$ in Eq.~\\eqref{eq:gamma_definition}, the ratio of the involved CKM matrix elements is~\\cite{grossmanEffectsBarMixing2014a}\n  217  \\begin{align}\n  218  -\\frac{V_{cd}^*/V_{ud}^*}{V_{us}^*/V_{cs}^*} \n  ...\n  650  ADD SECTION ON INFORMATION ON GAMMA FROM DPI AND THE TWO SOLUTIONS IN THE LHCB COMBINATION?!\n  651  \n  652: At the start of the work that lead to this thesis, it was not clear to what degree the measured \\CP-violating observables in \\BtoDpi decays were affected by \\CP violation in the neutral kaon sector. The impact had been shown to scale as $\\mathcal O(|\\epsilon| / r_B)$~\\cite{grossmanEffectsBarMixing2014}, which is negligible for the \\BtoDK channel but suggests potentially large biases in the \\BtoDpi channel, where $r_B$ is $~20$ times smaller. However, the dedicated analysis presented in Chapter~\\ref{ch:4-KS-CPV} has proved the effect on GGSZ measurements to be in fact be \\emph{smaller} than $\\mathcal O(|\\epsilon| / r_B)$ and the simultaneous measurement is indeed viable. \n  653  \n  654  The measurement is performed by making extended maximum-likelihood fits to the $m_B$ spectra of $\\B\\to\\D(\\to\\KS h^+h^-)h'^\\pm$ candidates split by charge and Dalitz bin. The \\BtoDK signal yields are parameterised using the expressions in Eq.~\\eqref{eq:lhcb_GGSZ_yields} directly, thus obtaining values for \\xpmdk and \\ypmdk directly. The Cartesian \\CP-violating observables \\xpm and \\ypm are employed because they lead to better statistical behaviour than fits to data where the underlying parameters $(\\gamma, r_B^\\DK, \\delta_B^\\DK)$ are determined~\\cite{}, at the cost of introducing a fourth degree of freedom. With the addition of the \\BtoDpi mode as a true signal channel, two new underlying parameters are introduced, $r_B^{\\DPi}$ and $\\delta_B^{\\DPi}$. There is a choice to be made, in terms of how to define the observables that are measured directly. One is to introduce an additional set of four observables, $(x_-^{D\\pi}, y_-^{D\\pi}, x_+^{D\\pi}, y_+^{D\\pi})$, that are analogous to the \\BtoDK parameters. As an alternative, it is possible to introduce only two Cartesian parameters~\\cite{Tico:2018qmg}, by defining\n\n/Users/bjoern/Documents/Oxford/thesis/chapters/ch4-GGSZ-and-KS-CPV.log:\n  749  Missing character: There is no s in font nullfont!\n  750  Missing character: There is no [ in font nullfont!\n  751: \\citation{grossmanEffectsBarMixing2014}\n  752  ! Undefined control sequence.\n  753  <write> ...: Citation `\\@citeb ' on page \\thepage \n  754                                                    \\space undefined\\on@line .\n  755: l.14 ...decays~\\cite{grossmanEffectsBarMixing2014}\n  756                                                    . However, as described in...\n  757  The control sequence at the end of the top line\n  ...\n  762  \n  763  \n  764: LaTeX Warning: Citation `grossmanEffectsBarMixing2014' on page  undefined on in\n  765  put line 14.\n  766  \n  ...\n  828  Missing character: There is no . in font nullfont!\n  829  Missing character: There is no [ in font nullfont!\n  830: \\citation{grossmanEffectsBarMixing2014}\n  831  ! Undefined control sequence.\n  832  <write> ...: Citation `\\@citeb ' on page \\thepage \n  833                                                    \\space undefined\\on@line .\n  834: l.14 ...n Ref.~\\cite{grossmanEffectsBarMixing2014}\n  835                                                     does not take into accoun...\n  836  The control sequence at the end of the top line\n  ...\n  841  \n  842  \n  843: LaTeX Warning: Citation `grossmanEffectsBarMixing2014' on page  undefined on in\n  844  put line 14.\n  845  \n\n/Users/bjoern/Documents/Oxford/thesis/chapters/ch4-GGSZ-and-KS-CPV.tex:\n   12  \n   13  The presence of a \\KS meson in the $\\D\\to\\KS h^+h^-$ final states introduces a small bias in BPGGSZ measurements due to \\CP-violation in the neutral kaon sector and asymmetries caused by the interaction between the neutral kaons and detector material. These fundamental physics effects are reviewed in Section~\\ref{sec:cp_violation_and_material_interaction_of_neutral_kaons}, after which the chapter presents a detailed analysis of the impact on the \\lhcb measurement that is the subject of the thesis,  as well as future $\\gamma$ measurements with the Belle II experiment. \n   14: Prior to this analysis, the only existing work on the the effect on $\\gamma$ measurements suggested a small effect in \\BtoDK measurements but potentially \\emph{very} significant effects in measurements based on \\BtoDpi decays~\\cite{grossmanEffectsBarMixing2014}. However, as described in Section~\\ref{sub:a_first_look_at_the_impact_on_gamma}, the analysis in Ref.~\\cite{grossmanEffectsBarMixing2014} does not take into account the fundamental aspect of the BPGGSZ method: that it relies on the phase-space distribution of signal decays, not phase-space integrated asymmetries. Furthermore, the study only considers the \\CP-violation effect, not material interaction. Therefore, a more detailed study was necessary before the \\BtoDpi decay mode could reliably be promoted to a signal channel.\n   15  \n   16  \n   ..\n  151  \n  152  \n  153: The effects described above have an impact on measurements of \\CP asymmetries in modes with a neutral kaon in the final state. This was analysed for the first time in relation to $\\gamma$ measurements by Grossman and Savastio in 2014~\\cite{grossmanEffectsBarMixing2014}. The authors point out two sources of corrections to be included:\n  154  \\begin{itemize}\n  155      \\item the fact that \\KS is not an exact \\CP eigenstate can break potential symmetry relations employed in an analysis, and\n  ...\n  191    {(2\\mathcal F_+ -1)r_B}\n  192    \\right),\n  193: \\end{align} which suggests that Grossman and Savastio severely \\emph{underestimates} the potential impact. This is described in detail in Section~\\ref{sub:modification_of_the_bpggsz_yield_equations}. More importantly, the analysis of the phase-space integrated asymmetry is in fact \\emph{irrelevant} to BPGGSZ measurements as they are currently performed: as described in Section~\\ref{sub:relation_to_glw_and_ads_measurements} the information from the global asymmetry is completely discarded. Therefore it is necessary to analyse the effects of kaon \\CP-violation on a full, binned analysis of \\DtoKshh decays, which is done in detail in the following sections. While the aim is to extend the analysis if Grossman and Savastio, the treatment in the following sections is completely independent of that in Ref.~\\cite{grossmanEffectsBarMixing2014}.\n  194  \n  195  \\section{\\texorpdfstring{Impact on BPGGSZ measurements of $\\gamma$: \\\\principles}{Impact on BPGGSZ measurements of gamma: principles}}% (fold)\n  ...\n  579  \n  580  \n  581: While the calculations were made for the case of \\DtoKspipi decays, the BPGGSZ approach can of course also be applied in other \\D-decay final states, such as ${\\D\\to\\KS\\Kp\\Km}$ and $\\D\\to\\KS\\pip\\pim\\piz$. The biases on measurements of $\\gamma$ based the \\D decay phase-space distributions should be of similar size in these decay channels. The impact on $\\gamma$ measurements based on the phase-space-integrated yield asymmetry can be expected to be tens of degrees for the $\\D\\to\\KS\\Kp\\Km$ channel, where the yield asymmetry is expected to be around 2\\,\\%, for the reasons explained in Section~\\ref{sub:modification_of_the_bpggsz_yield_equations}. The $\\D\\to\\KS\\pip\\pim\\piz$ decay, however, is dominantly \\CP-odd~\\cite{CLEOKSpipipi0}, and the bias in measurements based on the total asymmetry is therefore expected to be $O(\\epsilon/r_B)$, ie. a few degrees~\\cite{grossmanEffectsBarMixing2014}. More precise calculations of the biases would require a repeat of the study included here, with relevant amplitude models and binning schemes in place.\n  582  \n  583  \n\n/Users/bjoern/Documents/Oxford/thesis/tmp_build_files/thesis.aux:\n  122  \\bibcite{BESCISIKSKK}{73}\n  123  \\bibcite{LHCb-PAPER-2014-041}{74}\n  124: \\bibcite{grossmanEffectsBarMixing2014}{75}\n  125  \\bibcite{Tico:2018qmg}{76}\n  126  \\mciteSetMaxCount{main}{bibitem}{76}\n\n/Users/bjoern/Documents/Oxford/thesis/tmp_build_files/thesis.bbl:\n  868  {\\mcitedefaultendpunct}{\\mcitedefaultseppunct}\\relax\n  869  \\EndOfBibitem\n  870: \\bibitem{grossmanEffectsBarMixing2014}\n  871  Y.~Grossman and M.~Savastio, \\ifthenelse{\\boolean{articletitles}}{\\emph{Effects\n  872    of {{K}}-\\textbackslash bar {{K}} mixing on determining gamma from\n\n/Users/bjoern/Documents/Oxford/thesis/tmp_build_files/chapters/ch2-theory.aux:\n  264  \\newlabel{eq:Fi_def}{{2.42}{26}{Strategy for the LHCb measurement}{equation.2.4.42}{}}\n  265  \\newlabel{eq:ci_si_with_eff}{{2.43}{26}{Strategy for the LHCb measurement}{equation.2.4.43}{}}\n  266: \\citation{grossmanEffectsBarMixing2014}\n  267: \\citation{grossmanEffectsBarMixing2014}\n  268  \\citation{}\n  269  \\citation{Tico:2018qmg}\n\n/Users/bjoern/Documents/Oxford/thesis/tmp_build_files/chapters/ch4-GGSZ-and-KS-CPV.aux:\n    1  \\relax \n    2  \\providecommand\\hyper@newdestlabel[2]{}\n    3: \\citation{grossmanEffectsBarMixing2014}\n    4: \\citation{grossmanEffectsBarMixing2014}\n    5  \\citation{PDG2020}\n    6  \\@writefile{toc}{\\contentsline {chapter}{\\numberline {4}Neutral kaon {\\ensuremath  {C\\tmspace  -\\thinmuskip {.1667em}P}}\\xspace  violation and material\\\\interaction in BPGGSZ measurements}{49}{chapter.4}}\n    .\n   30  \\newlabel{eq:mat_time_dep}{{4.15}{52}{CP violation and material interaction of neutral kaons}{equation.4.1.15}{}}\n   31  \\newlabel{eq:mat_param}{{4.16}{52}{CP violation and material interaction of neutral kaons}{equation.4.1.16}{}}\n   32: \\citation{grossmanEffectsBarMixing2014}\n   33  \\@writefile{toc}{\\contentsline {subsection}{\\numberline {4.1.1}A first look at the impact on $\\gamma $ measurements}{53}{subsection.4.1.1}}\n   34  \\newlabel{sub:a_first_look_at_the_impact_on_gamma}{{4.1.1}{53}{\\texorpdfstring {A first look at the impact on $\\gamma $ measurements}{A first look at the impact on gamma measurements}}{subsection.4.1.1}{}}\n   ..\n   36  \\newlabel{eq:ADDb_definition_with_KL}{{4.19}{53}{\\texorpdfstring {A first look at the impact on $\\gamma $ measurements}{A first look at the impact on gamma measurements}}{equation.4.1.19}{}}\n   37  \\citation{kenzieEstimatingEnsuremathPi2016}\n   38: \\citation{grossmanEffectsBarMixing2014}\n   39  \\newlabel{eq:GS_asymmetry}{{4.20}{54}{\\texorpdfstring {A first look at the impact on $\\gamma $ measurements}{A first look at the impact on gamma measurements}}{equation.4.1.20}{}}\n   40  \\citation{kouBelleIIPhysics2019a}\n   ..\n  152  \\citation{CLEOKSpipipi0}\n  153  \\citation{CLEOKSpipipi0}\n  154: \\citation{grossmanEffectsBarMixing2014}\n  155  \\@writefile{lof}{\\contentsline {figure}{\\numberline {4.8}{\\ignorespaces The bias on (left) the \\ensuremath  {{{\\ensuremath  {{\\ensuremath  {\\ensuremath  {B}\\xspace  }}\\xspace  ^\\pm }}\\xspace  \\ensuremath  {\\rightarrow }\\xspace  {\\ensuremath  {\\ensuremath  {D}\\xspace  }}\\xspace  {\\ensuremath  {{\\ensuremath  {\\ensuremath  {K}\\xspace  }}\\xspace  ^\\pm }}\\xspace  }}\\xspace  and (right) $\\ensuremath  {{{\\ensuremath  {{\\ensuremath  {\\ensuremath  {B}\\xspace  }}\\xspace  ^\\pm }}\\xspace  \\ensuremath  {\\rightarrow }\\xspace  {\\ensuremath  {\\ensuremath  {D}\\xspace  }}\\xspace  {\\ensuremath  {{\\ensuremath  {\\ensuremath  {\\pi }\\xspace  }}\\xspace  ^\\pm }}\\xspace  }}\\xspace  \\tmspace  +\\thickmuskip {.2777em}{\\ensuremath  {C\\tmspace  -\\thinmuskip {.1667em}P}}\\xspace  $-violation observables in the \\unhbox \\voidb@x \\hbox {LHCb}\\xspace  DD category, evaluated in bias studies with inputs based on full \\unhbox \\voidb@x \\hbox {LHCb}\\xspace  simulation, calculated as a function of input $\\gamma _0$.\\relax }}{70}{figure.caption.41}}\n  156  \\newlabel{fig:LHCb_related_biases}{{4.8}{70}{The bias on (left) the \\BtoDK and (right) $\\BtoDpi \\;\\CP $-violation observables in the \\lhcb DD category, evaluated in bias studies with inputs based on full \\lhcb simulation, calculated as a function of input $\\gamma _0$.\\relax }{figure.caption.41}{}}\n\n26 matches across 10 files\n",
-			"settings":
-			{
-				"buffer_size": 13936,
-				"line_ending": "Unix",
-				"name": "Find Results",
-				"scratch": true
-			}
-		},
-		{
-			"file": "bib_files/references.bib",
-			"settings":
-			{
-				"buffer_size": 63758,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "LHCb.bst",
-			"settings":
-			{
-				"buffer_size": 29504,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "bib_files/LHCb-PAPER.bib",
-			"settings":
-			{
-				"buffer_size": 294106,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "chapters/ch5-systematics-and-interpretation.tex",
-			"settings":
-			{
-				"buffer_size": 64165,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "tables/05_measurement/Fi_values.tex",
-			"settings":
-			{
-				"buffer_size": 1623,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "tables/05_measurement/eff_corr_cisi_d2kspipi.tex",
-			"settings":
-			{
-				"buffer_size": 1924,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "chapters/ch4-GGSZ-and-KS-CPV.tex",
-			"settings":
-			{
-				"buffer_size": 67240,
 				"line_ending": "Unix"
 			}
 		}
@@ -827,26 +728,40 @@
 	"expanded_folders":
 	[
 		"/Users/bjoern/Documents/Oxford/thesis",
+		"/Users/bjoern/Documents/Oxford/thesis/appendices",
+		"/Users/bjoern/Documents/Oxford/thesis/bib_files",
+		"/Users/bjoern/Documents/Oxford/thesis/chapters",
 		"/Users/bjoern/Documents/Oxford/thesis/preambles",
 		"/Users/bjoern/Documents/Oxford/thesis/tables",
 		"/Users/bjoern/Documents/Oxford/thesis/tables/02_theory"
 	],
 	"file_history":
 	[
-		"/Users/bjoern/Documents/Oxford/thesis/tables/05_measurement/Fi_values.tex",
-		"/Users/bjoern/Documents/Oxford/thesis/tables/05_measurement/eff_corr_cisi_d2kspipi.tex",
-		"/Users/bjoern/Documents/Oxford/thesis/tables/05_measurement/lhcb_combo_inputs.tex",
+		"/Users/bjoern/Documents/Oxford/thesis/chapters/ch3-the-LHCb-detector.tex",
+		"/Users/bjoern/Documents/Oxford/thesis/bib_files/DPhil.bib",
+		"/Users/bjoern/Documents/Oxford/thesis/bib_files/references.bib",
+		"/Users/bjoern/Documents/Oxford/thesis/tmp_build_files/thesis.bbl",
 		"/Users/bjoern/Documents/Oxford/thesis/chapters/ch5-systematics-and-interpretation.tex",
 		"/Users/bjoern/Documents/Oxford/thesis/chapters/ch5-the-two-fits.tex",
-		"/Users/bjoern/Documents/Oxford/thesis/chapters/ch3-the-LHCb-detector.tex",
+		"/Users/bjoern/Documents/Oxford/thesis/tables/05_measurement/lhcb_combo_inputs.tex",
 		"/Users/bjoern/Documents/Oxford/thesis/chapters/ch5-selection-and-backgrounds.tex",
+		"/Users/bjoern/Documents/Oxford/thesis/chapters/ch4-GGSZ-and-KS-CPV.tex",
+		"/Users/bjoern/Documents/Oxford/thesis/appendices/all_fits.tex",
+		"/Users/bjoern/Documents/Oxford/thesis/preambles/preface.tex",
+		"/Users/bjoern/Documents/Oxford/thesis/chapters/ch6-conclusions.tex",
+		"/Users/bjoern/Documents/Oxford/thesis/chapters/ch1-intro.tex",
+		"/Users/bjoern/Documents/Oxford/thesis/tables/02_theory/bin_categories.tex",
+		"/Users/bjoern/Documents/Oxford/thesis/chapters/ch2-theory.tex",
+		"/Users/bjoern/Documents/Oxford/thesis/tmp_build_files/thesis.log",
+		"/Users/bjoern/Documents/Oxford/thesis/LHCb.bst",
+		"/Users/bjoern/Documents/Oxford/thesis/tables/05_measurement/eff_corr_cisi_d2kspipi.tex",
+		"/Users/bjoern/Documents/Oxford/thesis/tables/05_measurement/Fi_values.tex",
+		"/Users/bjoern/Documents/Oxford/thesis/bib_files/LHCb-PAPER.bib",
 		"/Users/bjoern/Documents/Oxford/Analysis/b2dh-ggsz-ana/tmp_build_files/main.bbl",
 		"/Users/bjoern/Documents/Oxford/Analysis/b2dh-ggsz-ana/chapters/selection.tex",
 		"/Users/bjoern/Documents/Oxford/Analysis/b2dh-ggsz-ana/chapters/theory_and_strategy.tex",
 		"/Users/bjoern/Documents/Oxford/thesis/tables/05_measurement/bdt_variables.tex",
 		"/Users/bjoern/Documents/Oxford/thesis/tables/05_measurement/global_fit_yields.tex",
-		"/Users/bjoern/Documents/Oxford/thesis/tables/02_theory/bin_categories.tex",
-		"/Users/bjoern/Documents/Oxford/thesis/chapters/ch2-theory.tex",
 		"/Users/bjoern/Documents/Oxford/Analysis/b2dh-ggsz-ana/tables/systematics/total_syst_corr_matrix.tex",
 		"/Users/bjoern/Documents/Oxford/thesis/tables/05_measurement/total_syst_corr_matrix.tex",
 		"/Users/bjoern/Documents/Oxford/thesis/tables/05_measurement/lhcb_syst_corr_matrix.tex",
@@ -855,7 +770,6 @@
 		"/Users/bjoern/Documents/Oxford/Analysis/b2dh-ggsz-ana/title-LHCb-ANA.tex",
 		"/Users/bjoern/Documents/Oxford/Analysis/b2dh-ggsz-ana/tables/systematics/cisi_syst_corr_matrix.tex",
 		"/Users/bjoern/Documents/Oxford/Analysis/b2dh-ggsz-ana/chapters/results_and_interpretation.tex",
-		"/Users/bjoern/Documents/Oxford/thesis/chapters/ch1-intro.tex",
 		"/Users/bjoern/Documents/Oxford/thesis/preambles/ggsz-symbols-def.tex",
 		"/Users/bjoern/Documents/Oxford/thesis/chapters/ch5-GGSZ-with-B2Dh.tex",
 		"/Users/bjoern/Documents/Oxford/Analysis/b2dh-ggsz-ana/tables/systematics/systematic_overview.tex",
@@ -865,12 +779,9 @@
 		"/Users/bjoern/Documents/Oxford/Analysis/b2dh-ggsz-ana/chapters/introduction.tex",
 		"/Users/bjoern/Documents/Oxford/thesis/tables/05_measurement/cisi_syst_corr_matrix.tex",
 		"/Users/bjoern/Documents/Oxford/Analysis/b2dh-ggsz-ana/chapters/systematic_uncertainties.tex",
-		"/Users/bjoern/Documents/Oxford/thesis/chapters/ch4-GGSZ-and-KS-CPV.tex",
-		"/Users/bjoern/Documents/Oxford/thesis/bib_files/references.bib",
 		"/Users/bjoern/Documents/Oxford/Analysis/b2dh-ggsz-ana/chapters/global_fit.tex",
 		"/Users/bjoern/Documents/Oxford/thesis/tables/05_measurement/cp_fit_toy_results.tex",
 		"/Users/bjoern/Documents/Oxford/thesis/tables/05_measurement/cpfit_stat_corr_matrix.tex",
-		"/Users/bjoern/Documents/Oxford/thesis/appendices/all_fits.tex",
 		"/Users/bjoern/Documents/Oxford/Analysis/Bu2Dh_D2Kshh/BDK_GGSZ_PAPER/sections/selection.tex",
 		"/Users/bjoern/Documents/Oxford/Analysis/b2dh-ggsz-ana/chapters/cp_fit.tex",
 		"/Users/bjoern/Documents/Oxford/thesis/tables/05_measurement/fitted_parameters_global_fit.tex",
@@ -880,17 +791,14 @@
 		"/Users/bjoern/Documents/Oxford/Analysis/b2dh-ggsz-ana/tables/selection/input_param.tex",
 		"/Users/bjoern/Documents/Oxford/Analysis/ks-cpv-in-ggsz-analyses/ks-cpv-paper/sections/numerical_studies.tex",
 		"/Users/bjoern/Documents/Oxford/thesis/bib_files/Fysik.bib",
-		"/Users/bjoern/Documents/Oxford/thesis/preambles/preface.tex",
 		"/Users/bjoern/Documents/Oxford/thesis/tables/05_measurement/selected_candidates.tex",
 		"/Users/bjoern/Documents/Oxford/thesis/tables/05_measurement/pid_efficiencies.tex",
 		"/Users/bjoern/Documents/Oxford/Analysis/b2dh-ggsz-ana/tables/selection/pid_eff_results.tex",
 		"/Users/bjoern/Documents/Oxford/Analysis/b2dh-ggsz-ana/tables/selection/final_data_yields_table.tex",
 		"/Users/bjoern/Documents/Oxford/Analysis/b2dh-ggsz-ana/tables/selection/rectangular_cuts.tex",
-		"/Users/bjoern/Documents/Oxford/thesis/tmp_build_files/thesis.bbl",
 		"/Users/bjoern/Documents/Oxford/Analysis/ks-cpv-in-ggsz-analyses/ks-cpv-paper/tmp_build_files/ks_cpv_paper.bbl",
 		"/Users/bjoern/Documents/Oxford/thesis/tmp_build_files/thesis.toc",
 		"/Users/bjoern/Documents/Oxford/Analysis/ks-cpv-in-ggsz-analyses/ks-cpv-paper/sections/appendix.tex",
-		"/Users/bjoern/Documents/Oxford/thesis/chapters/ch6-conclusions.tex",
 		"/Users/bjoern/Documents/Oxford/thesis/tables/02_theory/bes_cleo_cisi.tex",
 		"/Users/bjoern/Documents/Oxford/Analysis/ks-cpv-in-ggsz-analyses/note/sections/material_effects.tex",
 		"/Users/bjoern/Documents/Oxford/Analysis/ks-cpv-in-ggsz-analyses/note/sections/simplified_studies.tex",
@@ -902,8 +810,6 @@
 		"/Users/bjoern/Dropbox/Oxford/Beauty2019/skeleton.tex",
 		"/Users/bjoern/Documents/Oxford/Analysis/B2Dpi_GGSZ/b2dh-ggsz-ana/chapters/theory_and_strategy.tex",
 		"/Users/bjoern/Documents/Oxford/Analysis/ks-cpv-in-ggsz-analyses/ks-cpv-paper/sections/GGSZ_theory.tex",
-		"/Users/bjoern/Documents/Oxford/thesis/bib_files/LHCb-PAPER.bib",
-		"/Users/bjoern/Documents/Oxford/thesis/tmp_build_files/thesis.log",
 		"/Users/bjoern/Documents/Oxford/Analysis/B2Dpi_GGSZ/b2dh-ggsz-ana/chapters/systematic_uncertainties.tex",
 		"/Users/bjoern/Documents/Oxford/Analysis/B2Dpi_GGSZ/b2dh-ggsz-ana/tmp_build_files/main.bbl",
 		"/Users/bjoern/Documents/Oxford/thesis/appendices/appendix-1.tex",
@@ -958,13 +864,11 @@
 		"/Users/bjoern/Documents/Oxford/Analysis/B2Dpi_GGSZ/b2dh-ggsz-ana/tables/selection/efficiency_tables/signal_relative_eff.tex",
 		"/Users/bjoern/Documents/Oxford/Analysis/B2Dpi_GGSZ/b2dh-ggsz-ana/tmp_build_files/main.toc",
 		"/Users/bjoern/Documents/Oxford/Analysis/B2Dpi_GGSZ/b2dh-ggsz-ana/tables/selection/rectangular_cuts.tex",
-		"/Users/bjoern/Documents/Oxford/Analysis/B2Dpi_GGSZ/b2dh-ggsz-ana/chapters/data_and_mc_samples.tex",
-		"/Users/bjoern/Documents/Oxford/Analysis/B2Dpi_GGSZ/b2dh-ggsz-ana/appendix/global_fit_feasibility_studies.tex",
-		"/Users/bjoern/Documents/Oxford/Analysis/B2Dpi_GGSZ/b2dh-ggsz-ana/tables/global_fit/lowmass/lowmass_global_fit_Dst_pi0.tex"
+		"/Users/bjoern/Documents/Oxford/Analysis/B2Dpi_GGSZ/b2dh-ggsz-ana/chapters/data_and_mc_samples.tex"
 	],
 	"find":
 	{
-		"height": 26.0
+		"height": 39.0
 	},
 	"find_in_files":
 	{
@@ -979,6 +883,29 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"trigger",
+			"Lange:2001uf",
+			"Evt",
+			"anderliniPIDCalibPackage2016",
+			"rDpikouBelleIIPhysics2019",
+			"kouBelleIIPhysics2019a",
+			"kenzieEstimatingEnsuremathPi2016",
+			"VELOUpgradeTDR",
+			"Gammacombo2016",
+			"Gammacombo2018",
+			"LHCb-CONF-2018",
+			"Cowan:2016tnm",
+			"lhcbcollaborationPhysicsCaseLHCb2019",
+			"Sjostrand:2007gs",
+			"LHCB-DP-2019-001",
+			"cdfl",
+			"format.lhcb",
+			"format.lhcbi",
+			"format.lhcbid",
+			"output",
+			"misc",
+			"unpublished",
+			"function.typ",
 			"format.DOI",
 			"format.articledoi",
 			"article",
@@ -1005,6 +932,13 @@
 		"regex": false,
 		"replace_history":
 		[
+			"EvtGen",
+			"kouBelleIIPhysics2019",
+			"rDpikouBelleIIPhysics2019",
+			"rDpi",
+			"LHCb-PAPER-2016-032",
+			"LHCb-CONF-2018-002",
+			"cowanRapidSimApplicationFast2017",
 			"LHCb-PAPER-2016-032",
 			"c",
 			"delta_{\\CP}"
@@ -1018,7 +952,7 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 1,
 			"sheets":
 			[
 				{
@@ -1027,15 +961,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 9761,
+						"buffer_size": 9755,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								9221,
-								9221
+								9647,
+								9674
 							]
 						],
 						"settings":
@@ -1043,382 +977,27 @@
 							"syntax": "Packages/LaTeX/LaTeX.sublime-syntax"
 						},
 						"translation.x": 0.0,
-						"translation.y": 2885.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "bib_files/DPhil.bib",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 269012,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								138600,
-								138600
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/LaTeXTools/BibLaTeX.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 6,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "preambles/preface.tex",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 2373,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								194,
-								185
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/LaTeX/LaTeX.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 12,
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "chapters/ch2-theory.tex",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 72978,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								50654,
-								50654
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/LaTeX/LaTeX.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 4,
-					"type": "text"
-				},
-				{
-					"buffer": 4,
-					"file": "tmp_build_files/thesis.bbl",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 17191,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Text/Plain text.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 3,
-					"type": "text"
-				},
-				{
-					"buffer": 5,
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 13936,
-						"regions":
-						{
-							"match":
-							{
-								"flags": 112,
-								"regions":
-								[
-									[
-										148,
-										176
-									],
-									[
-										429,
-										457
-									],
-									[
-										717,
-										745
-									],
-									[
-										1057,
-										1085
-									],
-									[
-										2098,
-										2126
-									],
-									[
-										2598,
-										2626
-									],
-									[
-										4351,
-										4379
-									],
-									[
-										4588,
-										4616
-									],
-									[
-										4814,
-										4842
-									],
-									[
-										5036,
-										5064
-									],
-									[
-										5273,
-										5301
-									],
-									[
-										5499,
-										5527
-									],
-									[
-										6484,
-										6512
-									],
-									[
-										6622,
-										6650
-									],
-									[
-										7329,
-										7357
-									],
-									[
-										8463,
-										8491
-									],
-									[
-										9546,
-										9574
-									],
-									[
-										9902,
-										9930
-									],
-									[
-										10178,
-										10206
-									],
-									[
-										10664,
-										10692
-									],
-									[
-										10711,
-										10739
-									],
-									[
-										10959,
-										10987
-									],
-									[
-										11006,
-										11034
-									],
-									[
-										11536,
-										11564
-									],
-									[
-										12198,
-										12226
-									],
-									[
-										12543,
-										12571
-									]
-								],
-								"scope": ""
-							}
-						},
-						"selection":
-						[
-							[
-								451,
-								451
-							]
-						],
-						"settings":
-						{
-							"detect_indentation": false,
-							"line_numbers": false,
-							"output_tag": 1,
-							"result_base_dir": "",
-							"result_file_regex": "^([^ \t].*):$",
-							"result_line_regex": "^ +([0-9]+):",
-							"scroll_past_end": true,
-							"syntax": "Packages/Default/Find Results.hidden-tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 7,
-					"type": "text"
-				},
-				{
-					"buffer": 6,
-					"file": "bib_files/references.bib",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 63758,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								52190,
-								52190
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/LaTeXTools/BibLaTeX.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 7,
-					"file": "LHCb.bst",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 29504,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1207,
-								1207
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Text/Plain text.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 3710.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 1,
 					"type": "text"
 				},
 				{
-					"buffer": 8,
-					"file": "bib_files/LHCb-PAPER.bib",
+					"buffer": 1,
+					"file": "chapters/ch5-the-two-fits.tex",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 294106,
+						"buffer_size": 80277,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								9487,
-								9487
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/LaTeXTools/BibLaTeX.tmLanguage",
-							"tab_size": 6,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 5,
-					"type": "text"
-				},
-				{
-					"buffer": 9,
-					"file": "chapters/ch5-systematics-and-interpretation.tex",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 64165,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								44796,
-								44757
+								44103,
+								44103
 							]
 						],
 						"settings":
@@ -1428,98 +1007,10 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 11612.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 8,
-					"type": "text"
-				},
-				{
-					"buffer": 10,
-					"file": "tables/05_measurement/Fi_values.tex",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1623,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								303,
-								303
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/LaTeX/LaTeX.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 9,
-					"type": "text"
-				},
-				{
-					"buffer": 11,
-					"file": "tables/05_measurement/eff_corr_cisi_d2kspipi.tex",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1924,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								138,
-								138
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/LaTeX/LaTeX.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 10,
-					"type": "text"
-				},
-				{
-					"buffer": 12,
-					"file": "chapters/ch4-GGSZ-and-KS-CPV.tex",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 67240,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								33820,
-								33783
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/LaTeX/LaTeX.sublime-syntax",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 11,
+					"stack_index": 0,
 					"type": "text"
 				}
 			]
@@ -1572,7 +1063,7 @@
 	"project": "oxford-thesis.sublime-project",
 	"replace":
 	{
-		"height": 48.0
+		"height": 70.0
 	},
 	"save_all_on_build": true,
 	"select_file":
