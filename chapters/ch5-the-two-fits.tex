@@ -92,11 +92,11 @@ The cross-feed shapes are obtained in a data-driven manner using the sPlot metho
 
 \item A set of weights are defined, based on the candidate-by-candidate PID efficiencies obtained as described in Section~\ref{sub:particle_identification_requirements}:
   \begin{itemize}
-    \item The extracted PID efficiencies of the PIDK$<$4 cut $\epsilon_{\D\pi\to\D\pi}(p,\eta,n_\text{tracks})$ are used to reverse-weight the \BtoDpi sample, in order to obtain the bachelor kinematic distributions before the PIDK$<$4 cut is applied. 
-    \item The extracted PID efficiencies of the PIDK$>$4 cut $\epsilon_{\D\pi\to\D\kaon}(p,\eta,n_\text{tracks})$ are used to obtain the bachelor kinematic distribution of the \BtoDpi candidates mis-identified as \BtoDK.
+    \item The extracted PID efficiencies of the \texttt{PIDK}$<$4 cut $\epsilon_{\D\pi\to\D\pi}(p,\eta,n_\text{tracks})$ are used to reverse-weight the \BtoDpi sample, in order to obtain the bachelor kinematic distributions before the \texttt{PIDK}$<$4 cut is applied. 
+    \item The extracted PID efficiencies of the \texttt{PIDK}$>$4 cut $\epsilon_{\D\pi\to\D\kaon}(p,\eta,n_\text{tracks})$ are used to obtain the bachelor kinematic distribution of the \BtoDpi candidates mis-identified as \BtoDK.
   \end{itemize}
   
-\item The raw distribution of the invariant mass of \Bpm particles with  a misidentified bachelor, $m_B^{mis-ID}$, is produced by also doing the DecayTreeFit kinematic refit while swapping the companion mass hypothesis of each \BtoDpi candidate to a kaon hypothesis.
+\item The raw distribution of the invariant mass of \Bpm particles with  a misidentified bachelor, $m_B^{mis-ID}$, is produced by also doing the \texttt{DecayTreeFitter} kinematic refit while swapping the companion mass hypothesis of each \BtoDpi candidate to a kaon hypothesis.
 
 \item Each candidate is reweighted by the overall weight $w=w_s^{cand.} / \epsilon_{\D\pi\to\D\pi}^{cand.} \cdot \epsilon_{\D\pi\to\D\kaon}^{cand.}$, and the reweighed $m_B^{mis-ID}$ distribution is fitted to obtain the cross-feed mass distribution function.
 \end{itemize}
@@ -312,7 +312,7 @@ The projections of the fit to data are shown in Figs.~\ref{fig:kspipimass}~and~\
 % subsection fit_results (end)
 
 % section signal_and_background_components (end)
-
+\FloatBarrier
 \section{Measurement of the CP-violation observables} % (fold)
 \label{sec:measurement_of_the_cp_violation_observables}
 
@@ -373,40 +373,49 @@ The former parameterisation has the benefit that information on $\gamma$ from th
 
 In order to inform the choice of parameterisation, a series of pseudo experiments has been carried out to compare the obtainable precision on $\gamma$ (these studies were performed, and discussed within \lhcb, prior to the publication of Ref.~\cite{JordiXi2}; thus, the results presented here constitute independent work, even if there is some overlap in scope and conclusions with that reference). Many simulated data sets were generated, constituting of a number signal yields approximately equal to the expected yields in the full Run~1~and~2 \lhcb data set: approximately 15,000 \BtoDK decays and 210,000 \BtoDpi decays.\footnote{No backgrounds were included in these studies, and thus the quoted uncertainties on $\gamma$ are better than what is obtainable in the final measurement; a similar study including realistic backgrounds is presented for the final setup below.} The signal decays were distributed between Dalitz bins according to  $(\gamma, r_B^{DK}, \delta_B^{DK})=(75^\circ, 0.1, 130^\circ)$ in the \BtoDK mode, which is to the world average values of direct $\gamma$ measurements at the time. In the \BtoDpi mode, the behaviour is investigated for different sets of input values; of most importance is the case $(r_B^{D\pi}, \delta_B^{D\pi})=(0.005, 300^\circ)$, because it corresponds to the solution in the \lhcb combination~\cite{LHCb-PAPER-2016-032} that is in agreement with the theoretical expectation $r_B^{D\pi}\simeq 0.005$~\cite{rDpi}. The behaviour at larger $r_B^{D\pi}$ values is also investigated.
 %, exemplified below by the parameter set $(r_B^{D\pi}, \delta_B^{D\pi})=(0.03, 330^\circ)$ which corresponds to the alternative solution in the \lhcb combination. 
-The generated data sets are fitted using both parameterisations, and the observables are interpreted in terms of the underlying physics parameters using a maximum-likelihood fit, essentially following the procedure outlined in Section~\ref{sub:statistical_approach}. In the 8-parameter setup it is possible to determine $\gamma$ using the results in either the \BtoDK or \BtoDpi channels separately, or consider the combined results; in the 6-parameter setup only the latter option is available. The studies are performed in two modes: with the \Fi floating in the fit, emulating a realistic fit to data, as well as with the \Fi fixed to the input values used in data generation. The latter studies emulate a setup where the \Fi parameters are determined in an ultra-high statistics control channel, and perfect efficiency corrections are applied. In all cases, a single set of \Fi parameters is shared between the \BtoDK and \BtoDpi modes.
+For each generated data set
+\begin{enumerate}
+     \item the observables are measured in a fit to the data set, using both the 6-parameter and 8-parameter setups
+     \item the obtained observables are then fitted to obtain the underlying physics parameters $(\gamma,r_B^{DK}, \delta_B^{DK}, r_B^{D\pi}, \delta_B^{D\pi})$ using a maximum-likelihood fit, essentially following the procedure outlined in Section~\ref{sub:statistical_approach}.
+ \end{enumerate} 
+ In the 8-parameter setup it is possible to determine $\gamma$ using the results in either the \BtoDK or \BtoDpi channels separately, or consider the combined results; in the 6-parameter setup only the latter option is available. The studies are performed in two modes: with the \Fi floating in the fit, emulating a realistic fit to data, as well as with the \Fi fixed to the input values used in data generation. The latter studies emulate a setup where the \Fi parameters are determined in an ultra-high statistics control channel, and perfect efficiency corrections are applied. In all cases, a single set of \Fi parameters is shared between the \BtoDK and \BtoDpi modes.
 
 \begin{figure}[tb]
     \centering
     \includegraphics[width=0.95\columnwidth]{figures/analysis/signal_only_feasibility_thesis/compare_68_yp.pdf}
-    \caption{Caption here}
+    \caption{The distribution of (left) fit values and (right) statistical uncertainty estimate for \ypdk in a series of pseudo experiments, for both the (green) 6-parameter and (red) 8-parameter setups.}
     \label{fig:compare_yp_68}
 \end{figure}
 
 The 6-parameter setup shows significantly better statistical performance than the 8-parameter setup in the realistic case where the \Fi parameters are determined in the fit and $r_B^{D\pi}\sim 0.005$.\footnote{For larger, non-physical values of $r_B^{D\pi} > 0.03$ both fit setups behave well.} The fits that employ the 6-parameter setup behave well in this case, whereas the additional degrees of freedom in the 8-parameter fit leads to essentially all parameters being 100\,\% (anti-)correlated, and a significant number of fits not converging. For the fits that do converge, the uncertainties on the observables are significantly larger due to the large correlations, as shown exemplified with the case of $\ypdk$ in Fig.~\ref{fig:compare_yp_68}. This essentially determines the choice of parameterisation: it is possible to reliably model \CP violation in the \BtoDpi channel and simultaneously determine the \Fi parameters by using the 6-parameter setup, but not by using the 8-parameter setup.
 
+
+
+Interestingly, when the constraints on $\gamma$ are compared, both setup lead to similar precision; in spite of the large uncertainties on the individual observables in the 8-parameter setups, the constraints on $\gamma$ are tight. This is illustrated in Fig.~\ref{fig:compare_g_68}. Nevertheless, it remains true that the 8-parameter setup is ruled out due the statistical behaviour in the determination of the observables.
+
 \begin{figure}[tb]
     \centering
     \includegraphics[width=0.95\columnwidth]{figures/analysis/signal_only_feasibility_thesis/compare_68_g.pdf}
-    \caption{Caption here}
+    \caption{The distribution of (left) fit values and (right) statistical uncertainty estimate for $\gamma$ in a series of pseudo experiments, for both the (green) 6-parameter and (red) 8-parameter setups.}
     \label{fig:compare_g_68}
 \end{figure}
-
-Interestingly, when constraints on $\gamma$ are . This is illustrated in Fig.~\ref{FILLOUT}
 
 Furthermore, both the 6- and 8-parameter setups lead to fits that behave well in the studies where the \Fi parameters are kept fixed, and the resulting uncertainties on the Cartesian observables and $\gamma$ are essentially identical. Thus, the 6-parameter setup does not inherently lead to a gain in precision over the 8-parameter setup; the strength of the parameterisation is that it allows for a reliable, simultaneous determination of the \Fi parameters and the observables of interest. This conclusion differs somewhat from the one drawn in Ref.~\cite{JordiXi2}.
 
 The fixed-\Fi studies allow for an assessment of the gain in precision on $\gamma$ due to the inclusion of the \BtoDpi mode, by comparing the precision obtained in the simultaneous fits with that obtained when $\gamma$ is constrained using only information from the \BtoDK channel. In the realistic case where $r_B^{D\pi}=0.005$, the gain in precision is about $0.1^\circ$.
 The reason for the small impact, in spite of the yield being approximately 14 times larger in the \BtoDpi channel than in the \BtoDK channel, is that $r_B$ is 20 times smaller, and the \CP asymmetries are proportional to $r_B$. Thus, the main improvement to the analysis from including \BtoDpi as a signal channel comes from the ability to determine the \Fi parameters without adding a large systematic uncertainty.\footnote{If this comparison is made using the parameter set $(r_B^{D\pi}, \delta_B^{D\pi})=(0.03, 330^\circ)$, which corresponds to the alternative, non-physical solution in the \lhcb combination~\cite{LHCb-PAPER-2016-032}, the gain in precision is $1.3^\circ$ in stead; this fact made the statistical interpretation of the \BtoDh combination in Ref.~\cite{LHCb-PAPER-2016-032} non-trivial.}
 
-\begin{figure}[tb]
-    \centering
-    \includegraphics[width=0.95\columnwidth]{figures/analysis/signal_only_feasibility_thesis/compare_float_fix_g.pdf}
-    \caption{Caption here}
-    \label{fig:compare_g_float_fixed}
-\end{figure}
+
 
 Finally, it is worth considering whether any precision can be gained by including information on the \Fi parameters from a control channel, even if the fit is well behaved without external information. The potential yield in the ${\Bzb\to\Dstarp(\to \Dz \pip)\mu^- \bar \nu_\mu X}$ control channel is approximately three times larger than in the \BtoDpi channel, and it does therefore offer a better statistical handle on the \Fi values (at the significant cost of having to worry about efficiency corrections). This question can be answered by comparing the obtained precision on $\gamma$ in the fits where \Fi parameters were floating, to the precision in the case where they were kept fixed. Such a comparison is shown for the 6-parameter setup in Fig.~\ref{fig:compare_g_float_fixed} for the realistic scenario where $r_B^{D\pi}=0.005$. The difference in the average $\sigma(\gamma)$ is \emph{less than $0.05^\circ$}, which is of course completely negligible. Therefore, no gain in precision can be obtained by including the control channel in the analysis, and it is not considered further.
 %\footnote{In the alternative case, where $r_B^{D\pi}=0.03$, the \BtoDpi mode drives the precision on $\gamma$, and YYY. However, the analysis design is chosen mainly based on the $r_B^{D\pi}=0.005$ case that is close to the theory expectation, and in any case, this gain in statistical precision would be compromised by the necessary efficiency correction, and the associated systematic uncertainty.}
+
+\begin{figure}[tb]
+    \centering
+    \includegraphics[width=0.95\columnwidth]{figures/analysis/signal_only_feasibility_thesis/compare_float_fix_g.pdf}
+    \caption{The distribution of (left) central values and (right) statistical uncertainty estimate for $\gamma$ in a series of pseudo experiments that use the 6-parameter setup, where (green) the \Fi parameters are determined in the fit and (blue) where they are kept fixed at their input values.}
+    \label{fig:compare_g_float_fixed}
+\end{figure}
 
 \subsubsection{Final choice of observables and the determination of the \texorpdfstring{\Fi}{Fi} parameters} % (fold)
 \label{ssub:final_choice_of_observables}
@@ -719,19 +728,19 @@ The measurement results are compared in Table~\ref{tab:pid12}, where the differe
     \centering
     \includegraphics[width=0.98\columnwidth]{figures/analysis/pretty_fit_tightPID_d2kspp_LL.pdf}
     \includegraphics[width=0.98\columnwidth]{figures/analysis/pretty_fit_tightPID_d2kspp_DD.pdf}
-    \caption{Fit projections for fits to the \DtoKspipi candidates with a companion PIDK requirement at 12 instead of 4 used to split into (left) \BtoDK and (right) \BtoDpi candidates, for the (top)  LL and (bottom) DD categories.}
+    \caption{Fit projections for fits to the \DtoKspipi candidates with a companion \texttt{PIDK} requirement at 12 instead of 4 used to split into (left) \BtoDK and (right) \BtoDpi candidates, for the (top)  LL and (bottom) DD categories.}
     \label{fig:pid12_fits}
 \end{figure}
 
 \begin{table}[tbp]
 \centering
-\caption{Results of running the measurement with the default PIDK cut at 4 used to separate \BtoDK and \BtoDpi candidates, as well as with an alternative PIK cut at 12, resulting in much lower cross-feed from misidentified \BtoDpi decays. We also show the pulls, defined as $\Delta x / \sqrt{|\sigma^2_{PIDK>12} - \sigma^2_{PIDK>4}|}$ as described in the main text body. The comparison was made before the BESIII measurement of the \DtoKsKK strong-phase inputs became available; therefore the fits use the CLEO-only results~\cite{CLEOCISI} for this mode, which explains why the results quoted for $\text{PIDK}>4$ differ slightly from the nominal fit results.
+\caption{Results of running the measurement with the default \texttt{PIDK} requirement at 4 used to separate \BtoDK and \BtoDpi candidates, as well as with an alternative \texttt{PIDK} requirement at 12, resulting in much lower cross-feed from misidentified \BtoDpi decays. We also show the pulls, defined as $\Delta x / \sqrt{|\sigma^2_{PIDK>12} - \sigma^2_{PIDK>4}|}$ as described in the main text body. The comparison was made before the BESIII measurement of the \DtoKsKK strong-phase inputs became available; therefore the fits use the CLEO-only results~\cite{CLEOCISI} for this mode, which explains why the results quoted for $\texttt{PIDK}>4$ differ slightly from the nominal fit results.
 \label{tab:pid12}}
     
 
 \begin{tabular}{c|cccc}
 \toprule
-    Parameter & $\text{PIDK}>4$ & $\text{PIDK}>12$ & $\sigma=\sqrt{\sigma^2_{PIDK>12} - \sigma^2_{PIDK>4}}$ & Pull \\
+    Parameter & $\texttt{PIDK}>4$ & $\texttt{PIDK}>12$ & $\sigma=\sqrt{\sigma^2_{PIDK>12} - \sigma^2_{PIDK>4}}$ & Pull \\
     \midrule
     \xmdk   & $\phantom{-} 5.59 \pm  0.96$& $\phantom{-} 5.82 \pm  1.01$& $ 0.30 $& $ 0.77 $ \\
     \ymdk   & $\phantom{-} 6.45 \pm  1.14$& $\phantom{-} 6.86 \pm  1.19$& $ 0.36 $& $ 1.13 $ \\

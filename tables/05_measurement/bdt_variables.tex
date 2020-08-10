@@ -1,5 +1,10 @@
-\begin{landscape}
- \begin{table}[p]
+
+
+
+% \begin{landscape}
+%  \begin{table}[p]
+\begin{sidewaystable}[p]
+\global\pdfpageattr\expandafter{\the\pdfpageattr/Rotate 90}
 
 \centering
 \caption{Input parameter set used in BDT trained to separate signal and combinatorial background, sorted according to importance in the LL classifier. \label{tab:mva_input_parameters}}
@@ -37,6 +42,9 @@ $\texttt{log(Bu\_VTXCHI2DOF)}                           $ & 1.8 \% / 1.7 \% (23)
 \hline\hline
 
 \end{tabular*} 
+\global\pdfpageattr\expandafter{\the\pdfpageattr/Rotate 0}
 
-\end{table}   
-\end{landscape}
+\end{sidewaystable}
+
+% \end{table}   
+% \end{landscape}
