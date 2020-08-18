@@ -11,7 +11,7 @@
 \label{ch:4-KS-CPV}
 
 The presence of a \KS meson in the $\D\to\KS h^+h^-$ final states introduces a small bias in BPGGSZ measurements due to \CP-violation in the neutral kaon sector and asymmetries caused by the interaction between the neutral kaons and detector material. These fundamental physics effects are reviewed in Section~\ref{sec:cp_violation_and_material_interaction_of_neutral_kaons}, after which the chapter presents a detailed analysis of the impact on the \lhcb measurement that is the subject of the thesis,  as well as future $\gamma$ measurements with the Belle II experiment. 
-Prior to this analysis, the only existing work on the the effect on $\gamma$ measurements suggested a small effect in \BtoDK measurements but potentially \emph{very} significant effects in measurements based on \BtoDpi decays~\cite{grossmanEffectsBarMixing2014}. However, as described in Section~\ref{sub:a_first_look_at_the_impact_on_gamma}, the analysis in Ref.~\cite{grossmanEffectsBarMixing2014} does not take into account the fundamental aspect of the BPGGSZ method: that it relies on the phase-space distribution of signal decays, not phase-space integrated asymmetries. Furthermore, the study only considers the \CP-violation effect, not material interaction. Therefore, a more detailed study was necessary before the \BtoDpi decay mode could reliably be promoted to a signal channel.
+Prior to this analysis, the only existing work on the the effect on $\gamma$ measurements suggested a small effect in \BtoDK measurements but potentially \emph{very} significant effects in measurements based on \BtoDpi decays~\cite{grossmanEffectsBarMixing2014}. However, as described in Section~\ref{sub:a_first_look_at_the_impact_on_gamma}, the analysis in Ref.~\cite{grossmanEffectsBarMixing2014} does not take into account the fundamental aspect of the BPGGSZ method: that it relies on the phase-space distribution of signal decays, not phase-space integrated asymmetries. Furthermore, the earlier study only considers the \CP-violation effect, not material interaction. Therefore, a more detailed study was necessary before the \BtoDpi decay mode could reliably be promoted to a signal channel. The full analysis shows the impact on the $\gamma$ measurement in Chapter~\ref{ch:5-GGSZ-measurement} to be small, and allows for the assignment of an appropriate systematic uncertainty.
 
 
 
@@ -36,7 +36,7 @@ A meson state that starts as a general superposition of $\ket \Mz$ and $\ket \Mz
        \psi_M^0\equiv \psi_M(0) &= a(0)\ket \Mz + b(0)\ket \Mzb \\&\equiv \psi_{\Mz}^0 + \psi_{\Mzb}^0
     \end{split}
 \end{align}
-will, over time, involve into a state that consists of a different superposition of $\ket \Mz$ and $\ket \Mzb$, as well as components for all possible states the meson system can decay into
+will, over time, evolve into a state that consists of a different superposition of $\ket \Mz$ and $\ket \Mzb$, as well as components for all possible states the meson system can decay into
 \begin{align}
 \begin{split}
      \psi_M(t) &= a(t)\ket \Mz + b(t)\ket \Mzb + \sum c_i(t) f_i \\&\equiv \psi_{\Mz}(t) + \psi_{\Mzb}(t) + \sum c_i(t) f_i.
@@ -73,7 +73,7 @@ The eigenstates of the Hamiltonian governing the neutral kaon system are almost,
     \ket{K_1}   &= \frac{\ket \Kz + \ket \Kzb}{\sqrt{2}} &
     \ket{K_2}   &= \frac{\ket \Kz - \ket \Kzb}{\sqrt{2}},
 \end{align}
-which are \CP even and odd, respectively. This approximate equality leads to the most prominent feature of the neutral kaon system: the two eigenstates of $\mathcal H_0$ have lifetimes that differ by orders of magnitude. This is best understood by assuming, for a moment, that the states in Eq.~\eqref{eq:K_CP_states} \emph{do} equal the eigenstates with definite life times. The $K_1$ state can decay in the \CP even $\pip\pim$ and $\piz\piz$ modes, and does so almost 100\,\% of the time; these decay modes are not available to the $K_2$ (in the absence of direct \CP violation) which results in a much lower decay rate and much longer life time. Therefore, the eigenstates in the kaon system are labelled the \emph{short-lived} kaon, \KS, which is almost \CP even, and the \emph{long-lived} kaon, \KL, which is almost \CP odd. The life times are~\cite{PDG2020}
+which are \CP even and odd, respectively. This approximate equality leads to the most prominent feature of the neutral kaon system: the two eigenstates of $\mathcal H_0$ have lifetimes that differ by orders of magnitude. This is best understood by assuming, for a moment, that the states in Eq.~\eqref{eq:K_CP_states} \emph{do} equal the eigenstates with definite life times. The $K_1$ state can decay in the \CP even $\pip\pim$ and $\piz\piz$ modes, and does so almost 100\,\% of the time; these decay modes are not available to the $K_2$ (in the absence of direct \CP violation) which results in a much lower decay rate and a much longer life time. Therefore, the eigenstates in the kaon system are labelled the \emph{short-lived} kaon, \KS, which is almost \CP even, and the \emph{long-lived} kaon, \KL, which is almost \CP odd. The life times are~\cite{PDG2020}
 \begin{align}
     \tau_\KS &= (8.954\pm0.004)\times10^{-11} \text s &
     \tau_\KL &= (5.116\pm0.021)\times10^{-8} \text s.
@@ -94,7 +94,11 @@ However, the discovery of $\KL\to\pi\pi$ decays by Kronin and Fitch in 1964 esta
 \end{align}
 In these expressions $\epsilon$ denotes the contribution from \CP violation in mixing and $\epsilon'$ the contribution due to direct \CP violation in the decays.  The $\epsilon$ parameter has been measured to be~\cite{PDG2020}  
 \begin{align}\label{eq:PDG_epsilon}
-    |\epsilon|=(2.228\pm 0.011)\times 10^{-3}, \qquad \arg \epsilon = (43.52\pm 0.05)^\circ.
+    |\epsilon|=(2.228\pm 0.011)\times 10^{-3}, \qquad \arg \epsilon = (43.52\pm 0.05)^\circ,
+\end{align}
+while the $\epsilon'$ parameter satisfies~\cite{PDG2020}
+\begin{align}
+  \text{Re}(\epsilon'/\epsilon)\simeq \epsilon'/\epsilon \simeq (1.66\pm0.23)\times 10^{-3}
 \end{align}
 Direct \CP violation is ignored for the remainder of the thesis, because $\epsilon'$ is measured to be three orders of magnitude smaller than $\epsilon$. In terms of the \CP eigenstates of Eq.~\eqref{eq:K_CP_states}, the mass eigenstates \KS and \KL are given by
 \begin{align}
@@ -190,7 +194,7 @@ The conclusions are lacking on two accounts, however. Firstly, as made clear in 
   \frac{|\epsilon|}
   {(2\mathcal F_+ -1)r_B}
   \right),
-\end{align} which suggests that Grossman and Savastio severely \emph{underestimates} the potential impact. This is described in detail in Section~\ref{sub:modification_of_the_bpggsz_yield_equations}. More importantly, the analysis of the phase-space integrated asymmetry is in fact \emph{irrelevant} to BPGGSZ measurements as they are currently performed: as described in Section~\ref{sub:relation_to_glw_and_ads_measurements} the information from the global asymmetry is completely discarded. Therefore it is necessary to analyse the effects of kaon \CP-violation on a full, binned analysis of \DtoKshh decays, which is done in detail in the following sections. While the aim is to extend the analysis if Grossman and Savastio, the treatment in the following sections is completely independent of that in Ref.~\cite{grossmanEffectsBarMixing2014}.
+\end{align} which suggests that Grossman and Savastio severely \emph{underestimated} the potential impact. This is described in detail in Section~\ref{sub:modification_of_the_bpggsz_yield_equations}. More importantly, the analysis of the phase-space integrated asymmetry is in fact \emph{irrelevant} to BPGGSZ measurements as they are currently performed: as described in Section~\ref{sub:relation_to_glw_and_ads_measurements} the information from the global asymmetry is completely discarded. Therefore it is necessary to analyse the effects of kaon \CP-violation on a full, binned analysis of \DtoKshh decays, which is done in detail in the following sections. While the aim is to extend the analysis if Grossman and Savastio, the treatment in the following sections is completely independent of that in Ref.~\cite{grossmanEffectsBarMixing2014}; instead taking inspiration from the discussion of $\Dz\to\KS\pip\pim$ and $\Dz\to\KS\pip\pim$ decay amplitudes in Ref.~\cite{CLEOCISI}.
 
 \section{\texorpdfstring{Impact on BPGGSZ measurements of $\gamma$: \\principles}{Impact on BPGGSZ measurements of gamma: principles}}% (fold)
 \label{sec:impact_on_}
@@ -207,7 +211,7 @@ In order to derive the corrections to the asymmetry relation $\ADS(\smp)\simeq \
    A_{1/2}^{\scaleto{\DorDbar}{9pt}} = 
    A({\DorDbar}^0\to K^0_\text{1/2} \pi^+\pi^-),
 \end{align}
- because these amplitude satisfy the exact symmetries 
+ because these amplitudes satisfy the exact symmetries 
  $A_1^{\D}(\smp) = A_1^{\Db}(\spm)$
 and
  $A_2^{\D}(\smp) = -A_2^{\Db}(\spm)$. This approach is different to that of Grossman and Savastio, but the final results are equivalent. 
@@ -425,7 +429,7 @@ The time acceptance has a significant impact for the \lhcb categories, where som
 %     \caption{Decay time distribution of simulated \lhcb signal decays in the (top) DD and (bottom) LL data categories, for four different, narrow $p_z(\KS)$ regions. The expected distributions given the time acceptance used in the simple studies  are overlaid.\label{fig:dec_time_dist}} 
 % \end{figure}
 
-For \belle II, it is assumed that the \KS reconstruction is similar to {}the \belle\ \KS reconstruction, which is based on a neural network and reconstructs \KS decays for which the decay product leave tracks in both the drift chamber and silicon vertex detectors, as well as decays that leave tracks in the drift chamber only~\cite{BelleKSPaper,BelleKSThesis}. Therefore, the \KS decay is required to be within $r_{max}=1130\mm$ of the beam axis, corresponding to a decay within the outer radius of the drift-chamber. In practice, most of the kaons decay inside the silicon vertex detector, and requiring a decay before 1130\mm is essentially equivalent to having no time cut-off.
+For \belle II, it is assumed that the \KS reconstruction is similar to {}the \belle\ \KS reconstruction, which is based on a neural network and reconstructs \KS decays for which the decay product leave tracks in both the drift chamber and silicon vertex detectors, as well as decays that leave tracks in the drift chamber only~\cite{BelleKSPaper,BelleKSThesis}. Therefore, the \KS decay is required to be within $r_{max}=1130\mm$ of the beam axis, corresponding to a decay within the outer radius of the drift-chamber. In practice, most of the kaons already decay inside the silicon vertex detector, and requiring a decay before the outer radius of the drift chamber is essentially equivalent to having no time cut-off.
 
 
 
@@ -519,7 +523,7 @@ Given the decay-time acceptance and momentum distribution for each experimental 
 
 The uncertainty bands in Fig.~\ref{fig:compare_experiments} are calculated by repeating the study while varying some of the inputs. The model dependence of the predicted biases is probed by repeating the study using two other amplitude models as input for $A_1(\spm)$ and $A_2(\spm)$: the model published in Ref.~\cite{BELLE2010} and the model included in \sc{EvtGen}\normalfont~\cite{EvtGen}. 
 %The use of different models change the predicted biases by up to $0.05^\circ$. W
-hen defining $A_2(\spm)$ in terms of $A_1(\spm)$, there is an uncertainty due to the unknown $(r_k, \delta_k)$ parameters used to describe the $\pi\pi$ resonance terms. This uncertainty is assessed by making the study with several different random realisations of the parameter set. 
+then defining $A_2(\spm)$ in terms of $A_1(\spm)$, there is an uncertainty due to the unknown $(r_k, \delta_k)$ parameters used to describe the $\pi\pi$ resonance terms. This uncertainty is assessed by making the study with several different random realisations of the parameter set. 
 %The phases $\delta_k$ are sampled uniformly in the interval $[0, 2\pi]$ while the $r_k$ are sampled from a normal distribution with $\mu=\tan^2\theta_C$ and $\sigma=\mu/2$. The uncertainty is about $0.05^\circ$ across the three experiments considered. 
 The studies are repeated while varying the time acceptances and material densities with $\pm 10\,\%$. 
 %The largest deviations in biases are found to be below $0.05^\circ$. The dependence on the handling of the momentum distribution is estimated by repeating the study using 10 and 20 quantiles to describe the momentum distributions at each point in phase space, instead of 5. The variation in the results is taken as the systematic uncertainty, and found to be below $0.01^\circ$ for all experiments. 

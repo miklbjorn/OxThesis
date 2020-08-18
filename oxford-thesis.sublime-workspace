@@ -516,10 +516,10 @@
 	"buffers":
 	[
 		{
-			"file": "thesis.tex",
+			"file": "preambles/preamble.tex",
 			"settings":
 			{
-				"buffer_size": 9755,
+				"buffer_size": 2842,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -528,7 +528,7 @@
 			"file": "chapters/ch5-the-two-fits.tex",
 			"settings":
 			{
-				"buffer_size": 82481,
+				"buffer_size": 84271,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -537,34 +537,25 @@
 			"file": "chapters/ch5-systematics-and-interpretation.tex",
 			"settings":
 			{
-				"buffer_size": 64691,
+				"buffer_size": 66600,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "tables/05_measurement/global_fit_yields.tex",
+			"file": "preambles/preface.tex",
 			"settings":
 			{
-				"buffer_size": 1497,
+				"buffer_size": 6738,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "chapters/ch3-the-LHCb-detector.tex",
+			"file": "tables/05_measurement/systematic_overview.tex",
 			"settings":
 			{
-				"buffer_size": 44440,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "bib_files/references.bib",
-			"settings":
-			{
-				"buffer_size": 32441,
+				"buffer_size": 1903,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -573,16 +564,7 @@
 			"file": "chapters/ch5-selection-and-backgrounds.tex",
 			"settings":
 			{
-				"buffer_size": 59882,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "tables/05_measurement/bdt_variables.tex",
-			"settings":
-			{
-				"buffer_size": 3801,
+				"buffer_size": 60361,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -782,25 +764,28 @@
 	"expanded_folders":
 	[
 		"/Users/bjoern/Documents/Oxford/thesis",
-		"/Users/bjoern/Documents/Oxford/thesis/appendices",
-		"/Users/bjoern/Documents/Oxford/thesis/bib_files",
 		"/Users/bjoern/Documents/Oxford/thesis/chapters",
-		"/Users/bjoern/Documents/Oxford/thesis/preambles",
-		"/Users/bjoern/Documents/Oxford/thesis/tables",
-		"/Users/bjoern/Documents/Oxford/thesis/tables/02_theory"
+		"/Users/bjoern/Documents/Oxford/thesis/preambles"
 	],
 	"file_history":
 	[
-		"/Users/bjoern/Documents/Oxford/thesis/chapters/ch3-the-LHCb-detector.tex",
-		"/Users/bjoern/Documents/Oxford/thesis/bib_files/DPhil.bib",
-		"/Users/bjoern/Documents/Oxford/thesis/bib_files/references.bib",
-		"/Users/bjoern/Documents/Oxford/thesis/tmp_build_files/thesis.bbl",
-		"/Users/bjoern/Documents/Oxford/thesis/chapters/ch5-systematics-and-interpretation.tex",
-		"/Users/bjoern/Documents/Oxford/thesis/chapters/ch5-the-two-fits.tex",
-		"/Users/bjoern/Documents/Oxford/thesis/tables/05_measurement/lhcb_combo_inputs.tex",
-		"/Users/bjoern/Documents/Oxford/thesis/chapters/ch5-selection-and-backgrounds.tex",
 		"/Users/bjoern/Documents/Oxford/thesis/chapters/ch4-GGSZ-and-KS-CPV.tex",
+		"/Users/bjoern/Documents/Oxford/thesis/chapters/ch5-systematics-and-interpretation.tex",
+		"/Users/bjoern/Documents/Oxford/thesis/tables/05_measurement/selection_summary.tex",
+		"/Users/bjoern/Documents/Oxford/thesis/chapters/ch5-selection-and-backgrounds.tex",
+		"/Users/bjoern/Documents/Oxford/thesis/thesis.tex",
+		"/Users/bjoern/Documents/Oxford/thesis/tables/05_measurement/selected_candidates.tex",
+		"/Users/bjoern/Documents/Oxford/thesis/chapters/ch5-the-two-fits.tex",
+		"/Users/bjoern/Documents/Oxford/thesis/chapters/ch3-the-LHCb-detector.tex",
+		"/Users/bjoern/Documents/Oxford/thesis/tables/05_measurement/bdt_variables.tex",
+		"/Users/bjoern/Documents/Oxford/thesis/bib_files/LHCb-PAPER.bib",
+		"/Users/bjoern/Documents/Oxford/thesis/bib_files/references.bib",
+		"/Users/bjoern/Documents/Oxford/thesis/tables/05_measurement/global_fit_yields.tex",
 		"/Users/bjoern/Documents/Oxford/thesis/appendices/all_fits.tex",
+		"/Users/bjoern/Documents/Oxford/thesis/tables/05_measurement/lhcb_combo_inputs.tex",
+		"/Users/bjoern/Documents/Oxford/thesis/tables/05_measurement/cp_fit_toy_results.tex",
+		"/Users/bjoern/Documents/Oxford/thesis/bib_files/DPhil.bib",
+		"/Users/bjoern/Documents/Oxford/thesis/tmp_build_files/thesis.bbl",
 		"/Users/bjoern/Documents/Oxford/thesis/preambles/preface.tex",
 		"/Users/bjoern/Documents/Oxford/thesis/chapters/ch6-conclusions.tex",
 		"/Users/bjoern/Documents/Oxford/thesis/chapters/ch1-intro.tex",
@@ -810,12 +795,9 @@
 		"/Users/bjoern/Documents/Oxford/thesis/LHCb.bst",
 		"/Users/bjoern/Documents/Oxford/thesis/tables/05_measurement/eff_corr_cisi_d2kspipi.tex",
 		"/Users/bjoern/Documents/Oxford/thesis/tables/05_measurement/Fi_values.tex",
-		"/Users/bjoern/Documents/Oxford/thesis/bib_files/LHCb-PAPER.bib",
 		"/Users/bjoern/Documents/Oxford/Analysis/b2dh-ggsz-ana/tmp_build_files/main.bbl",
 		"/Users/bjoern/Documents/Oxford/Analysis/b2dh-ggsz-ana/chapters/selection.tex",
 		"/Users/bjoern/Documents/Oxford/Analysis/b2dh-ggsz-ana/chapters/theory_and_strategy.tex",
-		"/Users/bjoern/Documents/Oxford/thesis/tables/05_measurement/bdt_variables.tex",
-		"/Users/bjoern/Documents/Oxford/thesis/tables/05_measurement/global_fit_yields.tex",
 		"/Users/bjoern/Documents/Oxford/Analysis/b2dh-ggsz-ana/tables/systematics/total_syst_corr_matrix.tex",
 		"/Users/bjoern/Documents/Oxford/thesis/tables/05_measurement/total_syst_corr_matrix.tex",
 		"/Users/bjoern/Documents/Oxford/thesis/tables/05_measurement/lhcb_syst_corr_matrix.tex",
@@ -834,18 +816,15 @@
 		"/Users/bjoern/Documents/Oxford/thesis/tables/05_measurement/cisi_syst_corr_matrix.tex",
 		"/Users/bjoern/Documents/Oxford/Analysis/b2dh-ggsz-ana/chapters/systematic_uncertainties.tex",
 		"/Users/bjoern/Documents/Oxford/Analysis/b2dh-ggsz-ana/chapters/global_fit.tex",
-		"/Users/bjoern/Documents/Oxford/thesis/tables/05_measurement/cp_fit_toy_results.tex",
 		"/Users/bjoern/Documents/Oxford/thesis/tables/05_measurement/cpfit_stat_corr_matrix.tex",
 		"/Users/bjoern/Documents/Oxford/Analysis/Bu2Dh_D2Kshh/BDK_GGSZ_PAPER/sections/selection.tex",
 		"/Users/bjoern/Documents/Oxford/Analysis/b2dh-ggsz-ana/chapters/cp_fit.tex",
 		"/Users/bjoern/Documents/Oxford/thesis/tables/05_measurement/fitted_parameters_global_fit.tex",
 		"/Users/bjoern/Documents/Oxford/Analysis/b2dh-ggsz-ana/tables/global_fit/global_fit_yields.tex",
 		"/Users/bjoern/Documents/Oxford/thesis/preambles/preamble.tex",
-		"/Users/bjoern/Documents/Oxford/thesis/tables/05_measurement/selection_summary.tex",
 		"/Users/bjoern/Documents/Oxford/Analysis/b2dh-ggsz-ana/tables/selection/input_param.tex",
 		"/Users/bjoern/Documents/Oxford/Analysis/ks-cpv-in-ggsz-analyses/ks-cpv-paper/sections/numerical_studies.tex",
 		"/Users/bjoern/Documents/Oxford/thesis/bib_files/Fysik.bib",
-		"/Users/bjoern/Documents/Oxford/thesis/tables/05_measurement/selected_candidates.tex",
 		"/Users/bjoern/Documents/Oxford/thesis/tables/05_measurement/pid_efficiencies.tex",
 		"/Users/bjoern/Documents/Oxford/Analysis/b2dh-ggsz-ana/tables/selection/pid_eff_results.tex",
 		"/Users/bjoern/Documents/Oxford/Analysis/b2dh-ggsz-ana/tables/selection/final_data_yields_table.tex",
@@ -917,8 +896,7 @@
 		"/Users/bjoern/Documents/Oxford/Analysis/B2Dpi_GGSZ/b2dh-ggsz-ana/appendix/charmless_fits.tex",
 		"/Users/bjoern/Documents/Oxford/Analysis/B2Dpi_GGSZ/b2dh-ggsz-ana/tables/selection/efficiency_tables/signal_relative_eff.tex",
 		"/Users/bjoern/Documents/Oxford/Analysis/B2Dpi_GGSZ/b2dh-ggsz-ana/tmp_build_files/main.toc",
-		"/Users/bjoern/Documents/Oxford/Analysis/B2Dpi_GGSZ/b2dh-ggsz-ana/tables/selection/rectangular_cuts.tex",
-		"/Users/bjoern/Documents/Oxford/Analysis/B2Dpi_GGSZ/b2dh-ggsz-ana/chapters/data_and_mc_samples.tex"
+		"/Users/bjoern/Documents/Oxford/Analysis/B2Dpi_GGSZ/b2dh-ggsz-ana/tables/selection/rectangular_cuts.tex"
 	],
 	"find":
 	{
@@ -937,6 +915,11 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"CB",
+			"DecayTre",
+			"RapidSim",
+			"PIDK",
+			"second addendum to the Technical Design Report",
 			"TMVA4",
 			"trigger",
 			"Lange:2001uf",
@@ -1007,35 +990,37 @@
 	"groups":
 	[
 		{
-			"selected": 2,
+			"selected": 3,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "thesis.tex",
+					"file": "preambles/preamble.tex",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 9755,
+						"buffer_size": 2842,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								9647,
-								9674
+								400,
+								400
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/LaTeX/LaTeX.sublime-syntax"
+							"syntax": "Packages/LaTeX/LaTeX.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 7,
+					"stack_index": 5,
 					"type": "text"
 				},
 				{
@@ -1044,15 +1029,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 82481,
+						"buffer_size": 84271,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								71809,
-								71809
+								57705,
+								57705
 							]
 						],
 						"settings":
@@ -1062,10 +1047,10 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 33430.0,
+						"translation.y": 17857.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 3,
 					"type": "text"
 				},
 				{
@@ -1074,15 +1059,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 64691,
+						"buffer_size": 66600,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								63666,
-								63666
+								64186,
+								64186
 							]
 						],
 						"settings":
@@ -1092,27 +1077,55 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 29041.0,
+						"translation.y": 19475.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "preambles/preface.tex",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 6738,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								6737,
+								6737
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/LaTeX/LaTeX.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 1209.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
 					"type": "text"
 				},
 				{
-					"buffer": 3,
-					"file": "tables/05_measurement/global_fit_yields.tex",
+					"buffer": 4,
+					"file": "tables/05_measurement/systematic_overview.tex",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1497,
+						"buffer_size": 1903,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1113,
-								1113
+								544,
+								544
 							]
 						],
 						"settings":
@@ -1120,128 +1133,40 @@
 							"syntax": "Packages/LaTeX/LaTeX.sublime-syntax"
 						},
 						"translation.x": 0.0,
-						"translation.y": 333.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 6,
-					"type": "text"
-				},
-				{
-					"buffer": 4,
-					"file": "chapters/ch3-the-LHCb-detector.tex",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 44440,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								44333,
-								44333
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/LaTeX/LaTeX.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 17700.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 4,
-					"type": "text"
-				},
-				{
-					"buffer": 5,
-					"file": "bib_files/references.bib",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 32441,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								26674,
-								26658
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/LaTeXTools/BibLaTeX.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 15199.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 5,
-					"type": "text"
-				},
-				{
-					"buffer": 6,
-					"file": "chapters/ch5-selection-and-backgrounds.tex",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 59882,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								52098,
-								52098
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/LaTeX/LaTeX.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 21600.0,
+						"translation.y": 103.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 2,
 					"type": "text"
 				},
 				{
-					"buffer": 7,
-					"file": "tables/05_measurement/bdt_variables.tex",
+					"buffer": 5,
+					"file": "chapters/ch5-selection-and-backgrounds.tex",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 3801,
+						"buffer_size": 60361,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								197,
-								197
+								16156,
+								16156
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/LaTeX/LaTeX.sublime-syntax"
+							"syntax": "Packages/LaTeX/LaTeX.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 4438.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 3,
+					"stack_index": 4,
 					"type": "text"
 				}
 			]
