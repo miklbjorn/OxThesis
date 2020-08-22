@@ -10,9 +10,62 @@
 \chapter{Summary and outlook}
 \label{ch:6-conclusion}
 
+The main result of the thesis is a measurement of the CKM angle $\gamma$ using \BtoDK and \BtoDpi decays, where the \D meson decays to one of the final states \Kspipi and \KsKK. Approximately 17,500 \BtoDK decays\footnote{This number includes the approximately 13.5\,\% of \BtoDK that are reconstructed as \BtoDpi decays in the analysis.} and 230,000 \BtoDpi decays are analysed, obtained from the $pp$ collision data set collected by the \lhcb experiment during Run~1~and~2 of the LHC. The total data set corresponds to an integrated luminosity of about 9\invfb collected at centre-of-mass energies of $\sqrt s =7$, $8$, and $13\tev$. The measurement relies on the phase-space distribution of signal decays, analysed using a model-independent method based on strong-phase measurements by the CLEO and BESIII collaborations; an approach known as the model-independent BPGGSZ method. The measured \CP-violation observables are defined
+\begin{align}
+    \xpmdk &= r_B^{DK} \cos (\delta_B^{DK} \pm \g), & \ypmdk &= r_B^{DK} \sin (\delta_B^{DK} \pm \g),
+\end{align}
+and measured to be
+\begin{align}
+\begin{split}
+    x_-^{DK} & = (\phantom{-}5.7 \pm 1.0 \pm  0.2\pm 0.2) \times 10^{-2}, \\
+    y_-^{DK} & = (\phantom{-}6.6 \pm 1.1 \pm  0.3\pm 0.4) \times 10^{-2}, \\
+    x_+^{DK} & = (         - 9.3 \pm 1.0 \pm  0.2\pm 0.2) \times 10^{-2}, \\
+    y_+^{DK} & = (         - 1.3 \pm 1.3 \pm  0.3\pm 0.3) \times 10^{-2},
+\end{split}
+\end{align}
+where the first uncertainty is statistical, the second arises due to systematic effects in the measurement, and the third is the propagated uncertainty on the strong-phase inputs from the CLEO and BESIII measurements. In addition, two nuissance parameters relating to \BtoDpi decays are measured. These are defined
+\begin{align}
+    \xxidpi &= (r_B^{DK}/r_B^{D\pi}) \cos (\delta_B^{DK} - \delta_B^{D\pi}), & 
+    \yxidpi &= (r_B^{DK}/r_B^{D\pi}) \sin (\delta_B^{DK} - \delta_B^{D\pi}),
+\end{align}
+and measured to be
+\begin{align}
+\begin{split}
+    x_\xi^{D\pi} & = (         - 5.5 \pm 2.0 \pm  0.3\pm 0.1) \times 10^{-2}, \\
+    y_\xi^{D\pi} & = (\phantom{-}0.7 \pm 2.3 \pm  0.5\pm 0.2) \times 10^{-2}, 
+\end{split}
+\end{align}
+Due to the measurement approach, the information on $\gamma$ obtained from \BtoDpi decays is encoded in the $(\xpmdk, \ypmdk)$ parameters. The measured observables have been interpreted in terms of the underlying physics parameters, yielding the results
+\begin{align}
+\begin{split}\label{eq:phys_results}
+    \gamma          &= (68.7^{+5.2}_{-5.1})^\circ, \\
+    r_B^{\DK}       &= 0.0904^{+0.0077}_{-0.0075}, \\
+    \delta_B^{\DK}  &= (118.3^{+5.5}_{-5.6})^\circ, \\
+    r_B^{\Dpi}      &= 0.0050^{+0.0017}_{-0.0017}, \\
+    \delta_B^{\Dpi} &= (291^{+24}_{-26})^\circ,
+\end{split}
+\end{align}
+This is the most precise stand-alone measurement of $\gamma$ to date, and surpasses the precision of all earlier measurements of $\gamma$ combined. The measured value agrees with the expectation from global fits of all CKM parameters. For example, the CKMFitter group obtain  $\gamma = (65.66^{+0.90}_{-2.65})^\circ $~\cite{CKMfitter2015} in a global fit that excludes direct $\gamma$ measurements, and the obtained values and uncertainties in other world averages are similar~\cite{HFLAV,UTfit-UT}.
+
+ It was the first  BPGGSZ measurement by the \lhcb collaboration to include \BtoDpi decays as a signal channel, and a series of feasibility studies that informed the analysis strategy have also been presented. While the impact on the $\gamma$ precision from \BtoDpi decays is limited, the new strategy significantly simplified the treatment of the non-uniform phase-space acceptance in \lhcb, and lead to a significant reduction of the systematic measurement uncertainty. This will become especially important in future measurements, where the precision will no longer be limited by the statistical uncertainty to the degree that it is now.
+
+The thesis also presented a careful analysis of the impact of neutral kaon \CP violation and material interaction on $\gamma$ measurements based on the BPGGSZ method. This was a crucial step towards to the promotion of the \BtoDpi channel to a signal channel: existing literature estimated the potential bias to be $\mathcal O(1^\circ)$ in \BtoDK decays \emph{and to scale with} $1/r_B$. This suggested potentially large biases for a \BtoDpi analysis, since $r_B^{D\pi}\simeq0.005$ is twenty times smaller than $r_B^{DK}\simeq 0.1$. However, the thesis argues that the actual impact is an order of magnitude smaller, as long as the \CP-violation observables are determined based on the phase-space distribution of signal decays. This is confirmed in a number of simple, numerical studies that take the detector geometries of the \lhcb and Belle~II detectors into account; these studies are also used to assign a (reasonably small) systematic uncertainty on the measurement results discussed above.
+
+\section{A look towards the future} % (fold)
+\label{sec:a_look_towards_the_future}
+
+% section a_look_towards_the_future (end)
 % \minitoc
 
-Say something clever
+Precise measurements of $\gamma$ play an important role in the physics programmes of both the \lhcb and \belle~II experiments, and the next 10--15 years will see huge improvements in the obtainable precision. Given the results of Chapter~\ref{ch:5-GGSZ-measurement}, it is clear that \lhcb is well on course to reach, ever surpass, the expected goal of determining $\gamma$ with a precision of $4^\circ$ using Run~1~and~2 data~\cite{LHCbUpgradeITDR}, when more analyses are performed with the full data set. In the longer run, \lhcb is expecting to reach a precision of $1.5^\circ$ in the combination of $\gamma$ measurements by the end of Run~3 of the LHC, and on improving that to $\sim 0.35^\circ$ in the planned Upgrade Phase II during the 2030'ies~\cite{lhcbcollaborationPhysicsCaseLHCb2019}, with the BPGGSZ mode continuing to be an important contributor the the obtainable precision. The mode plays an even more significant role in the Belle~II physics programme, being denoted the \emph{golden mode} in the physics programme~\cite{kouBelleIIPhysics2019}, due to a much higher \KS reconstruction efficiency in the experiment. When the planned data set corresponding to an integrated luminosity of 50\invab has been collected, the uncertainty on $\gamma$ from the combination of all Belle~II results is expected to be about $1.6^\circ$~\cite{kouBelleIIPhysics2019}; this is expected to happen in 2031 given the current schedule~\cite{BelleTimescale}.
+
+The main reason for the impressive expected improvement in precision is that current $\gamma$ measurements are dominated by statistical uncertainties in all the major signal modes. This is expected to remain true for the BPGGSZ modes throughout the period described above. The current dominating systematic uncertainty on $\gamma$ is due to the uncertainty on the measured strong-phase inputs, currently contributing an uncertainty of about $\sim1^\circ$; a number that represents a significant improvement compared to earlier analyses, due to the recently published measurements by the BESIII collaboration~\cite{BESCISI,BESCISIKSKK}. These measurements are based on a data set corresponding to an integrated luminosity of 2.9\invfb. The BESIII collaboration is planning to take data corresponding to an additional 17\invfb under the same running conditions during 2021--22~\cite{BESTimescale}; therefore, which will allow for significantly improved measurements. Therefore, is not expected that the strong-phase inputs will be a limiting systematic uncertainty in model-independent BPGGSZ measurements for the current generation of experiments. 
+
+It used to be the case that the dominating systematic uncertainty in \lhcb measurements of $\gamma$ with the BPGGSZ method was due to the non-trivial phase-space acceptance profile~\cite{LHCb-PAPER-2018-017}, contributing most of the $\sim2^\circ$ systematic uncertainty on $\gamma$ related to experimental effects. This would have been the largest systematic uncertainty in the measurement presented in the thesis, and would potentially become the dominating uncertainty during the first upgrade phase of \lhcb. However, as described in detail in the thesis, the uncertainty can be avoided altogether in a simultaneous analysis of \BtoDK and \BtoDpi decays, allowing for maximal use of the large data sets to be collected by the \lhcb experiment in the future.
+
+With the results of this thesis, the world averages of $\gamma$ measurements will move closer to the value preferred by global fits and the Standard Model passes yet another test. As such, the question remains open as to whether the CKM picture will hold up to the increasingly stringent scrutiny of the next decades, or if signs of new physics will start to appear.
+
+
 
 % section cp_violation_and_material_interaction_of_neutral_kaons (end)
 

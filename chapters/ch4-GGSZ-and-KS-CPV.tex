@@ -387,8 +387,8 @@ The neutral kaon momentum distributions are obtained using \texttt{RapidSim}~\ci
 
 \begin{figure}[tbp]
     \centering
-    \includegraphics[width=0.8\columnwidth]{figures/ks_chapter/note_figs/lhcb_studies/RapidSim_P_comparison.pdf}
-    \caption{Momentum spectra for the \KS meson in \lhcb, as generated using \texttt{RapidSim} (black lines) directly, as well as reweighed to match decay time acceptance in the (red) LL and (blue) DD data categories of \lhcb. The \lhcb spectra are compared with the spectra in fully simulated signal decays, for both (dotted red lines) LL and (dotted blue lines) DD data categories.}
+    \includegraphics[width=0.98\columnwidth]{figures/analysis/systematics/momentum_distributions_rapidsim_vs_lhcb.pdf}
+    \caption{Momentum spectra for the \KS meson in \lhcb, as generated using \texttt{RapidSim} (black lines) directly, as well as reweighed to match decay time acceptance in the (red) LL and (blue) DD data categories of \lhcb. The \lhcb spectra are compared with the spectra in fully simulated signal decays, for both the (dotted red lines) LL and (dotted blue lines) DD data categories.}
     \label{fig:rapidsim_momentum_comparison}
 \end{figure}
 
@@ -401,7 +401,7 @@ The resulting momentum distributions for the three types of sample are shown in 
 
 \begin{figure}[tbp]
     \centering
-    \includegraphics[width=0.95\columnwidth]{figures/ks_chapter/momentum_distributions.pdf}
+    \includegraphics[width=0.98\columnwidth]{figures/ks_chapter/momentum_distributions.pdf}
     \caption{Momentum distributions for the \lhcb (red dotted line) LL and (blue) DD categories, as well as (green) \belle II, obtained using \texttt{RapidSim}.}
     \label{fig:momentum}
 \end{figure}
@@ -461,8 +461,8 @@ where $\psi_\Kz(t)$ ($\psi_\Kzb(t)$) is the amplitude for an initial \Kz (\Kzb) 
 
 \begin{figure}[tb]
     \centering
-    \includegraphics[width=\columnwidth]{figures/ks_chapter/note_figs/lhcb_studies/material_fit_asym.pdf}
-    \caption{The asymmetry in Eq.~\eqref{eq:KKb_asymmetry_definition} as a function of time for (left) LL and (right) DD \KS tracks in a simulated \lhcb sample. The black lines show individual tracks. The light blue area is the central 50 \% quantile, the dark blue area is the 1$\sigma$ uncertainty band on the mean. The red lines are calculated using the average $\Delta\chi$ values that are also used in the calculation of biases in BPGGSZ measurements.}
+    \includegraphics[width=\columnwidth]{figures/analysis/systematics/compare_material_int_asym.pdf}
+    \caption{The asymmetry in Eq.~\eqref{eq:KKb_asymmetry_definition} as a function of time for \KS tracks in samples of simulated (left) LL and (right) DD decays, using the full \lhcb simulation. The light blue area is the central 50 \% quantile of all tracks, the dark blue area is the 1$\sigma$ uncertainty band on the mean. The black lines show the result for a subset of individual, randomly sampled tracks. The red lines are calculated using the average $\Delta\chi$ values that are also used in the calculation of biases in BPGGSZ measurements.}
     \label{fig:lhcb_asymmetry}
 \end{figure}
 
@@ -475,7 +475,7 @@ The \lhcb detector is undergoing a significant upgrade prior to the start of the
 \subsection{Calculation procedure} % (fold)
 \label{sub:calculation_procedure}
 
-The main idea in the bias study is to calculate the BPGGSZ bin yields including the full effect of neutral kaon \CP violation and material, fit them using the default equations of Chapter~\ref{ch:2-litreview}, and obtain the bias $\Delta\gamma = \gamma - \gamma^0$ due to the kaon effects not being considered in the parameter extraction. For the purpose of Ref.~\cite{KsCPV}, a simple fit setup of a single \BtoDh mode is investigated, where the \Ki parameters are determined in a control channel with the relevant experimental acceptance. This setup is modified in the study used to assign a systematic uncertainty on the \lhcb measurement of Chapter~\ref{ch:5-GGSZ-measurement}, as described in Section~\ref{sub:the_impact_on_coupled_btodk_and_btodpi_measurements} below.
+The main idea in the bias study is to calculate the BPGGSZ bin yields including the full effect of neutral kaon \CP violation and material, fit them using the default equations of Chapter~\ref{ch:2-litreview}, and thereby obtain the bias $\Delta\gamma = \gamma - \gamma^0$ due to the kaon effects not being considered in the parameter extraction. For the purpose of Ref.~\cite{KsCPV}, a simple fit setup of a single \BtoDh mode is investigated, where the \Ki parameters are determined in a control channel with the relevant experimental acceptance. This setup is modified in the study used to assign a systematic uncertainty on the \lhcb measurement of Chapter~\ref{ch:5-GGSZ-measurement}, as described in Section~\ref{sub:the_impact_on_coupled_btodk_and_btodpi_measurements} below.
 
 
 In practice, the amplitude model for $\Dz\to\KS\pip\pim$ decays in Ref.~\cite{Belle2018} is taken to represent the $A_1(\spm)$ amplitude. Then $A_2(\spm)$ is obtained as described in Section~\ref{sub:relationship_between_the_ks_and_kl_amplitudes}. In terms of $A_1$ and $A_2$, the amplitudes $\ADorDbSL(\spm)$ can be expressed and related via Eqs.~\eqref{eq:A12toKS}~and~\eqref{eq:DDbar_relations}, and the full signal decay amplitudes as a function of phase-space coordinates, time, and the material interaction parameter $\Delta\chi$ can be calculated for a given set of input parameters $(\gamma^0, r_B^0, \delta_B^0)$. The squared decay amplitudes are then integrated over phase space and the kaon decay times to obtained the binned signal yield.

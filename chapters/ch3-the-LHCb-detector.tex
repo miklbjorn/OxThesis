@@ -24,7 +24,7 @@ During operation of the LHC, bunches of about $\mathcal O(10^{11})$ protons are 
     \label{fig:CERN_accerators}
 \end{figure}
 
-The LHC has been providing $pp$ collisions during two periods so far: Run~1 during 2011 and 2012, where the centre-of mass energies were $\sqrt{s}=7\tev$ and $8\tev$ respectively, and Run~2 from 2015 to 2018, where $\sqrt{s}=13\tev$. The instantaneous luminosity at the \lhcb collision point has been $4\times 10^{32} \cm^{-2} \,\mathrm s^{-1}$, and has allowed for the collection of a data set corresponding to an integrated luminosity of of 3\invfb during Run~1 and 6\invfb during Run~2. The full data set forms the basis of the thesis. This instantaneous luminosity is significantly lower than at other collision points, for example the peak instantaneous luminosity in the ATLAS detector was about $20\times 10^{33}\cm^{-2}\,\mathrm s^{-1}$ in 2018~\cite{ATLAS-CONF-2019-021},  50 times higher than in \lhcb. The lower luminosity is necessary to limit the number of $pp$ interactions per bunch crossing to an average of about 1.1--1.4 (depending on the data taking period), necessary for a vertex reconstruction with the required precision. The lower luminosity is achieved by colliding the proton beams with an off-set at the \lhcb collision point. This has the added benefit that the offset can be continuously adjusted during a fill of the LHC, and thus all data can be taken at the same instantaneous luminosity, allowing for simpler trigger configuration, and simpler subsequent analysis because the detector occupancy is constant. The lower luminosity, of course, comes with the downside that the collected data sample is smaller.
+The LHC has been providing $pp$ collisions during two periods so far: Run~1 during 2011 and 2012, where the centre-of mass energies were $\sqrt{s}=7\tev$ and $8\tev$ respectively, and Run~2 from 2015 to 2018, where $\sqrt{s}=13\tev$. The instantaneous luminosity at the \lhcb collision point has been $4\times 10^{32} \cm^{-2} \,\mathrm s^{-1}$, and has allowed for the collection of a data set corresponding to an integrated luminosity of approximately 3\invfb during Run~1 and 6\invfb during Run~2. The full data set forms the basis of the thesis. This instantaneous luminosity is significantly lower than at other collision points, for example the peak instantaneous luminosity in the ATLAS detector was about $20\times 10^{33}\cm^{-2}\,\mathrm s^{-1}$ in 2018~\cite{ATLAS-CONF-2019-021},  50 times higher than in \lhcb. The lower luminosity is necessary to limit the number of $pp$ interactions per bunch crossing to an average of about 1.1--1.4 (depending on the data taking period), necessary for a vertex reconstruction with the required precision. The lower luminosity is achieved by colliding the proton beams with an off-set at the \lhcb collision point. This has the added benefit that the offset can be continuously adjusted during a fill of the LHC, and thus all data can be taken at the same instantaneous luminosity, allowing for simpler trigger configuration, and simpler subsequent analysis because the detector occupancy is constant. The lower luminosity, of course, comes with the downside that the collected data sample is smaller.
 
 \begin{figure}[tb]
     \centering
@@ -321,5 +321,34 @@ The most significant computational cost of the simulation is due to the detector
 A number of sub-dominant backgrounds are investigated using the fast-simulation package \texttt{RapidSim}~\cite{cowanRapidSimApplicationFast2017}. This package can decay heavy $b$ and $c$ hadrons with kinematic distributions similar to those in \lhcb $pp$ collisions, or with user defined input distributions. The decays are typically evenly distributed over phase space, but can also be handled with \evtgen~\cite{EvtGen} to take involved spins and resonant structure into account. Furthermore, a smearing of the obtained momenta can be applied that is based on the \lhcb resolution. 
 
 % subsection rapidsim_a_fast_simulation_tool (end)RapidSim.
+
+\section{Data-taking conditions} % (fold)
+\label{sec:past_and_future_data_taking_conditions}
+
+\begin{table}[tp]
+    \centering
+    \caption{Overview of the running condition and collected data samples by the \lhcb experiment during Run~1~and~2 of the LHC~\cite{LHCbLumi}. A brief overview of data taking periods planned for the future is also shown.\label{tab:run_conditions}}
+    \begin{tabular}{cccc}
+    \toprule
+    LHC phase   & Year  & $\sqrt s / \tev$  & $\int \mathcal L\,\mathrm dt$ / \invfb \\
+    \midrule
+    Run 1       & 2011  & 7                 & 1.0 \\
+                & 2012  & 8                 & 2.0 \\
+    \midrule
+    Run 2       & 2015  & 13                & 0.3 \\
+                & 2016  &                   & 1.6 \\
+                & 2017  &                   & 1.7 \\
+                & 2018  &                   & 2.1 \\
+    \bottomrule
+    \end{tabular}
+\end{table}
+
+
+
+The \lhcb experiment has collected a data set corresponding to to 8.7\invfb during Run~1 and 2 of the LHC. The running conditions for each year are summarised in Table~\ref{tab:run_conditions}. The measurement that is the main topic of the thesis is based on the full data set.
+
+The $\Bpm$ production cross section increased significantly with the higher centre-of-mass energy during Run~2. In the \lhcb acceptance, the cross section has been measured to be approximately 43\,$\mu$b at $\sqrt s =7\tev$, increasing to about 87\,$\mu$b at $\sqrt s =13\tev$~\cite{LHCb-PAPER-2017-037}. In combination with an increased selection efficiency due to improvements to the trigger, this resulted in signal yields per \invfb that were about 2.5 times higher in Run~2 than in Run~1, in the measurement described in Chapter~\ref{ch:5-GGSZ-measurement}. Before delving into the details of that analysis, Chapter~\ref{ch:4-KS-CPV} is dedicated to a phenomenological study of how it is impacted neutral kaon \CP violation and interaction with the \lhcb detector.
+
+% section past_and_future_data_taking_conditions (end)
 
 % section simulation (end)
