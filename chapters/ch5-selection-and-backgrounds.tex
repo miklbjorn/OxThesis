@@ -237,14 +237,14 @@ This is investigated with two statistical tests. The first is a $\chi^2$ compari
     \centering
     \includegraphics[width=\columnwidth]{figures/analysis/DP_thesis_s_KolSmi_KK_LL.pdf}
     \includegraphics[width=\columnwidth]{figures/analysis/DP_thesis_s_KolSmi_KK_DD.pdf}
-    \caption{One-dimensional distributions of $m^2(\KS\Kp)$, $m^2(\KS\Km)$, and $m^2(\pip\pim)$ in simulated (blue) \BtoDK and (red) \BtoDpi  decays where \DtoKsKK  in the (top) LL and (bottom) DD categories. The $p$ values are the results of Kolmogorov-Smirnov compatibility tests between the distributions.}
+    \caption{One-dimensional distributions of $m^2(\KS\Kp)$, $m^2(\KS\Km)$, and $m^2(\Kp\Km)$ in simulated (blue) \BtoDK and (red) \BtoDpi  decays where \DtoKsKK  in the (top) LL and (bottom) DD categories. The $p$ values are the results of Kolmogorov-Smirnov compatibility tests between the distributions.}
     \label{fig:KolSmi_KK}
 \end{figure}
 % subsection efficiency_profile_over_the_dalitz_plot (end)
 
 % section signal_selection_efficiencies (end)
 
-
+\FloatBarrier
 \section{Background studies} % (fold)
 \label{sec:background_studies}
 
@@ -298,7 +298,7 @@ The reconstructed \B mass spectrum is shown for \BtoDpi candidates in the \D sid
     \includegraphics[width=0.95\columnwidth]{figures/analysis/background_checks/ks_fd_check_K_PiPi.pdf}
     \includegraphics[width=0.95\columnwidth]{figures/analysis/background_checks/ks_fd_check_Pi_KK.pdf}
     \includegraphics[width=0.95\columnwidth]{figures/analysis/background_checks/ks_fd_check_K_KK.pdf}
-    \caption{The \B mass spectrum in the \KS sideband where $m_\KS\in[467, 482]\mevcc$ or $\m_\KS\in[512,527]\mevcc$ (left) without a requirement on the \KS flight distance significance, and (right) after the requirement implemented in the analysis.}
+    \caption{The \B mass spectrum in the \KS sideband where $m_\KS\in[467, 482]\mevcc$ or $m_\KS\in[512,527]\mevcc$ (left) without a requirement on the \KS flight distance significance, and (right) after the requirement implemented in the analysis.}
     \label{fig:fake_ks}
 \end{figure}
 
@@ -309,16 +309,17 @@ A similar potential background is from real \BtoDh decays where the \D meson dec
 \subsection{Semi-leptonic backgrounds} % (fold)
 \label{sub:semi_leptonic_backgrounds}
 
-
-
-The data sample has a minor background from $\B\to\D\mu\nu_\mu X$ decays, visible in the \B mass spectrum when the companion is required to satisfy $\texttt{isMuon=1}$.  This is shown in Fig.~\ref{fig:semileptonic_B_check_mu} for both the \BtoDK and \BtoDpi channels where \DtoKspipi. The \B mass spectra for simulated $\Bpm\to\D\mupm\nu_\mu$ decays reconstructed in each category are also shown, from simulation samples produced via \texttt{RapidSim}. The background is very efficiently vetoed by requiring $\texttt{isMuon=0}$ on the companion. This requirement removes approximately 85\,\% of the background decays, as estimated using the \texttt{PIDCalib} calibration samples and the $(p, p_T)$ distribution for the muon in the \texttt{RapidSim} samples. The fraction of signal candidates for which the companion satisfies $\texttt{isMuon=1}$ in simulated signal samples is $\leq 0.9\,\%$ so the impact on the signal yield is small.
-
 \begin{figure}[tb]
     \centering
     \includegraphics[width=\columnwidth]{figures/analysis/background_checks/b2dmunu_plot.pdf}
     \caption{(Top) The $m_B$ spectra in data split by the value of $\texttt{isMuon}$ for the companion particle, in (left) the $\Dpi$ and (right) the $\DK$ samples where \DtoKspipi. The two histograms are normalised independently, so that the distributions can be compared. The fractions of candidates in data (with $m_B\in[5080, 5800]\mevcc$) where the companion satisfies $\texttt{isMuon=1}$ are 1.6\,\% and 1.8\,\% for the $\Dpi$ and $\DK$ channels respectively. (Bottom) the \texttt{RapidSim} mass spectra for $\Bpm\to\Dz\mupm\nu_\mu$ decays reconstructed in the (left) $\Dpi $and (right) $\DK$ categories.}
     \label{fig:semileptonic_B_check_mu}
 \end{figure}
+
+
+The data sample has a minor background from $\B\to\D\mu\nu_\mu X$ decays, visible in the \B mass spectrum when the companion is required to satisfy $\texttt{isMuon=1}$.  This is shown in Fig.~\ref{fig:semileptonic_B_check_mu} for both the \BtoDK and \BtoDpi channels where \DtoKspipi. The \B mass spectra for simulated $\Bpm\to\D\mupm\nu_\mu$ decays reconstructed in each category are also shown, from simulation samples produced via \texttt{RapidSim}. The background is very efficiently vetoed by requiring $\texttt{isMuon=0}$ on the companion. This requirement removes approximately 85\,\% of the background decays, as estimated using the \texttt{PIDCalib} calibration samples and the $(p, p_T)$ distribution for the muon in the \texttt{RapidSim} samples. The fraction of signal candidates for which the companion satisfies $\texttt{isMuon=1}$ in simulated signal samples is $\leq 0.9\,\%$ so the impact on the signal yield is small.
+
+
 
 The analogous $\B\to\D e\nu_e X$ background is investigated by inspecting the \B mass spectra after making requirements on \texttt{PIDe} for the companion candidate, but a presence of the semi-leptonic background in data is not visible and no electron veto is applied to the companion.
 
@@ -333,20 +334,11 @@ The analogous $\B\to\D e\nu_e X$ background is investigated by inspecting the \B
     \includegraphics[width=0.8\columnwidth]{figures/analysis/background_checks/semilep_D_mu_1430.pdf}
     \includegraphics[width=0.8\columnwidth]{figures/analysis/background_checks/semilep_D_mu_1430_2.pdf}
     \includegraphics[width=0.8\columnwidth]{figures/analysis/background_checks/semilep_D_mu_1680.pdf}
-    \caption{The reconstructed (left) $m(\KS \pi^+ \pi^-)$ and (right) $m(Dh)$ distributions in \texttt{RapidSim} samples of $\Bpm\to\D \Kpm$ decays where $\Dz\to\KS\pi^-\mu^+\nu_\mu$. The top plot is for  decays the were uniformly distributed over phase space, and the following plots show the distribution where the $\KS\pim$ originate in the resonances $\Kstarm(892)$, $K^{*-}_0(1430)$, $K^{*-}_2(1430)$, and $\Kstarm(1680)$. The shapes for the $\Dz\to\KS\pi^-e^+\nu_e$ case are almost identical.}
+    \caption{The reconstructed (left) $m(\KS \pi^+ \pi^-)$ and (right) $m(D\Kpm)$ distributions in \texttt{RapidSim} samples of $\Bpm\to\D \Kpm$ decays where $\Dz\to\KS\pi^-\mu^+\nu_\mu$. The top plot is for  decays the were uniformly distributed over phase space, and the following plots show the distribution where the $\KS\pim$ originate in the resonances $\Kstarm(892)$, $K^{*-}_0(1430)$, $K^{*-}_2(1430)$, and $\Kstarm(1680)$. The shapes for the $\Dz\to\KS\pi^-e^+\nu_e$ case are almost identical.}
     \label{fig:semileptonic_D_decays_kspp}
 \end{figure}
 
-\begin{figure}[tp]
-    \centering
-    \includegraphics[width=0.35\columnwidth]{figures/analysis/background_checks/semilep_d_DP_892.pdf}
-    \includegraphics[width=0.35\columnwidth]{figures/analysis/background_checks/semilep_d_DP_1430.pdf}
-    \includegraphics[width=0.35\columnwidth]{figures/analysis/background_checks/semilep_d_DP_1430_2.pdf}
-    \includegraphics[width=0.35\columnwidth]{figures/analysis/background_checks/semilep_d_DP_1680.pdf}
-    \includegraphics[width=0.35\columnwidth]{figures/analysis/background_checks/semilep_d_DP_PHSP.pdf}
-    \caption{Dalitz distribution for $\D\to\KS\pi\mu\nu_\mu$ decays in \texttt{RapidSim}, where the $\KS\pim$ originate in the resonances $\Kstarm(892)$, $K^{*-}_0(1430)$, $K^{*-}_2(1430)$, and $\Kstarm(1680)$, as well as for a uniform distribution over phase space.}
-    \label{fig:d2kstmunu_dalits}
-\end{figure}
+
 
 There is a potential background from real $\Bpm\to\D h^\pm$ decays where the \D meson decays semi-leptonically: $\Dz\to\KS\pim\ell^+\nu_\ell$. This background is particularly dangerous because is peaks at the \B mass, when the \D-mass requirement is applied and it is reconstructed in the \DtoKspipi category. This is illustrated in Fig.~\ref{fig:semileptonic_D_decays_kspp} using \texttt{RapidSim} samples of $\Bpm\to\D(\to K^{*-}(\to \KS\pi-)\ell^+\nu_\ell)h^\pm $ decays for $K^{*}\in\{K^*(892), K^*_0(1430), K^*_2(1430), K^*(1680)\}$. The correct spin of each resonance is taken into account in generation, by handling the decay via \evtgen. The expected background yields relative to signal can be estimated by applying the \B and \D mass cuts to decays in the \texttt{RapidSim} samples, and using the relative branching ratios. Only the $\Dz\to\Kstarm(892)\ell\nu_\ell$ branching fractions have been measured~\cite{PDG2020}, but there is no reason to expect that higher \Kstar resonances should not contribute. To estimate their potential contribution, the branching ratios are approximated by
 \begin{align*}
@@ -355,9 +347,11 @@ There is a potential background from real $\Bpm\to\D h^\pm$ decays where the \D 
 because all the relevant $\Dz\to\Kstarm(\to\KS\pim)\pip$ branching fractions are known~\cite{PDG2020
 }. The efficiencies and branching ratios relative to the signal channel are given in Table~\ref{tab:relative_d2ksellnu_yields}. It is clear that the higher \Kstar resonances are important: the smaller branching ratios are compensated for by a higher selection efficiency, due to the smaller phase-space of the missed neutrino. The total background yield is 1.1\,\% of the signal yield in both the \BtoDpi and \BtoDK channels. However, there will be an additional contribution in the \BtoDK channel from real \BtoDpi decays with semi-leptonic \D decays and a mis-identification of the companion. This background also peaks, and the yield is approximately 0.4\,\% of the \BtoDK signal yield.
 
+
+
 \begin{table}
     \centering
-    \caption{The selection efficiencies of $\Bpm\to\D\Kpm$ decays where $\Dz\to\KS\pim\ell^+\nu_\ell$ when reconstructed in the \DtoKspipi mode in \texttt{RapidSim} relative to the signal selection efficiencies, for a number of decay modes: $\texttt{PHSP}$ as well as resonant production where the $\KS\pim$ pair originates in one of several \Kstar resonances. The relative branching ratios are also shown, calculated as explained in the main text, as well as the predicted relative yields.
+    \caption{The selection efficiencies of $\Bpm\to\D\Kpm$ decays where $\Dz\to\KS\pim\ell^+\nu_\ell$ when reconstructed in the \DtoKspipi mode in \texttt{RapidSim} relative to the signal selection efficiencies, for a number of decay modes: uniformly distributed over phase space ($\texttt{PHSP}$), as well as resonant production where the $\KS\pim$ pair originates in one of several \Kstar resonances. The relative branching ratios are also shown, calculated as explained in the main text, as well as the predicted relative yields.
     \label{tab:relative_d2ksellnu_yields}}
     \begin{tabular}{l |cc|c}
     \toprule
@@ -388,12 +382,7 @@ because all the relevant $\Dz\to\Kstarm(\to\KS\pim)\pip$ branching fractions are
 %     \label{fig:semileptonic_D_decays_kspp_misID}
 % \end{figure}
 
-\begin{figure}[tb]
-    \centering
-    \includegraphics[width=0.65\columnwidth]{figures/analysis/background_checks/D2Kstmunu_biases.pdf}
-    \caption{Estimated biases on the measured observables due to the presence of $\D\to\KS\pi\ell\nu_\ell$ backgrounds, calculated while varying efficiencies and branching ratios within uncertainties.}
-    \label{fig:d2kstmunu_biases}
-\end{figure}
+
 
 The potential impact from the presence of the background is estimated by 
 \begin{enumerate}
@@ -403,12 +392,30 @@ The potential impact from the presence of the background is estimated by
 \end{enumerate}
 The obtained biases are shown in Fig.~\ref{fig:d2kstmunu_biases}, where they are calculated a number of times, each time varying the efficiencies within statistical uncertainties and the relevant branching fractions within the measurement uncertainties. The  systematic uncertainty due to the unknown branching fractions and the use of \texttt{RapidSim} in lieu of full simulation is not included, but is of course significant. Nevertheless it is clear that the potential biases are significant compared to the size of the systematic uncertainties of the analysis presented in Section~\ref{sec:systematic_uncertainties}. Therefore the backgrounds are vetoed by requiring $\texttt{isMuon=0}$ and $\texttt{PIDe} < 0$ on the pions from the \D-decay with opposite charge to the companion in the \DtoKspipi channel. This requirement removes 88\,\% of the muonic background and 99\,\% of the electron background, according to PID efficiencies obtained via the  \texttt{PIDCalib} package, using the $(p, p_T)$ distribution for the muon/electron in the \texttt{RapidSim} samples. The survival rate for signal decays in full simulation is 94\,\%, so the impact on the obtainable precision is only about $3\,\%$. A systematic uncertainty is assigned to account for the potential remaining background.
 
+\begin{figure}[tp]
+    \centering
+    \includegraphics[width=0.35\columnwidth]{figures/analysis/background_checks/semilep_d_DP_892.pdf}
+    \includegraphics[width=0.35\columnwidth]{figures/analysis/background_checks/semilep_d_DP_1430.pdf}
+    \includegraphics[width=0.35\columnwidth]{figures/analysis/background_checks/semilep_d_DP_1430_2.pdf}
+    \includegraphics[width=0.35\columnwidth]{figures/analysis/background_checks/semilep_d_DP_1680.pdf}
+    \includegraphics[width=0.35\columnwidth]{figures/analysis/background_checks/semilep_d_DP_PHSP.pdf}
+    \caption{Dalitz plots for $\D\to\KS\pi\mu\nu_\mu$ decays in \texttt{RapidSim}, where the $\KS\pim$ originate in the resonances $\Kstarm(892)$, $K^{*-}_0(1430)$, $K^{*-}_2(1430)$, and $\Kstarm(1680)$, as well as for a uniform distribution over phase space.}
+    \label{fig:d2kstmunu_dalits}
+\end{figure}
+
+\begin{figure}[tb]
+    \centering
+    \includegraphics[width=0.65\columnwidth]{figures/analysis/background_checks/D2Kstmunu_biases.pdf}
+    \caption{Estimated biases on the measured observables due to the presence of $\D\to\KS\pi\ell\nu_\ell$ backgrounds, calculated while varying efficiencies and branching ratios within uncertainties.}
+    \label{fig:d2kstmunu_biases}
+\end{figure}
+
 \begin{figure}[tbp]
     \centering
     \includegraphics[width=0.8\columnwidth]{figures/analysis/background_checks/semilep_D_mu_892_KsKK.pdf}
     \includegraphics[width=0.8\columnwidth]{figures/analysis/background_checks/semilep_D_mu_1430_KsKK.pdf}
     \includegraphics[width=0.8\columnwidth]{figures/analysis/background_checks/semilep_D_mu_1680_KsKK.pdf}
-    \caption{The reconstructed (left) $m(\KS K^+ K^-)$ and (right) $m(Dh)$ distributions in \texttt{RapidSim} samples of $\Bpm\to\D \Kpm$ decays where $\Dz\to\KS\pi^-\mu^+\nu_\mu$, where the $\KS\pim$ originate in (top to bottom) the resonances $\Kstarm(892)$, $K^{*-}_0(1430)$, and $\Kstarm(1680)$. The shapes for the $\Dz\to\KS\pi^-e^+\nu_e$ case are almost identical.}
+    \caption{The reconstructed (left) $m(\KS K^+ K^-)$ and (right) $m(D\Kpm)$ distributions in \texttt{RapidSim} samples of $\Bpm\to\D \Kpm$ decays where $\Dz\to\KS\pi^-\mu^+\nu_\mu$, where the $\KS\pim$ originate in (top to bottom) the resonances $\Kstarm(892)$, $K^{*-}_0(1430)$, and $\Kstarm(1680)$. The shapes for the $\Dz\to\KS\pi^-e^+\nu_e$ case are almost identical.}
     \label{fig:semileptonic_D_decays_kskk}
 \end{figure}
 

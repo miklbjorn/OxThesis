@@ -496,6 +496,8 @@ A set of 2000 pseudo experiments has been run, out of which 98.8\,\% converged p
 % subsubsection self_consistency_check (end)
 % subsection fit_setup (end)
 
+\FloatBarrier
+
 \subsection{Main results} % (fold)
 \label{sub:main_cpfit_results}
 % 
@@ -515,6 +517,9 @@ The values and statistical uncertainties of observables obtained in the fit are
 The statistical correlation matrix for the observables is given in Table~\ref{tab:stat_corr_matrix}. None of the correlations are larger than 15\,\% and the values of both uncertainties and correlation coefficients are similar to those obtained in the feasibility studies. The two-dimensional log-likelihood profile for the observables is shown in Fig.~\ref{fig:loglikelihood}, based on a full likelihood scan, where the fit is repeated with the observables fixed to a range of values around the optimal solution. It can be seen in the figure that the likelihood profile obtained in the scan is very well modelled by the Gaussian approximation, based on the Hessian matrix at maximum likelihood. Thus, the statistical uncertainties quoted in Eq.~\eqref{eq:xy_fit_results} are likely to be accurate.
 The signature of \CP violation is that $(\xpdk, \ypdk) \neq (\xmdk, \ymdk)$, very clearly the case for the measurement results. Finally, the figure illustrates how the opening angle between the two points defined by $(\xpdk, \ypdk)$ and $(\xmdk, \ymdk)$ is equal to $2\gamma$.
 
+\input{tables/05_measurement/cpfit_stat_corr_matrix}
+
+
 \begin{figure}[t]
     \centering
     \includegraphics[width=0.9\columnwidth]{figures/analysis/likelihood_plot.pdf}
@@ -532,7 +537,6 @@ While the \CP asymmetry of the phase-space integrated yield is small, this is no
     \label{fig:kspipimass_bin2}
 \end{figure}
 
-\input{tables/05_measurement/cpfit_stat_corr_matrix}
 
 
 The obtained \Fi parameter values are shown in Table~\ref{tab:Fi_values}. These parameters can be useful in other BPGGSZ measurements made within the \lhcb collaboration: it is expected that the systematic uncertainty due to differences between the Dalitz-plot acceptance profile in \BtoDh decays and, say, $\B\to\Dstar\kaon$ or $\B\to\D\Kstar$ decays is smaller than the systematic arising from extracting the efficiency profile from simulated decays. Therefore, the obtain central values and uncertainties have been made public~\cite{GGSZ-B2Dh}, including a set of systematic uncertainties discussed in Section~\ref{sub:summary_of_systematic_uncertainties}.\footnote{In practice, it is the obtained $\mathcal R_i$ values that are made public, related to the \Fi parameters via Eq.~\eqref{eq:Ri_definition}.}
@@ -544,6 +548,7 @@ The obtained \Fi parameter values are shown in Table~\ref{tab:Fi_values}. These 
 
 % subsection main_results (end)
 
+\FloatBarrier
 \subsection{Cross checks} % (fold)
 \label{sub:cpfit_cross_checks}
 
@@ -559,10 +564,10 @@ Firstly, the overlap between the data samples is not 100\,\% due to changes in t
 
 Furthermore, the $F_i$ parameters were determined in a semi-leptonic control channel in the earlier analyses. Therefore, the expected difference obtained above is adjusted by adding the $F_i$-related systematic uncertainty of the original analysis in quadrature, when comparing the old results to those in new fits to the Run~1 and 15+16 data sets. No further corrections have been made to the expected differences, which effectively assumes all other systematic uncertainties to be 100\,\% correlated. Also for this reason can the check be considered conservative. As can be seen in Tables~\ref{tab:comparison_run1_results}~and~\ref{tab:comparison_1516_results}, neither the Run~1 and 2015+16 comparisons show unreasonable differences in central values.
 
-\begin{table}
+\begin{table}[tbp]
 \centering
 \caption{
-    Comparison between the results on the Run~1 analysis~\cite{LHCb-PAPER-2014-041} and the central values obtained when fitting the Run~1 dataset with the selection and fit setup described in this note. The pull is calculated using the $1\sigma$ expected difference, which takes the sample overlap and the systematic uncertainty on the $F_i$ parameters in the previous analysis into account, but assumes all other systematic uncertainties to be perfectly correlated. The new fits are performed using the CLEO strong-phase inputs.
+    Comparison between the results on the Run~1 analysis~\cite{LHCb-PAPER-2014-041} and the central values obtained when fitting the Run~1 dataset with the selection and fit setup described in the thesis. The pull is calculated using the $1\sigma$ expected difference, which takes the sample overlap and the systematic uncertainty on the $F_i$ parameters in the previous analysis into account, but assumes all other systematic uncertainties to be perfectly correlated. The new fits are performed using the CLEO strong-phase inputs.
     \label{tab:comparison_run1_results}
 }
     \begin{tabular}{c|cc|c}
@@ -581,10 +586,10 @@ $\ypdk$ & $-2.20$ & $ 0.80$ & $ 1.77$ \\
     \end{tabular}
 \end{table}
 
-\begin{table}
+\begin{table}[tbp]
 \centering
 \caption{
-    Comparison between the results on the 2015+16 analysis~\cite{LHCb-PAPER-2018-017} and the central values obtained when fitting the 2015+16 dataset with the selection and fit setup described in this note. The pull is calculated using the $1\sigma$ expected difference, which takes the sample overlap and the systematic uncertainty on the $F_i$ parameters in the previous analysis into account, but assumes all other systematic uncertainties to be perfectly correlated. The new fits are performed using the CLEO strong-phase inputs.
+    Comparison between the results on the 2015+16 analysis~\cite{LHCb-PAPER-2018-017} and the central values obtained when fitting the 2015+16 dataset with the selection and fit setup described in the thesis. The pull is calculated using the $1\sigma$ expected difference, which takes the sample overlap and the systematic uncertainty on the $F_i$ parameters in the previous analysis into account, but assumes all other systematic uncertainties to be perfectly correlated. The new fits are performed using the CLEO strong-phase inputs.
     \label{tab:comparison_1516_results}
 }
     \begin{tabular}{c|cc|c}
@@ -617,7 +622,7 @@ As a cross-check, the fit is run in an alternative mode, in which the signal yie
 are shown in Fig.~\ref{fig:asym_cross_check} for all decay channels. Again, the agreement between the nominal fit and the alternative fit with independent yields is found to be excellent for both \BtoDh decays. It is also clear how, in the case of \BtoDK decays, the asymmetry is significantly different from zero for a number of bin pairs. A fit that does not allow for \CP violation is also carried out, the results of which are also shown in the figure. The reason that the yield asymmetry is not zero in this fit, is that the overall yield of \Bp and \Bm decays \emph{are} allowed to differ in this fit; only the phase-space distribution of the decays is enforced to be \CP-symmetric. The observed asymmetry is due to a combination of production and detection asymmetries, \CP-violation and material interaction of the \KS meson, and \CP violation in the \BtoDh decays, but no attempt is made to disentangle the effects. 
 % subsubsection _directly_fitting_the_dk_yields (end)
 
-\begin{figure}[tb]
+\begin{figure}[tbp]
     \centering
     \includegraphics[width=0.48\columnwidth]{figures/analysis/cpfit_cross_check_plots/paper_yields_dk.pdf}
     \includegraphics[width=0.48\columnwidth]{figures/analysis/cpfit_cross_check_plots/paper_yields_dpi.pdf}
@@ -625,7 +630,7 @@ are shown in Fig.~\ref{fig:asym_cross_check} for all decay channels. Again, the 
     \label{fig:yield_cross_check}
 \end{figure}
 
-\begin{figure}[tb]
+\begin{figure}[tbp]
     \centering
     \includegraphics[width=0.48\columnwidth]{figures/analysis/cpfit_cross_check_plots/paper_asym_dk.pdf}
     \includegraphics[width=0.48\columnwidth]{figures/analysis/cpfit_cross_check_plots/paper_asym_dpi.pdf}
@@ -706,10 +711,13 @@ All figures show the Gaussian likelihood contours corresponding to the statistic
 
 % subsection compare_results_obtained_with_different_strong_phase_inputs (end)
 
+\FloatBarrier
+
+
 \subsubsection{Constraints from a subset of bins} % (fold)
 \label{ssub:constraints_from_a_subset_of_bins}
 
-\begin{figure}[tbp]
+\begin{figure}[tp]
     \centering
     \includegraphics[width=0.95\columnwidth]{figures/analysis/cpfit_cross_check_plots/bin_by_bin_constraints.pdf}
     \caption{Constraints on the \BtoDK observables from the signal yields of different subsets the \DtoKspp Dalitz bins, using the bin categorisation developed in Section~\ref{sub:relation_to_glw_and_ads_measurements}.}
