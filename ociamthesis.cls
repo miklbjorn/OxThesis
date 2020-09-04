@@ -227,8 +227,8 @@
 {\large \vspace*{30mm} {\crest \par} \vspace*{25mm}}
     {{\Large \@author} \par}
 {\large \vspace*{1ex}
-    {{\@college} \par}
-\vspace*{1ex}
+    {{\@college} \\}
+% \vspace*{1ex}
     {University of Oxford \par}
 \vspace*{20mm}
     {{\submittedtext} \par}
