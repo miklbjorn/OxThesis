@@ -537,7 +537,7 @@
 			"file": "chapters/ch2-theory.tex",
 			"settings":
 			{
-				"buffer_size": 83008,
+				"buffer_size": 83017,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -546,7 +546,8 @@
 			"file": "thesis.tex",
 			"settings":
 			{
-				"buffer_size": 9773,
+				"buffer_size": 9775,
+				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		},
@@ -572,7 +573,7 @@
 			"file": "chapters/ch6-conclusions.tex",
 			"settings":
 			{
-				"buffer_size": 9271,
+				"buffer_size": 9295,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -581,7 +582,7 @@
 			"file": "chapters/ch1-intro.tex",
 			"settings":
 			{
-				"buffer_size": 8008,
+				"buffer_size": 8050,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -590,7 +591,7 @@
 			"file": "preambles/acknowledgements.tex",
 			"settings":
 			{
-				"buffer_size": 32,
+				"buffer_size": 2643,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -617,7 +618,7 @@
 			"file": "chapters/ch3-the-LHCb-detector.tex",
 			"settings":
 			{
-				"buffer_size": 46952,
+				"buffer_size": 46951,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -644,7 +645,7 @@
 			"file": "chapters/ch5-the-two-fits.tex",
 			"settings":
 			{
-				"buffer_size": 84475,
+				"buffer_size": 84473,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -653,7 +654,7 @@
 			"file": "preambles/preface.tex",
 			"settings":
 			{
-				"buffer_size": 3710,
+				"buffer_size": 3713,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -1130,7 +1131,7 @@
 	"groups":
 	[
 		{
-			"selected": 10,
+			"selected": 14,
 			"sheets":
 			[
 				{
@@ -1160,7 +1161,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 19,
+					"stack_index": 8,
 					"type": "text"
 				},
 				{
@@ -1185,10 +1186,10 @@
 							"syntax": "Packages/LaTeX/LaTeX.sublime-syntax"
 						},
 						"translation.x": 0.0,
-						"translation.y": 275.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 13,
+					"stack_index": 16,
 					"type": "text"
 				},
 				{
@@ -1197,15 +1198,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 83008,
+						"buffer_size": 83017,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								79735,
-								79735
+								78558,
+								78558
 							]
 						],
 						"settings":
@@ -1215,10 +1216,10 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 20945.0,
+						"translation.y": 20646.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 10,
+					"stack_index": 3,
 					"type": "text"
 				},
 				{
@@ -1227,15 +1228,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 9773,
+						"buffer_size": 9775,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								7213,
-								7213
+								5026,
+								5026
 							]
 						],
 						"settings":
@@ -1243,7 +1244,7 @@
 							"syntax": "Packages/LaTeX/LaTeX.sublime-syntax"
 						},
 						"translation.x": 0.0,
-						"translation.y": 1107.0,
+						"translation.y": 1706.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 1,
@@ -1273,10 +1274,10 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 3684.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
+					"stack_index": 11,
 					"type": "text"
 				},
 				{
@@ -1292,8 +1293,8 @@
 						"selection":
 						[
 							[
-								934,
-								934
+								264,
+								264
 							]
 						],
 						"settings":
@@ -1304,7 +1305,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 12,
+					"stack_index": 6,
 					"type": "text"
 				},
 				{
@@ -1313,15 +1314,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 9271,
+						"buffer_size": 9295,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								7840,
-								7840
+								2536,
+								2536
 							]
 						],
 						"settings":
@@ -1331,10 +1332,10 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 1582.0,
+						"translation.y": 686.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 8,
+					"stack_index": 9,
 					"type": "text"
 				},
 				{
@@ -1343,15 +1344,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 8008,
+						"buffer_size": 8050,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2491,
-								2491
+								2115,
+								2115
 							]
 						],
 						"settings":
@@ -1359,10 +1360,10 @@
 							"syntax": "Packages/LaTeX/LaTeX.sublime-syntax"
 						},
 						"translation.x": 0.0,
-						"translation.y": 205.0,
+						"translation.y": 212.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 11,
+					"stack_index": 4,
 					"type": "text"
 				},
 				{
@@ -1371,15 +1372,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 32,
+						"buffer_size": 2643,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								32,
-								32
+								354,
+								354
 							]
 						],
 						"settings":
@@ -1390,7 +1391,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 15,
+					"stack_index": 7,
 					"type": "text"
 				},
 				{
@@ -1420,7 +1421,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 18,
+					"stack_index": 19,
 					"type": "text"
 				},
 				{
@@ -1447,10 +1448,10 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 15267.0,
+						"translation.y": 12537.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 10,
 					"type": "text"
 				},
 				{
@@ -1459,15 +1460,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 46952,
+						"buffer_size": 46951,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								46801,
-								46801
+								46575,
+								46575
 							]
 						],
 						"settings":
@@ -1477,10 +1478,10 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 11648.0,
+						"translation.y": 11663.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 9,
+					"stack_index": 2,
 					"type": "text"
 				},
 				{
@@ -1510,7 +1511,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 17,
+					"stack_index": 18,
 					"type": "text"
 				},
 				{
@@ -1540,7 +1541,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 6,
+					"stack_index": 14,
 					"type": "text"
 				},
 				{
@@ -1549,15 +1550,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 84475,
+						"buffer_size": 84473,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								31928,
-								31928
+								60568,
+								60568
 							]
 						],
 						"settings":
@@ -1567,10 +1568,10 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 8630.0,
+						"translation.y": 15971.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 3,
+					"stack_index": 0,
 					"type": "text"
 				},
 				{
@@ -1579,15 +1580,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 3710,
+						"buffer_size": 3713,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2836,
-								2836
+								859,
+								859
 							]
 						],
 						"settings":
@@ -1595,10 +1596,10 @@
 							"syntax": "Packages/LaTeX/LaTeX.sublime-syntax"
 						},
 						"translation.x": 0.0,
-						"translation.y": 375.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 14,
+					"stack_index": 5,
 					"type": "text"
 				},
 				{
@@ -1625,10 +1626,10 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 3018.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 5,
+					"stack_index": 13,
 					"type": "text"
 				},
 				{
@@ -1655,10 +1656,10 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 1566.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 4,
+					"stack_index": 12,
 					"type": "text"
 				},
 				{
@@ -1685,10 +1686,10 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 16074.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 7,
+					"stack_index": 15,
 					"type": "text"
 				},
 				{
@@ -1755,7 +1756,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 16,
+					"stack_index": 17,
 					"type": "text"
 				}
 			]
