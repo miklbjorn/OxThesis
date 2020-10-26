@@ -44,16 +44,16 @@ The signal component is modelled with a sum of a Gaussian density function, $f_G
     \end{array} 
     \right.
 \end{align}
-which is Gaussian when $\Delta m^2 \ll \sigma^2/\alpha_{L/R}$ or $\Delta m^2 \gg \beta^{-1}$ (with widths of $\sigma$ and $\sqrt{\alpha_{L/R}/\beta}$ respectively), with an exponential-like transition that is able to model the effect of the experimental resolution of \lhcb very well. For the case $\beta=0$ the shape is denoted the \emph{Cruijff} shape; however, in this case it tends to a uniform distribution for large $\Delta m^2$ values, and cannot model the tails of the signal distribution. Thus, the full
+which is Gaussian when $\Delta m^2 \ll \sigma^2/\alpha_{L/R}$ or $\Delta m^2 \gg \beta^{-1}$ (with widths of $\sigma$ and $\sqrt{\alpha_{L/R}/\beta}$ respectively), with an exponential-like transition that is able to model the effect of the experimental resolution of \lhcb very well, \mccorrect{and which can also model the asymmetric, radiative tail of the signal peak}. For the case $\beta=0$ the shape is denoted the \emph{Cruijff} shape; however, in this case it tends to a uniform distribution for large $\Delta m^2$ values, and cannot model the tails of the signal distribution. Thus, the full
 density function is
 \begin{align}
     f_s(m|m_B, \sigma, \alpha_L, \alpha_R, \beta) = k_C f_C(m|m_B, \sigma, \alpha_L, \alpha_R, \beta) + (1-k_C)f_G(m|m_B, \sigma).
 \end{align}
-The tail parameters $(\alpha_{L/R}, \beta)$ and the constant $k_C$ are determined in fits to simulated signal decays that have passed the full selection. The parameters are shared between the \Kspipi and \KsKK channels, but otherwise independent in the fit categories. An example of a fit to simulated $\Bpm\to\D(\to\Kspipi)h^\pm$ decays is given in Fig.~\ref{fig:sig_shapes_mc}. The resolution parameters $\sigma$ are determined in the fit to actual data. Separate parameters are determined in the LL and DD categories, because the LL category has a better resolution on the \Ks momentum, and therefore a narrower peak in reconstructed \B mass. Likewise, separate resolution parameters are used for \BtoDpi and \BtoDK decays, because the smaller $Q$ value in the latter case leads to smaller momenta of the decay products, and a correspondingly better resolution.
+The tail parameters $(\alpha_{L/R}, \beta)$ and the constant $k_C$ are determined in fits to simulated signal decays that have passed the full selection. The parameters are shared between the \Kspipi and \KsKK channels, but otherwise independent in the fit categories. An example of a fit to simulated $\Bpm\to\D(\to\Kspipi)h^\pm$ decays is given in Fig.~\ref{fig:sig_shapes_mc}. The \mccorrect{location of the signal peak, $m_B$, and the resolution parameters}, $\sigma$, are determined in the fit to actual data. Separate resolution parameters are determined in the LL and DD categories, because the LL category has a better resolution on the \Ks momentum, and therefore a narrower peak in reconstructed \B mass. Likewise, separate resolution parameters are used for \BtoDpi and \BtoDK decays, because the smaller $Q$ value in the latter case leads to smaller momenta of the decay products, and a correspondingly better resolution.
 
 
 
-The signal yields are determined independently in each \BtoDpi category. The yields in the \BtoDK categories are then parameterised in terms of a single yield-ratio $\mathcal R_{K/\pi}$, and $\epsilon^c$, the corresponding selection efficiency for a given category
+The signal yields are determined independently in each \BtoDpi category. The yields in the \BtoDK categories are then parameterised in terms of a single yield-ratio $\mathcal R_{K/\pi}$, and $\epsilon^c$, the corresponding selection efficiency for a given category. They are defined 
 \begin{align}
     N^c_{\DK} = \mathcal R_{K/\pi} \times N^c_{\Dpi} \times \frac{\epsilon^c_{\DK}}{\epsilon^c_{\Dpi}}.
 \end{align}
@@ -70,7 +70,11 @@ The selection efficiency is obtained in simulation, except for the PID efficienc
 There is a cross-feed between the  $\BtoDpi$ and $\BtoDK$ channels, where real \BtoDpi decays are reconstructed as \BtoDK decays, or where \BtoDK decays are reconstructed as \BtoDpi decays. Due to relative branching fractions the former contribution is by far the most important, but both are modelled.
 
 
-The cross-feed shapes are obtained in a data-driven manner using the sPlot method~\cite{sPlot}, and fixed in the fit to data. Separate shapes are determined for each category, using the following steps: 
+\begin{mccorrection}
+The cross-feed shapes are obtained in a data-driven manner, described below, using the so-called \emph{sPlot} method~\cite{sPlot}, 
+\end{mccorrection}
+
+The cross-feed shapes are obtained in a data-driven manner and fixed in the fit to data. Separate shapes are determined for each category, using the following steps: 
 \begin{figure}[tb]
     \centering
     \includegraphics[width=0.45\columnwidth]{figures/analysis/pretty_sw_misID_dk_LL.pdf}
@@ -139,14 +143,14 @@ f^0_\mathrm{HORNS}(m) = \begin{cases}
 \end{equation}
 Due to the double-peaking structure, and the fact that is was developed by Paolo Gandini for the two-body ADS/GLW analyses~\cite{LHCb-PAPER-2016-003}, this shape is denoted a \emph{HORNSdini} shape when convolved with a resolution function as described below.
 
-The second relevant decay situation is where the missing particle is a vector, again produced via the intermediate decay of a vector resonance (eg. $\Bpm\to\Dstarz(\to \Dz\gamma) \pipm$ decays where the photon is not reconstructed).  In this case, the spin-parity of the phton ($1^-$) means that it will decay preferentially in the $\Ptheta = \frac{\pi}{2}$ or  $\Ptheta=\frac{3\pi}{2}$ directions, and so a double-peak structure is not seen. In this case the parabolic distribution $f^0_\mathrm{HILL}(m)$ with kinematic endpoints \Pa, \Pb has negative curvature and can be described by
+The second relevant decay situation is where the missing particle is a vector, again produced via the intermediate decay of a vector resonance (eg. $\Bpm\to\Dstarz(\to \Dz\gamma) \pipm$ decays where the photon is not reconstructed).  In this case, the spin-parity of the photon ($1^-$) means that it will decay preferentially in the $\Ptheta = \frac{\pi}{2}$ or  $\Ptheta=\frac{3\pi}{2}$ directions, and so a double-peak structure is not seen. In this case the parabolic distribution $f^0_\mathrm{HILL}(m)$ with kinematic endpoints \Pa, \Pb has negative curvature and can be described by
 \begin{equation}
 f^0_\mathrm{HILL}(m) = \begin{cases}
 -(m-a)(m-b), & \text{if $a < x < b$} \\
  0, & \text{otherwise.}
 \end{cases}
 \end{equation}
-This shape is denoted a \emph{HILLdini} shape when convolved with a resolution function. A convolution is applied to take into the non-perfect resolution in the momentum determination. The resolution function is  chosen to be a sum of two Gaussians. For a single Gaussian shape $f_G(x|\mu,\sigma)$ with mean $\mu$ and width $\sigma$, the double Gaussian is expressed as
+This shape is denoted a \emph{HILLdini} shape when convolved with a resolution function. A convolution is applied to take into account the non-perfect resolution in the momentum determination. The resolution function is  chosen to be a sum of two Gaussians. For a single Gaussian shape $f_G(x|\mu,\sigma)$ with mean $\mu$ and width $\sigma$, the double Gaussian is expressed as
 \begin{equation}\label{eq:pr_resolution}
 f_{DG}(x) = f_G(x | \mu, \sigma) + k_G f_G(x|\mu,R_\sigma \sigma).
 \end{equation}
@@ -223,7 +227,7 @@ The background yields of these backgrounds are parameterised in terms of one tot
 In the \BtoDpi channels, the relative rates of the $\Bpm\to(\Dstarz\to\Dz[\piz])h^\pm$ and $\Bz\to(\Dstarpm\to\Dz[\pipm])h^\mp$ backgrounds are fixed from the known branching fractions, and relative selection efficiencies in simulation. These backgrounds have almost identical mass distributions and it is not possible to determine the ratio in the fit to data. The relative yield of ${\Bpm\to\Dstar(\to \Dz[\gamma])\pi^\pm}$ decays compared to the $\B\to\Dstar(\to\Dz[\pi])\pi^\pm$ mode is denoted $f^{\D\pi}_{\Dstar\gamma}$ and is floated in the fit to data, as is the relative yield of $\B\to\Dz\pi^\pm[\pi]$ decays compared to the $\B\to\Dstar\pi$ modes, denoted $f^{\D\pi}_{\D\pi\pi}$. In the \BtoDK channels, all the relative background rates are fixed via known branching fractions and relative selection efficiencies; this is necessary to obtain a stable fit, due to the lower yields. 
 
 % The Bs background
-In the \BtoDK categories, an additional partially reconstructed background is considered from $\Bs\to\Dzb[\pi^+]\Km$ (and conjugate) decays. The mass shape is obtained from simulated decays, generated using an amplitude model published by \lhcb~\cite{LHCb-PAPER-2014-036} and smeared to account for the experimental resolution.  The obtained shape is shown in Fig.~\ref{fig:fit_part_reco_DKpi}. The yield of this background component is fixed relative to the signal yields in the corresponding \BtoDpi category, taking the relative efficiencies, branching ratios and hadronisation factors into account~\cite{PDG2020,LHCb-PAPER-2018-050}.
+In the \BtoDK categories, an additional partially reconstructed background is considered from $\Bs\to\Dzb[\pi^+]\Km$ (and conjugate) decays. The mass shape is obtained from simulated decays, generated using an amplitude model published by \lhcb~\cite{LHCb-PAPER-2014-036} and smeared to account for the experimental resolution. \mccorrect{The simulated decays are fit with a HORSdini PDF;} the obtained shape is shown in Fig.~\ref{fig:fit_part_reco_DKpi}. The yield of this background component is fixed relative to the signal yields in the corresponding \BtoDpi category, taking the relative efficiencies, branching ratios and hadronisation factors into account~\cite{PDG2020,LHCb-PAPER-2018-050}.
 
 
 
@@ -246,7 +250,7 @@ It has also been investigated whether a background from $\Lb\to\Lc\pim$ or $\Lb\
 \subsection{Combinatorial background} % (fold)
 \label{sub:combinatorial_background}
 
-The combinatorial background is modelled with an exponentially falling density function, where both the yield and exponential slope are determined independently for each category. This shape is found to model the combinatorial well in all categories, most evident in the high-$m_B$ regions where this background dominates.
+The combinatorial background is modelled with an exponentially falling density function, where both the yield and exponential slope are determined independently for each category. This shape is found to model the combinatorial background well in all categories, most evident in the high-$m_B$ regions where this background dominates.
 
 
 
@@ -350,13 +354,13 @@ This parameterisation is essentially identical to the expressions in Section~\re
 % For example, if we had found that using the Dpi sample to get Fi added about 2 degrees to the uncertainty then we might have considered going back to the drawing board and trying to fix/correct the MC. 
 % This is very much a key part of your intellectual contribution to the development of this analysis - i think it a real shame to omit this. In total i don’t think this would be more than a page or two depending on whether you thought plots were required or not but it is an essential piece of the work you have done. 
 
-The motivation for promoting the \BtoDpi channel to a signal channel is two-fold: one aim is to extract the information on $\gamma$ from the \BtoDpi data, even if the precision gain is limited, and another is to be able to the \Fi parameters directly from the \BtoDh channels, to avoid the need for a control channel and a simulation-reliant efficiency correction. Two different sets of observables can be defined to describe the \CP-violation effects in the \BtoDpi channel:
+The motivation for promoting the \BtoDpi channel to a signal channel is two-fold: one aim is to extract the information on $\gamma$ from the \BtoDpi data, even if the precision gain is limited, and another is to be able to \mccorrect{determine} the \Fi parameters directly from the \BtoDh channels, to avoid the need for a control channel and a simulation-reliant efficiency correction. Two different sets of observables can be defined to describe the \CP-violation effects in the \BtoDpi channel:
 \begin{itemize}
-    \item one option, defined the 8-parameters setup below,  is to define a new set of four Cartesian for the \BtoDpi mode, $(\xmdpi, \ymdpi, \xpdpi, \ypdpi)$, defined analogously to the \BtoDK observables
+    \item One option, defined the 8-parameters setup below, is to define an independent set of four Cartesian \mccorrect{observables} for the \BtoDpi mode, $(\xmdpi, \ymdpi, \xpdpi, \ypdpi)$, which are analogous to the four \BtoDK observables.  \mccorrect{They are thus defined}
     \begin{align}
-        \xpmdpi &= \rB^{D\pi} \cos (\dB^{D\pi} \pm \g), & \ypmdpi &= \rB^{D\pi} \sin (\dB^{D\pi} \pm \g),
+        \xpmdpi &= \rB^{D\pi} \cos (\dB^{D\pi} \pm \g), & \ypmdpi &= \rB^{D\pi} \sin (\dB^{D\pi} \pm \g).
     \end{align}
-    \item another, proposed in Refs.~\cite{Tico:2018qmg,JordiXi2}, is to introduce the parameter
+    \item Another option, proposed in Refs.~\cite{Tico:2018qmg,JordiXi2}, is to introduce the parameter
     \begin{subequations}
     \begin{align}
         \xi^{\D\pi} = \left(\frac{r_B^{\D\pi}}{r_B^{DK}}\right)\exp [i (\delta_B^{\D\pi}-\delta_B^{DK})]
@@ -394,7 +398,7 @@ The 6-parameter setup shows significantly better statistical performance than th
 
 
 
-Interestingly, when the constraints on $\gamma$ are compared, both setup lead to similar precision; in spite of the large uncertainties on the individual observables in the 8-parameter setups, the constraints on $\gamma$ are tight. This is illustrated in Fig.~\ref{fig:compare_g_68}. Nevertheless, it remains true that the 8-parameter setup is ruled out due the statistical behaviour in the determination of the observables.
+Interestingly, when the constraints on $\gamma$ are compared, both setups lead to similar precision; in spite of the large uncertainties on the individual observables in the 8-parameter setups, the constraints on $\gamma$ are tight. This is illustrated in Fig.~\ref{fig:compare_g_68}. Nevertheless, it remains true that the 8-parameter setup is ruled out due the statistical behaviour in the determination of the observables.
 
 \begin{figure}[tb]
     \centering
@@ -465,8 +469,8 @@ The fit range is decreased to $m_B\in[5150, 5800]\mevcc$. The information from c
 \subsubsection{Self-consistency check} % (fold)
 \label{ssub:self_consistency_check}
 
-In order to establish the fit stability and investigate a potential bias, a series of pseudo experiments are run, in which data sets are generated using the model, and then fitted back. The total yields are taken from the first-stage fit. The signal yields are distributed between Dalitz bins using input physics parameters that approximately equal the values obtained in Section~\ref{sub:main_cpfit_results} from the results of the fit to data. The \Fi parameters are taken from a fit to data. The partly reconstructed background is distributed as "\Dz-like", ie. in the \Bpm channels $N_i^\pm\propto F_{\mp i}$, except for the \Bs background, which is "\Dzb-like" ($N_i^\pm\propto F_{\pm i}$).
-The combinatorial background includes real \D mesons paired with a random companion, as well as fake \D mesons that are themselves made up of random tracks. The former is distributed as 50/50 \Dz-like and \Dzb-like in generation, whereas the latter is assumed to be evenly distributed over the Dalitz plot (ie. the bin yield is proportional to the bin area).
+In order to establish the fit stability and investigate a potential bias, a series of pseudo experiments are run, in which data sets are generated using the model, and then fitted back. The total yields are taken from the first-stage fit. The signal yields are distributed between Dalitz bins using input physics parameters that approximately equal the values obtained in Section~\ref{sub:main_cpfit_results} from the results of the fit to data. The \Fi parameters are taken from a fit to data. The partly reconstructed background is distributed as "\Dz-like", i.e. in the \Bpm channels $N_i^\pm\propto F_{\mp i}$, except for the \Bs background, which is "\Dzb-like" ($N_i^\pm\propto F_{\pm i}$).
+The combinatorial background includes real \D mesons paired with a random companion, as well as fake \D mesons that are themselves made up of random tracks. The former is distributed as 50/50 \Dz-like and \Dzb-like in generation, whereas the latter is assumed to be evenly distributed over the Dalitz plot (i.e. the bin yield is proportional to the bin area).
 
 
 \input{tables/05_measurement/cp_fit_toy_results}
@@ -523,7 +527,7 @@ The signature of \CP violation is that $(\xpdk, \ypdk) \neq (\xmdk, \ymdk)$, ver
 \begin{figure}[t]
     \centering
     \includegraphics[width=0.9\columnwidth]{figures/analysis/likelihood_plot.pdf}
-    \caption{The 68\,\% and 95\,\% confidence regions for the fitted observables. The lines show the regions estimated from the covariance matrix returned by the default fit. The shaded areas are obtained in a likelihood scan, where the binned fit is run many times with all observables held at fixed values, scanning pairs of observables over the relevant ranges. The scan is made separately for the three pairs $(\xmdk,\ymdk)$, $(\xpdk, \ypdk)$, and $(\xxidpi, \yxidpi)$, holding the four other parameters fixed at their default-fit central values during a given scan. Then the minimum log-likelihood is related to a $\chi^2$ via $\mathcal L_\text{min} = \frac{1}{2}\chi^2$ (discarding an irrelevant constant), and the confidence region limits placed at $\chi^2=2.30$ and $\chi^2=6.18$, yielding the relevant percentiles for a $\chi^2$ distribution with 2 degrees of freedom.}
+    \caption{The 68\,\% and 95\,\% confidence regions for the fitted observables. The lines show the regions estimated from the covariance matrix returned by the default fit. The shaded areas are obtained in a likelihood scan, where the binned fit is run many times with all observables held at fixed values, scanning pairs of observables over the relevant ranges. The scan is made separately for the three pairs $(\xmdk,\ymdk)$, $(\xpdk, \ypdk)$, and $(\xxidpi, \yxidpi)$, holding the four other parameters fixed at their default-fit central values during a given scan \mccorrect{(the scans were also made where \emph{all} parameters, except the two for which the likelihood scan is made, are allowed to float, corresponding to a true likelihood marginalisation. The resulting plots are essentially identical, except that the likelihood contours suffer slightly more from numerical noise)}. Then the minimum log-likelihood is related to a $\chi^2$ via $\mathcal L_\text{min} = \frac{1}{2}\chi^2$ (discarding an irrelevant constant), and the confidence region limits placed at $\chi^2=2.30$ and $\chi^2=6.18$, yielding the relevant percentiles for a $\chi^2$ distribution with 2 degrees of freedom.}
     \label{fig:loglikelihood}
 \end{figure}
 
@@ -539,7 +543,7 @@ While the \CP asymmetry of the phase-space integrated yield is small, this is no
 
 
 
-The obtained \Fi parameter values are shown in Table~\ref{tab:Fi_values}. These parameters can be useful in other BPGGSZ measurements made within the \lhcb collaboration: it is expected that the systematic uncertainty due to differences between the Dalitz-plot acceptance profile in \BtoDh decays and, say, $\B\to\Dstar\kaon$ or $\B\to\D\Kstar$ decays is smaller than the systematic arising from extracting the efficiency profile from simulated decays. Therefore, the obtain central values and uncertainties will be made public~\cite{GGSZ-B2Dh}, including a set of systematic uncertainties discussed in Section~\ref{sub:summary_of_systematic_uncertainties}.\footnote{In practice, it is the obtained $\mathcal R_i$ values that are made public, related to the \Fi parameters via Eq.~\eqref{eq:Ri_definition}.}
+The obtained \Fi parameter values are shown in Table~\ref{tab:Fi_values}. These parameters can be useful in other BPGGSZ measurements made within the \lhcb collaboration: it is expected that the systematic uncertainty due to differences between the Dalitz-plot acceptance profile in \BtoDh decays and, say, $\B\to\Dstar\kaon$ or $\B\to\D\Kstar$ decays is smaller than the systematic arising from extracting the efficiency profile from simulated decays. Therefore, the central values and uncertainties will be made public~\cite{GGSZ-B2Dh}, including a set of systematic uncertainties discussed in Section~\ref{sub:summary_of_systematic_uncertainties}.\footnote{In practice, it is the obtained $\mathcal R_i$ values that are made public, related to the \Fi parameters via Eq.~\eqref{eq:Ri_definition}.}
 
 
 
