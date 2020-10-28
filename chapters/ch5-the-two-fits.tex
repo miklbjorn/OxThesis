@@ -9,7 +9,7 @@ In both steps, the candidates are split in 8 categories depending on whether the
 \begin{align}
     F^c(m|\theta) = N_s^c(\theta) f^c_s(m|\theta) + \sum_b N^c_b(\theta) f^c_b(m|\theta),
 \end{align}
-where $\theta$ denotes a set of parameters that describe the mass shapes and expected yields, in which some parameters are shared between categories. The distributions $f^c_{s/b}$ are normalised to integrate to unity, and the expected signal (background) yields are denoted $N^c_s$ ($N^c_b$). A total, normalised distribution can then be defined
+where $\theta$ denotes a set of parameters that describe the mass shapes and expected yields, in which some parameters are shared between categories. The probability density functions (PDFs) $f^c_{s/b}$ are normalised to integrate to unity, and the expected signal (background) yields are denoted $N^c_s$ ($N^c_b$). A total, normalised distribution can then be defined
 \begin{align}
     f^c(m|\theta) &= \frac{1}{N^c_\text{tot}(\theta)}F^c(m|\theta), & N^c_\text{tot}(\theta) = N^c_s(\theta) + \sum_b N^c_b(\theta).
 \end{align}
@@ -35,7 +35,7 @@ Apart from signal decays, the fit includes components that describe combinatoria
 \end{figure}
 
 
-The signal component is modelled with a sum of a Gaussian density function, $f_G(m|m_B, \sigma)$, and a modified Gaussian distribution with the parameterisation
+The signal component is modelled with a sum of a Gaussian PDF, $f_G(m|m_B, \sigma)$, and a modified Gaussian PDF with the parameterisation
 \begin{align}
     f_C(m|m_B, \sigma, \alpha_L, \alpha_R, \beta)\propto \left\{
     \begin{array}{ll}
@@ -69,10 +69,22 @@ The selection efficiency is obtained in simulation, except for the PID efficienc
 
 There is a cross-feed between the  $\BtoDpi$ and $\BtoDK$ channels, where real \BtoDpi decays are reconstructed as \BtoDK decays, or where \BtoDK decays are reconstructed as \BtoDpi decays. Due to relative branching fractions the former contribution is by far the most important, but both are modelled.
 
+The cross-feed shapes are obtained in a data-driven manner, described below, using the so-called \emph{sPlot} method~\cite{sPlot}. \mccorrect{ The sPlot method aims to disentangle data distributions in situations where a data set contains candidates from several sources: in this case signal decays and a number of different background components. The PDFs for one variable $m$, denoted the discriminating variable,}\footnote{\mccorrect{The "discriminating variable" can be a \emph{set of} variables, and is described as such in} Ref.~\cite{sPlot} where it is denoted $y$. The presentation is simplified in the discussion presented here, and the letter $m$ is used because the discriminating variable used in this study is $m(\D h^\pm)$.} \mccorrect{are assumed to be known for each source, and denoted $f_i(m)$ for the $i$'th source. The total number of decays due to each source, $N_i$, is also assumed to be known (given knowledge of $f_i(m)$ these yields can always be determined from the $m$ distribution in the data set under study). The sPlot technique allows for the statistical estimation of the distribution of a \emph{different} variable, the control variable $x$, due to a \emph{single source, s}, (e.g. for signal decays only), even if only the \emph{total} distribution of $x$ over the data set is known (including pollution from all background sources). 
+It does so, by specifying how to calculate a set of \emph{sWeights}, $w_s^e$, for each data point, $e$, allowing the estimation of decays in some bin of $x$ values from \emph{signal decays only} via a weighted sum over \emph{all} data points:}
+\begin{align}
+    \tilde N_s^{\text{bin}} = \sum_{\text{all data }e\text{ where }x\text{ in bin}} w_s^e
+\end{align}
+The sWeight for a given data point is defined
+\begin{align}
+    w_s^e = \frac{\sum_j \textbf{V}_{sj}f_j(m^e)}{\sum_k N_kf_k(m^e)},
+\end{align}
+where $\textbf{V}$ is the variance matrix defined via
+\begin{align}
+    \textbf{V}_{sj}^{-1} = \int \text dm\frac{f_s(m)f_j(m)}{\sum_k N_k f_k(m)}.
+\end{align}
+\mccorrect{Notably, the calculation of an sWeight only depends on knowledge of the $m$ distributions and total candidate yield from each source, as noted above, and the value of $m$ for a given data point, $m^e$.
+Under the assumption that $m$ and $x$ are \emph{uncorrelated}, it is shown in Ref.}~\cite{sPlot} \mccorrect{that, \emph{on average}, $\tilde N^\mathrm{bin}_s$ equals the expected signal-only yield of the bin in question, as predicted by the true $x$ distribution in signal decays. The variance is also derived in the reference. Thus, the sWeights allow for the determination of this distribution in a binned fit. This is used to obtain the cross-feed shapes, as described below.}
 
-\begin{mccorrection}
-The cross-feed shapes are obtained in a data-driven manner, described below, using the so-called \emph{sPlot} method~\cite{sPlot}, 
-\end{mccorrection}
 
 The cross-feed shapes are obtained in a data-driven manner and fixed in the fit to data. Separate shapes are determined for each category, using the following steps: 
 \begin{figure}[tb]
@@ -100,9 +112,9 @@ The cross-feed shapes are obtained in a data-driven manner and fixed in the fit 
     \item The extracted PID efficiencies of the \texttt{PIDK}$>$4 cut $\epsilon_{\D\pi\to\D\kaon}(p,\eta,n_\text{tracks})$ are used to obtain the companion kinematic distribution of the \BtoDpi candidates mis-identified as \BtoDK.
   \end{itemize}
   
-\item The raw distribution of the invariant mass of \Bpm particles with  a misidentified companion, $m_B^{mis-ID}$, is produced by also doing the \texttt{DecayTreeFitter} kinematic refit while swapping the companion mass hypothesis of each \BtoDpi candidate to a kaon hypothesis.
+\item The raw distribution of the invariant mass of \Bpm particles with  a misidentified companion, $m_B^\mathrm{mis-ID}$, is produced by also doing the \texttt{DecayTreeFitter} kinematic refit while swapping the companion mass hypothesis of each \BtoDpi candidate to a kaon hypothesis.
 
-\item Each candidate is reweighted by the overall weight $w=w_s^{cand.} / \epsilon_{\D\pi\to\D\pi}^{cand.} \cdot \epsilon_{\D\pi\to\D\kaon}^{cand.}$, and the reweighed $m_B^{mis-ID}$ distribution is fitted to obtain the cross-feed mass distribution function.
+\item Each candidate is reweighted by the overall weight $w=w_s^\mathrm{cand.} / \epsilon_{\D\pi\to\D\pi}^\mathrm{cand.} \cdot \epsilon_{\D\pi\to\D\kaon}^\mathrm{cand.}$, and the reweighed $m_B^\mathrm{mis-ID}$ histogram is fitted to obtain the cross-feed mass distribution function.
 \end{itemize}
 The distributions are modelled with a sum of two Crystal Ball density functions, each defined by the parameterisation~\cite{CrystalBall}
 \begin{align}\label{eq:CB_definition}
@@ -116,7 +128,7 @@ where $\alpha >0$, and
   A &= \left(\frac{n}{\alpha}\right)^n\exp [-\alpha^2/2]\,, &
   B &= \frac{n}{\alpha}-\alpha\,.
 \end{align}
-The obtained $m_B^{mis-ID}$ spectrum and obtained mass shape is given in Fig.~\ref{fig:misid_shape_DPi_kspp} for the \DtoKspipi category; the \DtoKskk shapes are very similar. An analogous procedure is used to obtain the mass distribution of \BtoDK decays reconstructed in the \BtoDpi category. In the first stage where sPlots are extracted by a fit to the \BtoDK mass spectrum, the $\D\pi$-cross-feed shape determined as described above is included. An example of one of the resulting shapes is given in Fig.~\ref{fig:misid_shape_DK}. The shapes obtained in this manner perform better in the fit to real data than those obtained using simulated decays, because the precision of the momentum determination is slightly overestimated in simulation.
+The obtained $m_B^\mathrm{mis-ID}$ spectrum and obtained mass shape is given in Fig.~\ref{fig:misid_shape_DPi_kspp} for the \DtoKspipi category; the \DtoKskk shapes are very similar. An analogous procedure is used to obtain the mass distribution of \BtoDK decays reconstructed in the \BtoDpi category. In the first stage where sPlots are extracted by a fit to the \BtoDK mass spectrum, the $\D\pi$-cross-feed shape determined as described above is included. An example of one of the resulting shapes is given in Fig.~\ref{fig:misid_shape_DK}. The shapes obtained in this manner perform better in the fit to real data than those obtained using simulated decays, because the precision of the momentum determination is slightly overestimated in simulation. \mccorrect{The procedure follows the approach in earlier instalments of the analysis}~\cite{LHCb-PAPER-2014-041,LHCb-PAPER-2018-017}\mccorrect{, where it was validated in simulation. Further, a simple, data-driven consistency check is presented as part of the studies of systematic uncertainties in Section~}\ref{ssub:determination_of_shape_parameters}\mccorrect{, motivated by the fact that $m(D h^\pm)$ and $m_B^\mathrm{mis-ID}$ are not completely uncorrelated (the study shows this not to be a problem for the case in question).}
 
 
 
@@ -124,7 +136,7 @@ The yield of cross-feed from \BtoDpi decays in a given \BtoDK category is parame
 \begin{align}
     N^c_{\pi\to\kaon} = N^c_{\Dpi} \frac{\epsilon_{\pi\to\kaon}^c}{1-\epsilon_{\pi\to\kaon}^c},
 \end{align}
-with an analoguous definition of the  yield of the cross-feed component from \BtoDK decays in the \BtoDpi spectrum. 
+with an analogous definition of the  yield of the cross-feed component from \BtoDK decays in the \BtoDpi spectrum. 
 
 
 \subsection{Partially reconstructed backgrounds} % (fold)
@@ -750,13 +762,13 @@ The measurement results are compared in Table~\ref{tab:pid12}, where the differe
 
 \begin{table}[tbp]
 \centering
-\caption{Results of running the measurement with the default \texttt{PIDK} requirement at 4 used to separate \BtoDK and \BtoDpi candidates, as well as with an alternative \texttt{PIDK} requirement at 12, resulting in much lower cross-feed from misidentified \BtoDpi decays. We also show the pulls, defined as $\Delta x / \sqrt{|\sigma^2_{PIDK>12} - \sigma^2_{PIDK>4}|}$ as described in the main text body. The comparison was made before the BESIII measurement of the \DtoKsKK strong-phase inputs became available; therefore the fits use the CLEO-only results~\cite{CLEOCISI} for this mode, which explains why the results quoted for $\texttt{PIDK}>4$ differ slightly from the nominal fit results.
+\caption{Results of running the measurement with the default \texttt{PIDK} requirement at 4 used to separate \BtoDK and \BtoDpi candidates, as well as with an alternative \texttt{PIDK} requirement at 12, resulting in much lower cross-feed from misidentified \BtoDpi decays. We also show the pulls, defined as $\Delta x / \sqrt{|\sigma^2_{\texttt{PIDK}>12} - \sigma^2_{\texttt{PIDK}>4}|}$ as described in the main text body. The comparison was made before the BESIII measurement of the \DtoKsKK strong-phase inputs became available; therefore the fits use the CLEO-only results~\cite{CLEOCISI} for this mode, which explains why the results quoted for $\texttt{PIDK}>4$ differ slightly from the nominal fit results.
 \label{tab:pid12}}
     
 
 \begin{tabular}{c|cccc}
 \toprule
-    Parameter & $\texttt{PIDK}>4$ & $\texttt{PIDK}>12$ & $\sigma=\sqrt{\sigma^2_{PIDK>12} - \sigma^2_{PIDK>4}}$ & Pull \\
+    Parameter & $\texttt{PIDK}>4$ & $\texttt{PIDK}>12$ & $\sigma=\sqrt{\sigma^2_{\texttt{PIDK}>12} - \sigma^2_{\texttt{PIDK}>4}}$ & Pull \\
     \midrule
     \xmdk   & $\phantom{-} 5.59 \pm  0.96$& $\phantom{-} 5.82 \pm  1.01$& $ 0.30 $& $ 0.77 $ \\
     \ymdk   & $\phantom{-} 6.45 \pm  1.14$& $\phantom{-} 6.86 \pm  1.19$& $ 0.36 $& $ 1.13 $ \\
